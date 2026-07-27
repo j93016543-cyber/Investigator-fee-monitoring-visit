@@ -134,12 +134,15 @@ def _cta_from_files(version, files):
         dates += parse_dates(f.name)
     eff = max(dates).isoformat() if dates else None
     items, meta = {}, {}
+    vcosts = {}
     for f in files:
         if f.suffix.lower() in XLS_EXTS and not f.name.startswith("~"):
             it, mt = extract_items(f)
             items.update(it)
             if mt and not meta:
                 meta = mt
+            for lab, amts in compute_visit_costs(f).items():
+                vcosts.setdefault(lab, set()).update(amts)
     return {
         "version": version,
         "effective_date": eff,
@@ -147,8 +150,77 @@ def _cta_from_files(version, files):
         "institution": meta.get("institution"),
         "pi": meta.get("pi"),
         "items": [{"item": k, "amount": v} for k, v in items.items()],
+        # 방문별 계약금액(참고): 레지멘/시트별 값이 여럿이면 리스트
+        "visit_costs": {k: sorted(v) for k, v in vcosts.items()},
         "n_files": len([f for f in files if f.is_file()]),
     }
+
+
+def _isnum(v):
+    return isinstance(v, (int, float))
+
+
+def _norm_visit(h):
+    h = str(h).replace("\n", " ")
+    if "creen" in h.lower():
+        return "Screening"
+    m = re.search(r"C(\d+).*?Day\s*(\d+)", h)
+    if m:
+        return f"C{m.group(1)}D{m.group(2)}"
+    return None
+
+
+def compute_visit_costs(path):
+    """budget 엑셀의 상세 매트릭스(절차×방문)에서 방문별 계약금액 계산.
+    반환: {visit_label: set(금액)}  — 절차표의 'Total' 행 전까지만 합산.
+    """
+    out = {}
+    try:
+        wb = open_workbook(path)
+    except Exception:
+        return out
+    for ws in wb.worksheets:
+        # 헤더행: 'Trial Procedures' + 'Selected Cost'
+        hr = costcol = None
+        for r in range(1, min(ws.max_row, 25) + 1):
+            has_proc = has_cost = False
+            for c in range(1, min(ws.max_column, 10) + 1):
+                v = str(ws.cell(r, c).value or "")
+                if "Trial Procedures" in v:
+                    has_proc = True
+                if "Selected Cost" in v:
+                    has_cost = True
+                    costcol = c
+            if has_proc and has_cost:
+                hr = r
+                break
+        if not hr or not costcol:
+            continue
+        # 첫 방문 컬럼
+        firstvisit = None
+        for c in range(costcol + 1, ws.max_column + 1):
+            if _norm_visit(ws.cell(hr, c).value):
+                firstvisit = c
+                break
+        if not firstvisit:
+            continue
+        for c in range(firstvisit, ws.max_column + 1):
+            lab = _norm_visit(ws.cell(hr, c).value)
+            if not lab:
+                continue
+            tot = 0.0
+            for r in range(hr + 1, ws.max_row + 1):
+                b = str(ws.cell(r, 2).value or "")
+                if "Total" in b or "Sub-total" in b:
+                    break
+                cost = ws.cell(r, costcol).value
+                q = ws.cell(r, c).value
+                if _isnum(cost) and _isnum(q):
+                    tot += cost * q
+            if tot > 0:
+                out.setdefault(lab, set()).add(round(tot, 2))
+    wb.close()
+    return out
 
 
 def parse_site_folder(site_dir):

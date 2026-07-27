@@ -225,7 +225,7 @@ function renderA(p, fees, invs){
 /* B — 11-컬럼 원장 */
 function renderB(p, fees, invs){
   const rows=[];
-  fees.forEach(x=>{ const pv=parseVisit(x.visit); const c=ctaAt(x.site, x.payment_date||realDate(x.visit_date));
+  fees.forEach(x=>{ const pv=parseVisit(x.visit); const c=ctaAt(x.site, realDate(x.visit_date)||x.payment_date);
     rows.push({t:'Investigator fee', country:x.country, site:x.site, subj:x.patient, visit:pv.label, vdate:realDate(x.visit_date),
       desc:x.visit, amount:x.amount, cur:x.currency, cta:c, pdate:x.payment_date, order:pv.order}); });
   invs.forEach(x=>{ const c=ctaAt(x.site, x.payment_date);
@@ -282,12 +282,28 @@ function renderC(p, fees, invs){
     const eff=ctaAt(site, null);
     const head=el('tr',{},[el('th',{},'Visit #'),...vis.map(v=>el('th',{class:'num'},v.l))]);
     function row(label, cellFn){ return el('tr',{}, [el('td',{style:'font-weight:650;color:var(--ink-2)'},label), ...vis.map(v=>cellFn(v))]); }
+    const patCur=(fees.find(f=>f.patient===pt)||{}).currency||'USD';
+    const ctaFor=v=> ctaAt(site, v.vdate || v.dates[0]);  // 계약은 방문 시점 기준
+    const vcosts=v=>{ const c=ctaFor(v); return (c&&c.visit_costs)?(c.visit_costs[v.l]||null):null; };
+    const actualOf=v=> patCur==='KRW'? v.k : v.u;
+    function costMatch(v){ const cs=vcosts(v), a=actualOf(v); if(!cs||!cs.length||!a) return null;
+      const aa=Math.abs(a), mn=cs[0], mx=cs[cs.length-1];
+      if(cs.some(x=>Math.abs(aa-x)<=Math.max(1,x*0.02))) return 'good';   // ±2% 일치
+      if(aa<mn*0.98) return 'under';                                       // 계약 미달(과소지급)
+      return 'over';                                                       // 계약 초과(묶음청구 가능)
+    }
+    function costStr(v){ const cs=vcosts(v); if(!cs||!cs.length) return '—';
+      const mn=cs[0], mx=cs[cs.length-1]; return money(mn,patCur,0)+(mx!==mn?' ~ '+money(mx,patCur,0):''); }
     const tb=el('tbody',{},[
       row('Visit date', v=>el('td',{class:'num'},v.vdate||'—')),
-      row('effective CTA', v=>{ const c=ctaAt(site, (v.dates[0]||v.vdate)); return el('td',{class:'num'+(c?'':' shade-warn')}, c?c.version:'—'); }),
-      row('CTA effective date', v=>{ const c=ctaAt(site,(v.dates[0]||v.vdate)); return el('td',{class:'num'}, c?c.effective_date:'—'); }),
-      row('Investigator fee', v=>{ const str=(v.u?('$'+Math.round(v.u).toLocaleString()):'')+((v.u&&v.k)?' / ':'')+(v.k?('₩'+Math.round(v.k).toLocaleString()):''); const paid=v.dates.length>0;
-        return el('td',{class:'num'+(paid?' shade-good':'')}, str||'—'); }),
+      row('effective CTA', v=>{ const c=ctaFor(v); return el('td',{class:'num'+(c?'':' shade-warn')}, c?c.version:'—'); }),
+      row('CTA effective date', v=>{ const c=ctaFor(v); return el('td',{class:'num'}, c?c.effective_date:'—'); }),
+      row('Investigator fee (실지급)', v=>{ const str=(v.u?('$'+Math.round(v.u).toLocaleString()):'')+((v.u&&v.k)?' / ':'')+(v.k?('₩'+Math.round(v.k).toLocaleString()):'');
+        const m=costMatch(v); const cls= m==='good'?'shade-good':m==='under'?'shade-crit':m==='over'?'shade-warn':(v.dates.length?'shade-good':'');
+        return el('td',{class:'num '+cls}, str||'—'); }),
+      row('CTA 계약금액(참고)', v=>el('td',{class:'num muted'}, costStr(v))),
+      row('대조', v=>{ const m=costMatch(v); return el('td',{class:'num'},
+        m==='good'?chip('good','일치'):m==='under'?chip('crit','미달'):m==='over'?chip('warn','초과'):'—'); }),
       row('Invoiceable item', v=>el('td',{class:'num muted'},'—')),
       row('Paid date', v=>{ const ds=v.dates.filter(Boolean).sort(); return el('td',{class:'num'+(ds.length?' shade-good':'')}, ds[ds.length-1]||'—'); }),
     ]);
@@ -300,7 +316,7 @@ function renderC(p, fees, invs){
   }
   function draw(){ holder.innerHTML='';
     const site=selSite.value, pt=selSubj.value;
-    holder.append(el('div',{class:'note',html:'<span>ℹ️</span><div>열=Visit, 행=지표. <b>지급일(Paid date)·연구비 셀 음영</b> <span class="chip good">지급</span>. Invoiceable은 site 단위라 방문별 매핑 없음(B 원장 참조). effective CTA는 <code>site_cta.json</code> 입력 시 채워집니다.</div>'}));
+    holder.append(el('div',{class:'note',html:'<span>ℹ️</span><div>열=Visit, 행=지표. <b>실지급 vs CTA 계약금액 대조</b>(방문일 시점 유효 CTA 기준): <span class="chip good">일치</span>(±2%) · <span class="chip warn">초과</span>(묶음청구/추가절차 가능) · <span class="chip crit">미달</span>(과소지급 검토). CTA 계약금액 = 해당 방문의 시술비 합계(레지멘/버전별 값이 여럿이면 범위, overhead 포함). Invoiceable은 site 단위라 방문별 매핑 없음.</div>'}));
     const P=idx[site]||{}; const pts= pt==='*'? Object.keys(P).sort() : [pt];
     pts.slice(0,15).forEach(x=>holder.append(subjBlock(site,x)));
     if(pt==='*'&&Object.keys(P).length>15) holder.append(el('div',{class:'small muted'},`상위 15명 표시 (총 ${Object.keys(P).length}명). 대상자를 선택하세요.`));
