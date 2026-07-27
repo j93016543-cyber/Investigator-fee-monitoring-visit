@@ -197,33 +197,35 @@ for k, qk in enumerate(sorted(qsplit)):
     for cc in range(1, 5):
         ws.cell(rr, cc).border = BORDER
 
-# 연구비 지급일별 요약 — req5
+# 사이트 지급 — 분기별 연구비 vs invoiceable (어느 분기의 연구비/invoice 인지) — req5
 r0 = r0 + len(qsplit) + 3
-ws.cell(r0, 1, "연구비 지급일별 요약 (visit_activity Payment Date)").font = Font(name=FONT, size=12, bold=True)
+ws.cell(r0, 1, "사이트 지급 분기별 — 연구비 vs invoiceable (지급일 기준)").font = Font(name=FONT, size=12, bold=True)
 r0 += 1
-for j, h in enumerate(["지급일(Paid date)", "건수", "USD 합", "₩(WON) 합"], 1):
+for j, h in enumerate(["연도-분기", "연구비 USD", "연구비 ₩(WON)", "invoiceable USD", "invoiceable ₩(WON)"], 1):
     c = ws.cell(r0, j, h); c.fill = HDR_FILL; c.font = HDR_FONT; c.border = BORDER
-pdmap = {}
+sq = {}
 for x in fees:
-    pd = x.get("payment_date")
-    if not pd:
+    qk = q_of(x.get("payment_date"))
+    if not qk:
         continue
-    o = pdmap.setdefault(pd, {"n": 0, "u": 0.0, "k": 0.0})
-    o["n"] += 1
-    if x.get("currency") == "KRW":
-        o["k"] += x.get("amount") or 0
-    else:
-        o["u"] += x.get("amount") or 0
-for k, pd in enumerate(sorted(pdmap)):
-    rr = r0 + 1 + k; o = pdmap[pd]
-    ws.cell(rr, 1, pd).font = BASE
-    ws.cell(rr, 2, o["n"]).font = BASE
-    cu = ws.cell(rr, 3, round(o["u"], 2)); cu.number_format = '$#,##0.00'
-    ck = ws.cell(rr, 4, round(o["k"])); ck.number_format = '₩#,##0'
-    for cc in range(1, 5):
+    o = sq.setdefault(qk, {"fu": 0.0, "fk": 0.0, "iu": 0.0, "ik": 0.0})
+    o["fk" if x.get("currency") == "KRW" else "fu"] += x.get("amount") or 0
+for x in invs:
+    qk = q_of(x.get("payment_date"))
+    if not qk:
+        continue
+    o = sq.setdefault(qk, {"fu": 0.0, "fk": 0.0, "iu": 0.0, "ik": 0.0})
+    o["ik" if x.get("currency") == "KRW" else "iu"] += x.get("amount") or 0
+for k, qk in enumerate(sorted(sq)):
+    rr = r0 + 1 + k; o = sq[qk]
+    ws.cell(rr, 1, qk).font = BASE
+    for jj, val, fm in [(2, o["fu"], '$#,##0'), (3, o["fk"], '₩#,##0'), (4, o["iu"], '$#,##0'), (5, o["ik"], '₩#,##0')]:
+        cc = ws.cell(rr, jj, round(val)); cc.font = BASE; cc.number_format = fm
+    for cc in range(1, 6):
         ws.cell(rr, cc).border = BORDER
+ws.cell(r0 - 2, 1)  # noop
 ws.column_dimensions["A"].width = 44
-for col in "BCD":
+for col in "BCDE":
     ws.column_dimensions[col].width = 20
 ws.freeze_panes = "A5"
 
@@ -322,7 +324,7 @@ wsC.column_dimensions["A"].width = 22
 for col in "BCDEFGHIJKLMNOPQRSTU":
     wsC.column_dimensions[col].width = 14
 METRICS = ["Visit date", "effective CTA", "CTA effective date",
-           "Investigator fee amount", "Invoiceable item amount", "Paid date"]
+           "Investigator fee amount(실지급)", "CTA 계약 연구비(계약서상)", "Invoiceable item amount", "Paid date"]
 rr = 1
 for s in sorted(tree, key=str):
     scur = tree[s]  # patients
@@ -354,7 +356,7 @@ for s in sorted(tree, key=str):
                     cell.value = c["version"] if c else "—"
                 elif metric == "CTA effective date":
                     cell.value = c["effective_date"] if c else "—"
-                elif metric == "Investigator fee amount":
+                elif metric == "Investigator fee amount(실지급)":
                     if actual:
                         cell.value = round(actual, 2)
                         cell.number_format = money_fmt(cur)
@@ -362,6 +364,13 @@ for s in sorted(tree, key=str):
                             cell.fill = SHADE[m]
                     else:
                         cell.value = "—"
+                elif metric == "CTA 계약 연구비(계약서상)":
+                    if costs:
+                        cell.value = (f"{costs[0]:,.0f} ~ {costs[-1]:,.0f}" if costs[0] != costs[-1]
+                                      else f"{costs[0]:,.0f}")
+                    else:
+                        cell.value = "—"
+                    cell.font = Font(name=FONT, size=10, color="6D8388")
                 elif metric == "Invoiceable item amount":
                     cell.value = "—"  # site 단위(방문 매핑 없음)
                 elif metric == "Paid date":
@@ -372,21 +381,25 @@ for s in sorted(tree, key=str):
 wsC.freeze_panes = "B1"
 
 # ============================================================ CRO 지급원장 (IQVIA Direct/PTC — req2)
+# 첨부 표 형식: Invoice#·Invoiced Amount($)·Invoiced Date·Paid Year·Paid Month·Paid Date·Paid Amount(₩)·Paid(Y)·지출결의#
 rowsP = []
-rowsP.append({"구분": "■ Direct (연구비/Professional) — 지출결의# 포함", "_cls": "sec"})
+rowsP.append({"구분": "■ Direct (연구비/Professional Fees)", "_cls": "sec"})
 for x in [p for p in pays if p.get("cost_type") == "Direct"]:
-    rowsP.append({"구분": "Direct", "Milestone/설명": x.get("milestone"), "Invoice #": x.get("invoice_no"),
-                  "Invoiced date": x.get("invoiced_date"), "Paid date": x.get("paid_date"),
-                  "Amount(USD)": x.get("invoiced_usd"), "총액(₩)": x.get("total_krw"),
-                  "지출결의#(내부기안)": x.get("approval_no"), "지급": "Y" if x.get("paid_yn") == "Y" else ""})
-rowsP.append({"구분": "■ PTC (Pass-through/invoice) — invoice#·date", "_cls": "sec"})
+    rowsP.append({"구분": "Direct", "Milestone / 설명": x.get("milestone"), "Invoice #": x.get("invoice_no"),
+                  "Invoiced Amount($)": x.get("invoiced_usd"), "Invoiced Date": x.get("invoiced_date"),
+                  "Paid Year": x.get("paid_year"), "Paid Month": x.get("paid_month"), "Paid Date": x.get("paid_date"),
+                  "Paid Amount(₩)": x.get("total_krw"), "Paid(Y)": x.get("paid_yn"), "지출결의 #": x.get("approval_no")})
+rowsP.append({"구분": "■ PTC (Pass-through / Invoice)", "_cls": "sec"})
 for x in [p for p in pays if p.get("cost_type") == "PTC"]:
-    rowsP.append({"구분": "PTC", "Milestone/설명": "Pass-through invoice", "Invoice #": x.get("invoice_no"),
-                  "Invoiced date": x.get("invoiced_date"), "Paid date": "",
-                  "Amount(USD)": x.get("invoiced_usd"), "총액(₩)": "", "지출결의#(내부기안)": "", "지급": ""})
+    rowsP.append({"구분": "PTC", "Milestone / 설명": "Pass-through invoice", "Invoice #": x.get("invoice_no"),
+                  "Invoiced Amount($)": x.get("invoiced_usd"), "Invoiced Date": x.get("invoiced_date"),
+                  "Paid Year": x.get("paid_year"), "Paid Month": x.get("paid_month"), "Paid Date": x.get("paid_date"),
+                  "Paid Amount(₩)": x.get("paid_krw"), "Paid(Y)": x.get("paid_yn"), "지출결의 #": x.get("approval_no")})
 sheet("CRO지급(IQVIA)",
-      ["구분", "Milestone/설명", "Invoice #", "Invoiced date", "Paid date", "Amount(USD)", "총액(₩)", "지출결의#(내부기안)", "지급"],
-      rowsP, widths=[10, 40, 14, 14, 14, 16, 16, 18, 6], numcols={6: "usd", 7: "int"})
+      ["구분", "Milestone / 설명", "Invoice #", "Invoiced Amount($)", "Invoiced Date", "Paid Year", "Paid Month",
+       "Paid Date", "Paid Amount(₩)", "Paid(Y)", "지출결의 #"],
+      rowsP, widths=[8, 38, 13, 16, 13, 9, 9, 12, 18, 7, 13],
+      numcols={4: "usd", 6: "int", 7: "int", 9: "int"})
 
 # ============================================================ D. IQVIA 계약
 rowsD = []

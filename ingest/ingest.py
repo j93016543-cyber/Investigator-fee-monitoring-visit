@@ -155,6 +155,11 @@ def parse_budget_tracker(path):
                 "invoiced_usd": amt,
                 "invoiced_date": d(w.cell(r, 17).value),
                 "paid_year": num(w.cell(r, 18).value),
+                "paid_month": num(w.cell(r, 19).value),      # S
+                "paid_date": d(w.cell(r, 20).value),          # T
+                "paid_krw": num(w.cell(r, 21).value),         # U Paid Amount(₩)
+                "paid_yn": s(w.cell(r, 22).value),            # V
+                "approval_no": s(w.cell(r, 23).value),        # W 지출결의 #
                 "breakdown": breakdown,
             })
     wb.close()

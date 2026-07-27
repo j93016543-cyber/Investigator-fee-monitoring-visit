@@ -4702,6 +4702,11 @@
       "invoiced_usd": 26480.58,
       "invoiced_date": "2024-07-22",
       "paid_year": 2024,
+      "paid_month": 8,
+      "paid_date": "2024-08-08",
+      "paid_krw": 39720870,
+      "paid_yn": "Y",
+      "approval_no": "CD24-170",
       "breakdown": {}
     },
     {
@@ -4711,6 +4716,11 @@
       "invoiced_usd": 137619.42,
       "invoiced_date": "2024-09-27",
       "paid_year": 2024,
+      "paid_month": 10,
+      "paid_date": "2024-10-10",
+      "paid_krw": 206429130.00000003,
+      "paid_yn": "Y",
+      "approval_no": "CD24-220",
       "breakdown": {}
     },
     {
@@ -4720,6 +4730,11 @@
       "invoiced_usd": 1248213,
       "invoiced_date": "2024-09-27",
       "paid_year": 2024,
+      "paid_month": 10,
+      "paid_date": "2024-10-10",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD24-220",
       "breakdown": {}
     },
     {
@@ -4729,6 +4744,11 @@
       "invoiced_usd": 439.55,
       "invoiced_date": "2024-10-15",
       "paid_year": 2024,
+      "paid_month": 10,
+      "paid_date": "2024-10-24",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD24-225",
       "breakdown": {}
     },
     {
@@ -4738,6 +4758,11 @@
       "invoiced_usd": 2626.46,
       "invoiced_date": "2024-11-21",
       "paid_year": 2024,
+      "paid_month": 12,
+      "paid_date": "2024-12-05",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD24-277",
       "breakdown": {}
     },
     {
@@ -4747,6 +4772,11 @@
       "invoiced_usd": 2603.63,
       "invoiced_date": "2024-12-26",
       "paid_year": 2025,
+      "paid_month": 1,
+      "paid_date": "2025-01-02",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD24-289",
       "breakdown": {}
     },
     {
@@ -4756,6 +4786,11 @@
       "invoiced_usd": 3495.17,
       "invoiced_date": "2025-02-11",
       "paid_year": 2025,
+      "paid_month": 2,
+      "paid_date": "2025-02-20",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-034",
       "breakdown": {}
     },
     {
@@ -4765,6 +4800,11 @@
       "invoiced_usd": 28596.55,
       "invoiced_date": "2025-03-05",
       "paid_year": 2025,
+      "paid_month": 3,
+      "paid_date": "2025-03-20",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-045",
       "breakdown": {}
     },
     {
@@ -4774,6 +4814,11 @@
       "invoiced_usd": 6399.93,
       "invoiced_date": "2025-03-24",
       "paid_year": 2025,
+      "paid_month": 4,
+      "paid_date": "2025-04-17",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-069",
       "breakdown": {}
     },
     {
@@ -4783,6 +4828,11 @@
       "invoiced_usd": 22753.1,
       "invoiced_date": "2025-04-28",
       "paid_year": 2025,
+      "paid_month": 5,
+      "paid_date": "2025-05-22",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-086",
       "breakdown": {}
     },
     {
@@ -4792,6 +4842,11 @@
       "invoiced_usd": 25045.7,
       "invoiced_date": "2025-05-22",
       "paid_year": 2025,
+      "paid_month": 6,
+      "paid_date": "2025-06-19",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-101",
       "breakdown": {}
     },
     {
@@ -4801,6 +4856,11 @@
       "invoiced_usd": 6875.43,
       "invoiced_date": "2025-05-22",
       "paid_year": 2025,
+      "paid_month": 6,
+      "paid_date": "2025-06-19",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-101",
       "breakdown": {}
     },
     {
@@ -4810,6 +4870,11 @@
       "invoiced_usd": 246916.46,
       "invoiced_date": "2025-07-04",
       "paid_year": 2025,
+      "paid_month": 7,
+      "paid_date": "2025-07-31",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-137",
       "breakdown": {}
     },
     {
@@ -4819,6 +4884,11 @@
       "invoiced_usd": 33087.27,
       "invoiced_date": "2025-07-04",
       "paid_year": 2025,
+      "paid_month": 7,
+      "paid_date": "2025-07-31",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-137",
       "breakdown": {}
     },
     {
@@ -4828,6 +4898,11 @@
       "invoiced_usd": 27051.47,
       "invoiced_date": "2025-07-28",
       "paid_year": 2025,
+      "paid_month": 8,
+      "paid_date": "2025-08-31",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-154",
       "breakdown": {}
     },
     {
@@ -4837,6 +4912,11 @@
       "invoiced_usd": 59531.23,
       "invoiced_date": "2025-07-28",
       "paid_year": 2025,
+      "paid_month": 8,
+      "paid_date": "2025-08-31",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-154",
       "breakdown": {}
     },
     {
@@ -4846,6 +4926,11 @@
       "invoiced_usd": 24756.78,
       "invoiced_date": "2025-10-17",
       "paid_year": 2025,
+      "paid_month": 12,
+      "paid_date": "2025-12-11",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-219",
       "breakdown": {}
     },
     {
@@ -4855,6 +4940,11 @@
       "invoiced_usd": 38305.79,
       "invoiced_date": "2025-09-25",
       "paid_year": 2025,
+      "paid_month": 11,
+      "paid_date": "2025-11-27",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-205",
       "breakdown": {}
     },
     {
@@ -4864,6 +4954,11 @@
       "invoiced_usd": 214703.35,
       "invoiced_date": "2025-09-25",
       "paid_year": 2025,
+      "paid_month": 11,
+      "paid_date": "2025-11-27",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-205",
       "breakdown": {}
     },
     {
@@ -4873,6 +4968,11 @@
       "invoiced_usd": 266838.75,
       "invoiced_date": "2025-11-07",
       "paid_year": 2025,
+      "paid_month": 12,
+      "paid_date": "2025-12-11",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-212",
       "breakdown": {}
     },
     {
@@ -4882,6 +4982,11 @@
       "invoiced_usd": 32289.36,
       "invoiced_date": "2025-11-07",
       "paid_year": 2025,
+      "paid_month": 12,
+      "paid_date": "2025-12-11",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-212",
       "breakdown": {}
     },
     {
@@ -4891,6 +4996,11 @@
       "invoiced_usd": 212960.76,
       "invoiced_date": "2025-11-27",
       "paid_year": 2025,
+      "paid_month": 12,
+      "paid_date": "2025-12-11",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-219",
       "breakdown": {}
     },
     {
@@ -4900,6 +5010,11 @@
       "invoiced_usd": 24321.85,
       "invoiced_date": "2025-11-27",
       "paid_year": 2025,
+      "paid_month": 12,
+      "paid_date": "2025-12-11",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD25-219",
       "breakdown": {}
     },
     {
@@ -4909,6 +5024,11 @@
       "invoiced_usd": 418111.57,
       "invoiced_date": "2025-12-19",
       "paid_year": 2026,
+      "paid_month": 1,
+      "paid_date": "2026-01-08",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD26-001",
       "breakdown": {}
     },
     {
@@ -4918,6 +5038,11 @@
       "invoiced_usd": 11566.32,
       "invoiced_date": "2025-12-19",
       "paid_year": 2026,
+      "paid_month": 1,
+      "paid_date": "2026-01-08",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CD26-001",
       "breakdown": {}
     },
     {
@@ -4927,6 +5052,11 @@
       "invoiced_usd": 183170.01,
       "invoiced_date": "2026-03-06",
       "paid_year": 2026,
+      "paid_month": 4,
+      "paid_date": "2026-04-09",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CO26-001",
       "breakdown": {}
     },
     {
@@ -4936,6 +5066,11 @@
       "invoiced_usd": 69898.94,
       "invoiced_date": "2026-03-06",
       "paid_year": 2026,
+      "paid_month": 4,
+      "paid_date": "2026-04-09",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CO26-001",
       "breakdown": {}
     },
     {
@@ -4945,6 +5080,11 @@
       "invoiced_usd": 82636.67,
       "invoiced_date": "2026-03-24",
       "paid_year": 2026,
+      "paid_month": 5,
+      "paid_date": "2026-05-07",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CO26-006",
       "breakdown": {}
     },
     {
@@ -4954,6 +5094,11 @@
       "invoiced_usd": 18197.63,
       "invoiced_date": "2026-03-24",
       "paid_year": 2026,
+      "paid_month": 5,
+      "paid_date": "2026-05-07",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CO26-006",
       "breakdown": {}
     },
     {
@@ -4963,6 +5108,11 @@
       "invoiced_usd": 11569.87,
       "invoiced_date": "2026-04-24",
       "paid_year": 2026,
+      "paid_month": 5,
+      "paid_date": "2026-05-21",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CO26-019",
       "breakdown": {}
     },
     {
@@ -4972,6 +5122,11 @@
       "invoiced_usd": 298480.73,
       "invoiced_date": "2026-06-09",
       "paid_year": 2026,
+      "paid_month": 6,
+      "paid_date": "2026-06-18",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CO26-034",
       "breakdown": {}
     },
     {
@@ -4981,6 +5136,11 @@
       "invoiced_usd": 26676.42,
       "invoiced_date": "2026-06-09",
       "paid_year": 2026,
+      "paid_month": 6,
+      "paid_date": "2026-06-18",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CO26-034",
       "breakdown": {}
     },
     {
@@ -4990,6 +5150,11 @@
       "invoiced_usd": 38914.75,
       "invoiced_date": "2026-06-22",
       "paid_year": 2026,
+      "paid_month": 7,
+      "paid_date": "2026-07-09",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CO26-045",
       "breakdown": {}
     },
     {
@@ -4999,6 +5164,11 @@
       "invoiced_usd": 95163.17,
       "invoiced_date": "2026-06-22",
       "paid_year": 2026,
+      "paid_month": 7,
+      "paid_date": "2026-07-09",
+      "paid_krw": null,
+      "paid_yn": "Y",
+      "approval_no": "CO26-045",
       "breakdown": {}
     }
   ],
