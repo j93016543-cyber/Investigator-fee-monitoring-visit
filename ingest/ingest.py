@@ -415,6 +415,14 @@ def norm_inv(x):
 def main():
     store = load_store()
     store["contract"] = contracts.build()
+    # IQVIA(CRO) CO/CNF 변경이력 (하위그룹 D)
+    try:
+        import iqvia as iqvia_mod  # noqa: E402
+        iv = iqvia_mod.parse_iqvia_root(SRC / "iqvia")
+        if iv:
+            store["contract"]["cnf_versions"] = iv
+    except Exception as e:  # noqa
+        print("IQVIA CNF 파싱 경고:", e)
 
     files = sorted(SRC.glob("*"))
     processed = []

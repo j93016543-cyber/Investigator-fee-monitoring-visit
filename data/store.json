@@ -1802,6 +1802,1790 @@
         "kind": "total"
       }
     ],
+    "cnf_versions": [
+      {
+        "version": "CNF1",
+        "effective_date": null,
+        "grand_total": null,
+        "budget": [],
+        "n_files": 1
+      },
+      {
+        "version": "CNF initial",
+        "effective_date": "2024-08-19",
+        "grand_total": null,
+        "budget": [],
+        "n_files": 4
+      },
+      {
+        "version": "CNF 2",
+        "effective_date": "2025-01-20",
+        "grand_total": 17737249.52,
+        "budget": [
+          {
+            "item": "Direct Expenses (Core Services)",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Project Start-up/Initiation",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Study Setup and Plan Development",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 10208.82,
+            "total": 10208.82,
+            "kind": "item"
+          },
+          {
+            "item": "Project Training",
+            "unit": "Training",
+            "qty": 1,
+            "unit_cost": 122413.94,
+            "total": 122413.94,
+            "kind": "item"
+          },
+          {
+            "item": "IQVIA Translation Services",
+            "unit": "Country",
+            "qty": 2,
+            "unit_cost": 30599,
+            "total": 61198,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 193820.76,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Site Start-up Services",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Site Identified",
+            "unit": "Site",
+            "qty": 11,
+            "unit_cost": 6058.86,
+            "total": 66647.42,
+            "kind": "item"
+          },
+          {
+            "item": "Core Document Package - Informed Consent",
+            "unit": "ICF(s)",
+            "qty": 4,
+            "unit_cost": 2237.57,
+            "total": 8950.27,
+            "kind": "item"
+          },
+          {
+            "item": "Core Document Package",
+            "unit": "Core Document Package",
+            "qty": 19,
+            "unit_cost": 754.01,
+            "total": 14326.11,
+            "kind": "item"
+          },
+          {
+            "item": "Core Document Package (for Amendments) Creation and Submission with ICF change",
+            "unit": "Master ICF Amendment",
+            "qty": 8,
+            "unit_cost": 4106.83,
+            "total": 32854.63,
+            "kind": "item"
+          },
+          {
+            "item": "Core Document Package (for Notifications) Creation and Submission",
+            "unit": "Notification",
+            "qty": 132,
+            "unit_cost": 189.79,
+            "total": 25052.57,
+            "kind": "item"
+          },
+          {
+            "item": "Site Activation",
+            "unit": "Site",
+            "qty": 19,
+            "unit_cost": 7084.02,
+            "total": 134596.44,
+            "kind": "item"
+          },
+          {
+            "item": "Site Contract",
+            "unit": "Site",
+            "qty": 19,
+            "unit_cost": 2923.93,
+            "total": 55554.68,
+            "kind": "item"
+          },
+          {
+            "item": "Site Contract Amendments",
+            "unit": "Total Contract Amendment",
+            "qty": 27,
+            "unit_cost": 1652.25,
+            "total": 44610.84,
+            "kind": "item"
+          },
+          {
+            "item": "Clinical Trial Submission to Central and Local IRBs and Ethics Committee(s)",
+            "unit": "Site",
+            "qty": 11,
+            "unit_cost": 3406.89,
+            "total": 37475.78,
+            "kind": "item"
+          },
+          {
+            "item": "Substantial Amendment",
+            "unit": "Amendment",
+            "qty": 2,
+            "unit_cost": 65192.26,
+            "total": 130384.51,
+            "kind": "item"
+          },
+          {
+            "item": "Import/Export License",
+            "unit": "License",
+            "qty": 1,
+            "unit_cost": 6521.89,
+            "total": 6521.89,
+            "kind": "item"
+          },
+          {
+            "item": "RA Amendments",
+            "unit": "Amendment",
+            "qty": 10,
+            "unit_cost": 2647.58,
+            "total": 26475.83,
+            "kind": "item"
+          },
+          {
+            "item": "Ethics Committee Amendment",
+            "unit": "Amendment",
+            "qty": 54,
+            "unit_cost": 2206.47,
+            "total": 119149.4,
+            "kind": "item"
+          },
+          {
+            "item": "GSA Hours (Global)",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 3689.67,
+            "total": 3689.67,
+            "kind": "item"
+          },
+          {
+            "item": "ICF Site Info Personalization",
+            "unit": "Sites",
+            "qty": 19,
+            "unit_cost": 224.75,
+            "total": 4270.26,
+            "kind": "item"
+          },
+          {
+            "item": "Preparation and QC of CSR Submissions",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 806.7,
+            "total": 806.7,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 711367.0,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Clinical Site Monitoring and Site Management",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Site Qualification Visit",
+            "unit": "Qual Visit",
+            "qty": 6,
+            "unit_cost": 2325.61,
+            "total": 13953.67,
+            "kind": "item"
+          },
+          {
+            "item": "Site Qualification Visit by Phone",
+            "unit": "Qual Call",
+            "qty": 7,
+            "unit_cost": 438.11,
+            "total": 3066.77,
+            "kind": "item"
+          },
+          {
+            "item": "Site Initiation Visit",
+            "unit": "SIV Visit",
+            "qty": 11,
+            "unit_cost": 2619.94,
+            "total": 28819.38,
+            "kind": "item"
+          },
+          {
+            "item": "Interim Site Monitoring Visit [Korea]",
+            "unit": "IMV Visit",
+            "qty": 277,
+            "unit_cost": 2553.56,
+            "total": 707335.49,
+            "kind": "item"
+          },
+          {
+            "item": "Interim Site Monitoring Visit [USA]",
+            "unit": "IMV Visit",
+            "qty": 95,
+            "unit_cost": 4577.16,
+            "total": 434829.91,
+            "kind": "item"
+          },
+          {
+            "item": "Essential Document / TMF Maintenance",
+            "unit": "Enrollment to Follow-up Month",
+            "qty": 51,
+            "unit_cost": 10394.12,
+            "total": 530100.12,
+            "kind": "item"
+          },
+          {
+            "item": "Site Closeout Visit",
+            "unit": "Closeout Visits",
+            "qty": 19,
+            "unit_cost": 3742.13,
+            "total": 71100.4,
+            "kind": "item"
+          },
+          {
+            "item": "One Day Co-Monitoring Visit [KOR]",
+            "unit": "Co-Monitoring Visit",
+            "qty": 3,
+            "unit_cost": 1984.68,
+            "total": 5954.04,
+            "kind": "item"
+          },
+          {
+            "item": "Two Day Co-Monitoring Visit [KOR]",
+            "unit": "Co-Monitoring Visit",
+            "qty": 13,
+            "unit_cost": 3043.17,
+            "total": 39561.22,
+            "kind": "item"
+          },
+          {
+            "item": "Three Day Co-Monitoring Visit [KOR]",
+            "unit": "Co-Monitoring Visit",
+            "qty": 2,
+            "unit_cost": 4101.66,
+            "total": 8203.33,
+            "kind": "item"
+          },
+          {
+            "item": "Site Management",
+            "unit": "Site Month",
+            "qty": 898,
+            "unit_cost": 676.95,
+            "total": 607896.88,
+            "kind": "item"
+          },
+          {
+            "item": "Two Day Onsite Monitoring Visits [KOR]",
+            "unit": "Visit",
+            "qty": 80,
+            "unit_cost": 3612.05,
+            "total": 288964.18,
+            "kind": "item"
+          },
+          {
+            "item": "Two Day Onsite Monitoring Visits [USA]",
+            "unit": "Visit",
+            "qty": 17,
+            "unit_cost": 6392.17,
+            "total": 108666.83,
+            "kind": "item"
+          },
+          {
+            "item": "Half Day Onsite Monitoring Visits [KOR]",
+            "unit": "Visit",
+            "qty": 0,
+            "unit_cost": 0,
+            "total": 0,
+            "kind": "item"
+          },
+          {
+            "item": "Three Day Onsite Monitoring Visits [KOR]",
+            "unit": "Visit",
+            "qty": 2,
+            "unit_cost": 4670.54,
+            "total": 9341.09,
+            "kind": "item"
+          },
+          {
+            "item": "Onsite Transition Visits (South Korea)",
+            "unit": "Visit",
+            "qty": 5,
+            "unit_cost": 2336.79,
+            "total": 11683.96,
+            "kind": "item"
+          },
+          {
+            "item": "Onsite Transition Visits (USA)",
+            "unit": "Visit",
+            "qty": 2,
+            "unit_cost": 4050.16,
+            "total": 8100.32,
+            "kind": "item"
+          },
+          {
+            "item": "Remote Onsite Transition Visits (USA)",
+            "unit": "Visit",
+            "qty": 1,
+            "unit_cost": 2984.33,
+            "total": 2984.33,
+            "kind": "item"
+          },
+          {
+            "item": "Electronic Investigator Site File Software (eISF)",
+            "unit": "Site",
+            "qty": 19,
+            "unit_cost": 2712.45,
+            "total": 51536.53,
+            "kind": "item"
+          },
+          {
+            "item": "CTMS Transfer",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 150000,
+            "total": 150000,
+            "kind": "item"
+          },
+          {
+            "item": "One-Day Remote SDM Visit",
+            "unit": "Visit",
+            "qty": 96,
+            "unit_cost": 3215.9,
+            "total": 308726.4,
+            "kind": "item"
+          },
+          {
+            "item": "Document Review for Transition- South Korea",
+            "unit": "Other",
+            "qty": 5,
+            "unit_cost": 353.95,
+            "total": 1769.75,
+            "kind": "item"
+          },
+          {
+            "item": "Document Review for Transition- USA",
+            "unit": "Other",
+            "qty": 3,
+            "unit_cost": 632.18,
+            "total": 1896.55,
+            "kind": "item"
+          },
+          {
+            "item": "Data Integration Services",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 18326.38,
+            "total": 18326.38,
+            "kind": "item"
+          },
+          {
+            "item": "Two-Day Remote SDM Visit",
+            "unit": "Visit",
+            "qty": 17,
+            "unit_cost": 5030.91,
+            "total": 85525.46,
+            "kind": "item"
+          },
+          {
+            "item": "Half Day Onsite Monitoring Visits with MVR [KOR]",
+            "unit": "Visit",
+            "qty": 0,
+            "unit_cost": 0,
+            "total": 0,
+            "kind": "item"
+          },
+          {
+            "item": "Half Day Onsite Monitoring Visits with MVR [USA]",
+            "unit": "Visit",
+            "qty": 0,
+            "unit_cost": 0,
+            "total": 0,
+            "kind": "item"
+          },
+          {
+            "item": "Half Day Onsite Monitoring Visits without MVR [KOR]",
+            "unit": "Visit",
+            "qty": 0,
+            "unit_cost": 0,
+            "total": 0,
+            "kind": "item"
+          },
+          {
+            "item": "Half Day Onsite Monitoring Visits without MVR [USA]",
+            "unit": "Visit",
+            "qty": 0,
+            "unit_cost": 0,
+            "total": 0,
+            "kind": "item"
+          },
+          {
+            "item": "Pharmacy Visit - Korea",
+            "unit": "Visit",
+            "qty": 20,
+            "unit_cost": 1627.37,
+            "total": 32547.5,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 3530890.47,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Project Management and Support",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Project Management (Pre-Study)",
+            "unit": "Pre-study Month",
+            "qty": 5,
+            "unit_cost": 73424.31,
+            "total": 367121.56,
+            "kind": "item"
+          },
+          {
+            "item": "Project Management (Ongoing)",
+            "unit": "Enrollment, Treatment Month",
+            "qty": 27,
+            "unit_cost": 53560.49,
+            "total": 1446133.21,
+            "kind": "item"
+          },
+          {
+            "item": "Project Management (Closeout)",
+            "unit": "Closeout Month",
+            "qty": 5,
+            "unit_cost": 15953.26,
+            "total": 79766.31,
+            "kind": "item"
+          },
+          {
+            "item": "Project Management (Long Term Follow-up )",
+            "unit": "Long Term Follow-up/Closeout  DBL Month",
+            "qty": 25,
+            "unit_cost": 50463.88,
+            "total": 1261597.02,
+            "kind": "item"
+          },
+          {
+            "item": "DLRT Charter Creation and Review",
+            "unit": "Charter",
+            "qty": 2,
+            "unit_cost": 743.66,
+            "total": 1487.32,
+            "kind": "item"
+          },
+          {
+            "item": "IQVIA DrugDev",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 188748.2,
+            "total": 188748.2,
+            "kind": "item"
+          },
+          {
+            "item": "Vendor Management Office",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 213486,
+            "total": 213486,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 3558339.6,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Meetings",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Meetings - Kick-off Meeting",
+            "unit": "Meeting",
+            "qty": 1,
+            "unit_cost": 13595.13,
+            "total": 13595.13,
+            "kind": "item"
+          },
+          {
+            "item": "Customer Teleconferences",
+            "unit": "Meeting",
+            "qty": 142,
+            "unit_cost": 758.87,
+            "total": 107758.93,
+            "kind": "item"
+          },
+          {
+            "item": "Meetings - Internal Team Meetings",
+            "unit": "Meeting",
+            "qty": 1054,
+            "unit_cost": 100.73,
+            "total": 106172.93,
+            "kind": "item"
+          },
+          {
+            "item": "DLRM",
+            "unit": "Meeting",
+            "qty": 17,
+            "unit_cost": 1580.93,
+            "total": 26875.73,
+            "kind": "item"
+          },
+          {
+            "item": "Site Transition Meeting (South Korea)",
+            "unit": "Meeting",
+            "qty": 5,
+            "unit_cost": 581.34,
+            "total": 2906.69,
+            "kind": "item"
+          },
+          {
+            "item": "Site Transition Meeting (USA)",
+            "unit": "Meeting",
+            "qty": 3,
+            "unit_cost": 1018.81,
+            "total": 3056.43,
+            "kind": "item"
+          },
+          {
+            "item": "LRSU to CRA handover meeting",
+            "unit": "Site",
+            "qty": 11,
+            "unit_cost": 144.12,
+            "total": 1585.28,
+            "kind": "item"
+          },
+          {
+            "item": "Transition Meeting with Outgoing CRO- South Korea",
+            "unit": "Other",
+            "qty": 5,
+            "unit_cost": 564.89,
+            "total": 2824.46,
+            "kind": "item"
+          },
+          {
+            "item": "Transition Meeting with Outgoing CRO- USA",
+            "unit": "Other",
+            "qty": 3,
+            "unit_cost": 873.79,
+            "total": 2621.37,
+            "kind": "item"
+          },
+          {
+            "item": "Transitioning Wrap Up Meeting- South Korea",
+            "unit": "Other",
+            "qty": 5,
+            "unit_cost": 750.09,
+            "total": 3750.45,
+            "kind": "item"
+          },
+          {
+            "item": "Transitioning Wrap Up Meeting- USA",
+            "unit": "Other",
+            "qty": 3,
+            "unit_cost": 1217.96,
+            "total": 3653.87,
+            "kind": "item"
+          },
+          {
+            "item": "SS3 Training visit by CL for Korea",
+            "unit": "Other",
+            "qty": 1,
+            "unit_cost": 860.92,
+            "total": 860.92,
+            "kind": "item"
+          },
+          {
+            "item": "SS3 Training visit by CRA for Korea",
+            "unit": "Other",
+            "qty": 1,
+            "unit_cost": 860.92,
+            "total": 860.92,
+            "kind": "item"
+          },
+          {
+            "item": "Remote Training by CRA for US",
+            "unit": "Other",
+            "qty": 3,
+            "unit_cost": 1492.16,
+            "total": 4476.49,
+            "kind": "item"
+          },
+          {
+            "item": "SS3 Training Visit by CRA including SC training",
+            "unit": "Other",
+            "qty": 1,
+            "unit_cost": 1106.9,
+            "total": 1106.9,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 282106.51,
+            "kind": "subtotal"
+          },
+          {
+            "item": "End of Study Activities",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Submission of End of Trial Notifications",
+            "unit": "Site",
+            "qty": 19,
+            "unit_cost": 161.25,
+            "total": 3063.78,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 3063.78,
+            "kind": "subtotal"
+          },
+          {
+            "item": "TDSE",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Transition Study Inv Payment - Reconciliation USA",
+            "unit": "Transition sites",
+            "qty": 3,
+            "unit_cost": 750,
+            "total": 2250,
+            "kind": "item"
+          },
+          {
+            "item": "Transition Study Inv Payment - Reconciliation ROW",
+            "unit": "Transition sites",
+            "qty": 5,
+            "unit_cost": 1250,
+            "total": 6250,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 8500,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Sub-total Direct Costs without BLD (Core CRO Services)",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 8288088.12,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Pass Through Costs",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Pass Through Costs (Core Services)",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Office Supplies",
+            "unit": "Notebook",
+            "qty": 19,
+            "unit_cost": 1689.21,
+            "total": 32095.0,
+            "kind": "item"
+          },
+          {
+            "item": "Monitoring Travel",
+            "unit": "Visit",
+            "qty": 528,
+            "unit_cost": 580.58,
+            "total": 306545,
+            "kind": "item"
+          },
+          {
+            "item": "Regulatory/IRB/EC fees",
+            "unit": "Estimated Total",
+            "qty": 19,
+            "unit_cost": 14516.42,
+            "total": 275811.92,
+            "kind": "item"
+          },
+          {
+            "item": "Document Indexing, QC and File Review",
+            "unit": "Document",
+            "qty": 7975,
+            "unit_cost": 0.07,
+            "total": 598.12,
+            "kind": "item"
+          },
+          {
+            "item": "Printing",
+            "unit": "Site",
+            "qty": 19,
+            "unit_cost": 11.26,
+            "total": 214,
+            "kind": "item"
+          },
+          {
+            "item": "Teleconferences",
+            "unit": "Teleconference",
+            "qty": 264,
+            "unit_cost": 21,
+            "total": 5544,
+            "kind": "item"
+          },
+          {
+            "item": "Miscellaneous Administrative Overhead",
+            "unit": "active sites x months",
+            "qty": 898,
+            "unit_cost": 33,
+            "total": 29634,
+            "kind": "item"
+          },
+          {
+            "item": "Informed consent Form",
+            "unit": "ICF",
+            "qty": 40,
+            "unit_cost": 1523.25,
+            "total": 60930,
+            "kind": "item"
+          },
+          {
+            "item": "DocuSign",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 35.36,
+            "total": 35.36,
+            "kind": "item"
+          },
+          {
+            "item": "Clario",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 416337,
+            "total": 416337,
+            "kind": "item"
+          },
+          {
+            "item": "OtherPass-Through Fees",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Investigator Grants and Vendor",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Investigator Payments (North America)",
+            "unit": "Patient",
+            "qty": 80,
+            "unit_cost": 43173.9,
+            "total": 3453912,
+            "kind": "item"
+          },
+          {
+            "item": "Investigator Payments (Asia Pacific)",
+            "unit": "Patient",
+            "qty": 130,
+            "unit_cost": 37442.35,
+            "total": 4867505,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total Pass-through Costs",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 9449161.41,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Project Grand Total",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 17737249.52,
+            "kind": "total"
+          }
+        ],
+        "n_files": 4
+      },
+      {
+        "version": "CNF 3",
+        "effective_date": "2025-03-19",
+        "grand_total": 17802251.28,
+        "budget": [
+          {
+            "item": "Direct Expenses (Core Services)",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Project Start-up/Initiation",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Study Setup and Plan Development",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 10208.82,
+            "total": 10208.82,
+            "kind": "item"
+          },
+          {
+            "item": "Project Training",
+            "unit": "Training",
+            "qty": 1,
+            "unit_cost": 122413.94,
+            "total": 122413.94,
+            "kind": "item"
+          },
+          {
+            "item": "IQVIA Translation Services",
+            "unit": "Country",
+            "qty": 2,
+            "unit_cost": 30599,
+            "total": 61198,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 193820.76,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Site Start-up Services",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Site Identified",
+            "unit": "Site",
+            "qty": 11,
+            "unit_cost": 6058.86,
+            "total": 66647.42,
+            "kind": "item"
+          },
+          {
+            "item": "Core Document Package - Informed Consent",
+            "unit": "ICF(s)",
+            "qty": 4,
+            "unit_cost": 2237.57,
+            "total": 8950.27,
+            "kind": "item"
+          },
+          {
+            "item": "Core Document Package",
+            "unit": "Core Document Package",
+            "qty": 19,
+            "unit_cost": 754.01,
+            "total": 14326.11,
+            "kind": "item"
+          },
+          {
+            "item": "Core Document Package (for Amendments) Creation and Submission with ICF change",
+            "unit": "Master ICF Amendment",
+            "qty": 8,
+            "unit_cost": 4106.83,
+            "total": 32854.63,
+            "kind": "item"
+          },
+          {
+            "item": "Core Document Package (for Notifications) Creation and Submission",
+            "unit": "Notification",
+            "qty": 132,
+            "unit_cost": 189.79,
+            "total": 25052.57,
+            "kind": "item"
+          },
+          {
+            "item": "Site Activation",
+            "unit": "Site",
+            "qty": 19,
+            "unit_cost": 7084.02,
+            "total": 134596.44,
+            "kind": "item"
+          },
+          {
+            "item": "Site Contract",
+            "unit": "Site",
+            "qty": 19,
+            "unit_cost": 2923.93,
+            "total": 55554.68,
+            "kind": "item"
+          },
+          {
+            "item": "Site Contract Amendments",
+            "unit": "Total Contract Amendment",
+            "qty": 27,
+            "unit_cost": 1652.25,
+            "total": 44610.84,
+            "kind": "item"
+          },
+          {
+            "item": "Clinical Trial Submission to Central and Local IRBs and Ethics Committee(s)",
+            "unit": "Site",
+            "qty": 11,
+            "unit_cost": 3406.89,
+            "total": 37475.78,
+            "kind": "item"
+          },
+          {
+            "item": "Substantial Amendment",
+            "unit": "Amendment",
+            "qty": 2,
+            "unit_cost": 65192.26,
+            "total": 130384.51,
+            "kind": "item"
+          },
+          {
+            "item": "Import/Export License",
+            "unit": "License",
+            "qty": 1,
+            "unit_cost": 6521.89,
+            "total": 6521.89,
+            "kind": "item"
+          },
+          {
+            "item": "RA Amendments",
+            "unit": "Amendment",
+            "qty": 10,
+            "unit_cost": 2647.58,
+            "total": 26475.83,
+            "kind": "item"
+          },
+          {
+            "item": "Ethics Committee Amendment",
+            "unit": "Amendment",
+            "qty": 54,
+            "unit_cost": 2206.47,
+            "total": 119149.4,
+            "kind": "item"
+          },
+          {
+            "item": "GSA Hours (Global)",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 3689.67,
+            "total": 3689.67,
+            "kind": "item"
+          },
+          {
+            "item": "ICF Site Info Personalization",
+            "unit": "Sites",
+            "qty": 19,
+            "unit_cost": 224.75,
+            "total": 4270.26,
+            "kind": "item"
+          },
+          {
+            "item": "Preparation and QC of CSR Submissions",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 806.7,
+            "total": 806.7,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 711367.0,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Clinical Site Monitoring and Site Management",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Site Qualification Visit",
+            "unit": "Qual Visit",
+            "qty": 6,
+            "unit_cost": 2325.61,
+            "total": 13953.67,
+            "kind": "item"
+          },
+          {
+            "item": "Site Qualification Visit by Phone",
+            "unit": "Qual Call",
+            "qty": 7,
+            "unit_cost": 438.11,
+            "total": 3066.77,
+            "kind": "item"
+          },
+          {
+            "item": "Site Initiation Visit",
+            "unit": "SIV Visit",
+            "qty": 11,
+            "unit_cost": 2619.94,
+            "total": 28819.38,
+            "kind": "item"
+          },
+          {
+            "item": "Interim Site Monitoring Visit [Korea]",
+            "unit": "IMV Visit",
+            "qty": 277,
+            "unit_cost": 2553.56,
+            "total": 707335.49,
+            "kind": "item"
+          },
+          {
+            "item": "Interim Site Monitoring Visit [USA]",
+            "unit": "IMV Visit",
+            "qty": 95,
+            "unit_cost": 4577.16,
+            "total": 434829.91,
+            "kind": "item"
+          },
+          {
+            "item": "Essential Document / TMF Maintenance",
+            "unit": "Enrollment to Follow-up Month",
+            "qty": 51,
+            "unit_cost": 10394.12,
+            "total": 530100.12,
+            "kind": "item"
+          },
+          {
+            "item": "Site Closeout Visit",
+            "unit": "Closeout Visits",
+            "qty": 19,
+            "unit_cost": 3742.13,
+            "total": 71100.4,
+            "kind": "item"
+          },
+          {
+            "item": "One Day Co-Monitoring Visit [KOR]",
+            "unit": "Co-Monitoring Visit",
+            "qty": 3,
+            "unit_cost": 1984.68,
+            "total": 5954.04,
+            "kind": "item"
+          },
+          {
+            "item": "Two Day Co-Monitoring Visit [KOR]",
+            "unit": "Co-Monitoring Visit",
+            "qty": 13,
+            "unit_cost": 3043.17,
+            "total": 39561.22,
+            "kind": "item"
+          },
+          {
+            "item": "Three Day Co-Monitoring Visit [KOR]",
+            "unit": "Co-Monitoring Visit",
+            "qty": 2,
+            "unit_cost": 4101.66,
+            "total": 8203.33,
+            "kind": "item"
+          },
+          {
+            "item": "Site Management",
+            "unit": "Site Month",
+            "qty": 898,
+            "unit_cost": 676.95,
+            "total": 607896.88,
+            "kind": "item"
+          },
+          {
+            "item": "Two Day Onsite Monitoring Visits [KOR]",
+            "unit": "Visit",
+            "qty": 80,
+            "unit_cost": 3612.05,
+            "total": 288964.18,
+            "kind": "item"
+          },
+          {
+            "item": "Two Day Onsite Monitoring Visits [USA]",
+            "unit": "Visit",
+            "qty": 17,
+            "unit_cost": 6392.17,
+            "total": 108666.83,
+            "kind": "item"
+          },
+          {
+            "item": "Half Day Onsite Monitoring Visits [KOR]",
+            "unit": "Visit",
+            "qty": 0,
+            "unit_cost": 0,
+            "total": 0,
+            "kind": "item"
+          },
+          {
+            "item": "Three Day Onsite Monitoring Visits [KOR]",
+            "unit": "Visit",
+            "qty": 2,
+            "unit_cost": 4670.54,
+            "total": 9341.09,
+            "kind": "item"
+          },
+          {
+            "item": "Onsite Transition Visits (South Korea)",
+            "unit": "Visit",
+            "qty": 5,
+            "unit_cost": 2336.79,
+            "total": 11683.96,
+            "kind": "item"
+          },
+          {
+            "item": "Onsite Transition Visits (USA)",
+            "unit": "Visit",
+            "qty": 2,
+            "unit_cost": 4050.16,
+            "total": 8100.32,
+            "kind": "item"
+          },
+          {
+            "item": "Remote Onsite Transition Visits (USA)",
+            "unit": "Visit",
+            "qty": 1,
+            "unit_cost": 2984.33,
+            "total": 2984.33,
+            "kind": "item"
+          },
+          {
+            "item": "Electronic Investigator Site File Software (eISF)",
+            "unit": "Site",
+            "qty": 19,
+            "unit_cost": 2712.45,
+            "total": 51536.53,
+            "kind": "item"
+          },
+          {
+            "item": "CTMS Transfer",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 150000,
+            "total": 150000,
+            "kind": "item"
+          },
+          {
+            "item": "One-Day Remote SDM Visit",
+            "unit": "Visit",
+            "qty": 96,
+            "unit_cost": 3215.9,
+            "total": 308726.4,
+            "kind": "item"
+          },
+          {
+            "item": "Document Review for Transition- South Korea",
+            "unit": "Other",
+            "qty": 5,
+            "unit_cost": 353.95,
+            "total": 1769.75,
+            "kind": "item"
+          },
+          {
+            "item": "Document Review for Transition- USA",
+            "unit": "Other",
+            "qty": 3,
+            "unit_cost": 632.18,
+            "total": 1896.55,
+            "kind": "item"
+          },
+          {
+            "item": "Data Integration Services",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 18326.38,
+            "total": 18326.38,
+            "kind": "item"
+          },
+          {
+            "item": "Two-Day Remote SDM Visit",
+            "unit": "Visit",
+            "qty": 17,
+            "unit_cost": 5030.91,
+            "total": 85525.46,
+            "kind": "item"
+          },
+          {
+            "item": "Half Day Onsite Monitoring Visits with MVR [KOR]",
+            "unit": "Visit",
+            "qty": 0,
+            "unit_cost": 0,
+            "total": 0,
+            "kind": "item"
+          },
+          {
+            "item": "Half Day Onsite Monitoring Visits with MVR [USA]",
+            "unit": "Visit",
+            "qty": 0,
+            "unit_cost": 0,
+            "total": 0,
+            "kind": "item"
+          },
+          {
+            "item": "Half Day Onsite Monitoring Visits without MVR [KOR]",
+            "unit": "Visit",
+            "qty": 0,
+            "unit_cost": 0,
+            "total": 0,
+            "kind": "item"
+          },
+          {
+            "item": "Half Day Onsite Monitoring Visits without MVR [USA]",
+            "unit": "Visit",
+            "qty": 0,
+            "unit_cost": 0,
+            "total": 0,
+            "kind": "item"
+          },
+          {
+            "item": "Pharmacy Visit - Korea",
+            "unit": "Visit",
+            "qty": 20,
+            "unit_cost": 1627.37,
+            "total": 32547.5,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 3530890.47,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Project Management and Support",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Project Management (Pre-Study)",
+            "unit": "Pre-study Month",
+            "qty": 5,
+            "unit_cost": 73424.31,
+            "total": 367121.56,
+            "kind": "item"
+          },
+          {
+            "item": "Project Management (Ongoing)",
+            "unit": "Enrollment, Treatment Month",
+            "qty": 27,
+            "unit_cost": 53560.49,
+            "total": 1446133.21,
+            "kind": "item"
+          },
+          {
+            "item": "Project Management (Closeout)",
+            "unit": "Closeout Month",
+            "qty": 5,
+            "unit_cost": 15953.26,
+            "total": 79766.31,
+            "kind": "item"
+          },
+          {
+            "item": "Project Management (Long Term Follow-up )",
+            "unit": "Long Term Follow-up/Closeout  DBL Month",
+            "qty": 25,
+            "unit_cost": 50463.88,
+            "total": 1261597.02,
+            "kind": "item"
+          },
+          {
+            "item": "DLRT Charter Creation and Review",
+            "unit": "Charter",
+            "qty": 2,
+            "unit_cost": 743.66,
+            "total": 1487.32,
+            "kind": "item"
+          },
+          {
+            "item": "IQVIA DrugDev",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 188748.2,
+            "total": 188748.2,
+            "kind": "item"
+          },
+          {
+            "item": "Vendor Management Office",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 213486,
+            "total": 213486,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 3558339.6,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Meetings",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Meetings - Kick-off Meeting",
+            "unit": "Meeting",
+            "qty": 1,
+            "unit_cost": 13595.13,
+            "total": 13595.13,
+            "kind": "item"
+          },
+          {
+            "item": "Customer Teleconferences",
+            "unit": "Meeting",
+            "qty": 142,
+            "unit_cost": 758.87,
+            "total": 107758.93,
+            "kind": "item"
+          },
+          {
+            "item": "Meetings - Internal Team Meetings",
+            "unit": "Meeting",
+            "qty": 1054,
+            "unit_cost": 100.73,
+            "total": 106172.93,
+            "kind": "item"
+          },
+          {
+            "item": "DLRM",
+            "unit": "Meeting",
+            "qty": 17,
+            "unit_cost": 1580.93,
+            "total": 26875.73,
+            "kind": "item"
+          },
+          {
+            "item": "Site Transition Meeting (South Korea)",
+            "unit": "Meeting",
+            "qty": 5,
+            "unit_cost": 581.34,
+            "total": 2906.69,
+            "kind": "item"
+          },
+          {
+            "item": "Site Transition Meeting (USA)",
+            "unit": "Meeting",
+            "qty": 3,
+            "unit_cost": 1018.81,
+            "total": 3056.43,
+            "kind": "item"
+          },
+          {
+            "item": "LRSU to CRA handover meeting",
+            "unit": "Site",
+            "qty": 11,
+            "unit_cost": 144.12,
+            "total": 1585.28,
+            "kind": "item"
+          },
+          {
+            "item": "Transition Meeting with Outgoing CRO- South Korea",
+            "unit": "Other",
+            "qty": 5,
+            "unit_cost": 564.89,
+            "total": 2824.46,
+            "kind": "item"
+          },
+          {
+            "item": "Transition Meeting with Outgoing CRO- USA",
+            "unit": "Other",
+            "qty": 3,
+            "unit_cost": 873.79,
+            "total": 2621.37,
+            "kind": "item"
+          },
+          {
+            "item": "Transitioning Wrap Up Meeting- South Korea",
+            "unit": "Other",
+            "qty": 5,
+            "unit_cost": 750.09,
+            "total": 3750.45,
+            "kind": "item"
+          },
+          {
+            "item": "Transitioning Wrap Up Meeting- USA",
+            "unit": "Other",
+            "qty": 3,
+            "unit_cost": 1217.96,
+            "total": 3653.87,
+            "kind": "item"
+          },
+          {
+            "item": "SS3 Training visit by CL for Korea",
+            "unit": "Other",
+            "qty": 1,
+            "unit_cost": 860.92,
+            "total": 860.92,
+            "kind": "item"
+          },
+          {
+            "item": "SS3 Training visit by CRA for Korea",
+            "unit": "Other",
+            "qty": 1,
+            "unit_cost": 860.92,
+            "total": 860.92,
+            "kind": "item"
+          },
+          {
+            "item": "Remote Training by CRA for US",
+            "unit": "Other",
+            "qty": 3,
+            "unit_cost": 1492.16,
+            "total": 4476.49,
+            "kind": "item"
+          },
+          {
+            "item": "SS3 Training Visit by CRA including SC training",
+            "unit": "Other",
+            "qty": 1,
+            "unit_cost": 1106.9,
+            "total": 1106.9,
+            "kind": "item"
+          },
+          {
+            "item": "Investigator Meeting - Virtual",
+            "unit": "Other",
+            "qty": 1,
+            "unit_cost": 9641.76,
+            "total": 9641.76,
+            "kind": "item"
+          },
+          {
+            "item": "Investigator Meeting Admin",
+            "unit": "Other",
+            "qty": 1,
+            "unit_cost": 10000,
+            "total": 10000,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 301748.27,
+            "kind": "subtotal"
+          },
+          {
+            "item": "End of Study Activities",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Submission of End of Trial Notifications",
+            "unit": "Site",
+            "qty": 19,
+            "unit_cost": 161.25,
+            "total": 3063.78,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 3063.78,
+            "kind": "subtotal"
+          },
+          {
+            "item": "TDSE",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Transition Study Inv Payment - Reconciliation USA",
+            "unit": "Transition sites",
+            "qty": 3,
+            "unit_cost": 750,
+            "total": 2250,
+            "kind": "item"
+          },
+          {
+            "item": "Transition Study Inv Payment - Reconciliation ROW",
+            "unit": "Transition sites",
+            "qty": 5,
+            "unit_cost": 1250,
+            "total": 6250,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total:",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 8500,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Sub-total Direct Costs without BLD (Core CRO Services)",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 8307729.88,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Pass Through Costs",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Pass Through Costs (Core Services)",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Office Supplies",
+            "unit": "Notebook",
+            "qty": 19,
+            "unit_cost": 1689.21,
+            "total": 32095.0,
+            "kind": "item"
+          },
+          {
+            "item": "Monitoring Travel",
+            "unit": "Visit",
+            "qty": 528,
+            "unit_cost": 580.58,
+            "total": 306545,
+            "kind": "item"
+          },
+          {
+            "item": "Regulatory/IRB/EC fees",
+            "unit": "Estimated Total",
+            "qty": 19,
+            "unit_cost": 14516.42,
+            "total": 275811.92,
+            "kind": "item"
+          },
+          {
+            "item": "Document Indexing, QC and File Review",
+            "unit": "Document",
+            "qty": 7975,
+            "unit_cost": 0.07,
+            "total": 598.12,
+            "kind": "item"
+          },
+          {
+            "item": "Printing",
+            "unit": "Site",
+            "qty": 19,
+            "unit_cost": 11.26,
+            "total": 214,
+            "kind": "item"
+          },
+          {
+            "item": "Teleconferences",
+            "unit": "Teleconference",
+            "qty": 264,
+            "unit_cost": 21,
+            "total": 5544,
+            "kind": "item"
+          },
+          {
+            "item": "Miscellaneous Administrative Overhead",
+            "unit": "active sites x months",
+            "qty": 898,
+            "unit_cost": 33,
+            "total": 29634,
+            "kind": "item"
+          },
+          {
+            "item": "Informed consent Form",
+            "unit": "ICF",
+            "qty": 40,
+            "unit_cost": 1523.25,
+            "total": 60930,
+            "kind": "item"
+          },
+          {
+            "item": "DocuSign",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 35.36,
+            "total": 35.36,
+            "kind": "item"
+          },
+          {
+            "item": "Clario",
+            "unit": "Study",
+            "qty": 1,
+            "unit_cost": 416337,
+            "total": 416337,
+            "kind": "item"
+          },
+          {
+            "item": "Investigator Meetings Logistics",
+            "unit": "Study",
+            "qty": 4,
+            "unit_cost": 11340,
+            "total": 45360,
+            "kind": "item"
+          },
+          {
+            "item": "OtherPass-Through Fees",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Investigator Grants and Vendor",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": null,
+            "kind": "section"
+          },
+          {
+            "item": "Investigator Payments (North America)",
+            "unit": "Patient",
+            "qty": 80,
+            "unit_cost": 43173.9,
+            "total": 3453912,
+            "kind": "item"
+          },
+          {
+            "item": "Investigator Payments (Asia Pacific)",
+            "unit": "Patient",
+            "qty": 130,
+            "unit_cost": 37442.35,
+            "total": 4867505,
+            "kind": "item"
+          },
+          {
+            "item": "Sub-total Pass-through Costs",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 9494521.41,
+            "kind": "subtotal"
+          },
+          {
+            "item": "Project Grand Total without BLD",
+            "unit": null,
+            "qty": null,
+            "unit_cost": null,
+            "total": 17802251.28,
+            "kind": "total"
+          }
+        ],
+        "n_files": 4
+      }
+    ],
     "tracker_meta": {
       "contract_number": "LAB97701",
       "version": "CO1_23Sep2025",
@@ -45116,6 +46900,7 @@
     "IQVIA_WOv3.docx",
     "Invoice.xlsx",
     "cta",
+    "iqvia",
     "project_budget_tracker.xlsx",
     "subject_visit_tracker.xlsx",
     "visit_activity.xlsx",

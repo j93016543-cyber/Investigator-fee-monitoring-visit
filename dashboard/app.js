@@ -402,8 +402,45 @@ function renderMon(){
       el('div',{},[el('h3',{class:'subh'},'지급 스케줄 (Attachment 4)'),tableFrom([{k:'m',h:'예정월'},{k:'ms',h:'Milestone'},{k:'p',h:'%',num:true},{k:'a',h:'Net(USD)',num:true}],psRows,{tall:true})]) ])]);
   p.append(card('D','IQVIA(CRO) 모니터링 계약 · 항목별 비용', `유효: ${C.effective_version} (eff. ${C.effective_date})`, dWrap));
 
+  renderCNF(p);
   renderE(p, cexp, cvis);
   renderF(p, cvis);
+}
+
+/* D — IQVIA(CRO) CO/CNF 변경이력 & 예산 */
+function renderCNF(p){
+  const cnf=(C.cnf_versions||[]).filter(v=>v.effective_date||v.grand_total||(v.budget||[]).length);
+  if(!cnf.length) return;
+  const sorted=cnf.slice().sort((a,b)=>String(a.effective_date||'').localeCompare(b.effective_date||''));
+  const withBudget=sorted.filter(v=>(v.budget||[]).length);
+  const latest=withBudget[withBudget.length-1];
+  // 변경이력
+  let prev=null;
+  const hrows=sorted.map(v=>{ const g=v.grand_total; const d= (prev!=null&&g!=null)?(g-prev):null;
+    const r={v:v.version, e:v.effective_date||'—', g:g!=null?usd(g):'—', d:d==null?'—':(d>0?'+'+usd(d):usd(d)), n:(v.budget||[]).length||'—',
+      _cls: latest&&v.version===latest.version?'eff':''};
+    if(g!=null) prev=g; return r; });
+  // 예산 뷰어
+  const selVer=el('select',{}, withBudget.map(v=>el('option',{value:v.version, selected: latest&&v.version===latest.version?'selected':null},`${v.version} (${v.effective_date||'—'})`)));
+  const box=el('div',{});
+  function drawB(){ box.innerHTML='';
+    const v=withBudget.find(x=>x.version===selVer.value)||latest;
+    const rr=(v.budget||[]).map(b=>({item:b.item, unit:b.unit||'', qty:b.qty!=null?nfmt(b.qty):'', uc:b.unit_cost!=null?usd2(b.unit_cost):'', tot:b.total!=null?usd(b.total):'',
+      _cls:(b.kind==='section'?'sec':b.kind==='subtotal'?'subtotal':b.kind==='total'?'total':'')}));
+    box.append(tableFrom([{k:'item',h:'항목'},{k:'unit',h:'Unit'},{k:'qty',h:'수량',num:true},{k:'uc',h:'단가(USD)',num:true},{k:'tot',h:'Revised 총액(USD)',num:true}], rr, {tall:true}));
+  }
+  selVer.onchange=drawB; if(withBudget.length) drawB();
+  const body=el('div',{},[
+    el('div',{class:'kpis'},[
+      kpi('현재 계약 예산(최신 CO)', latest?usd(latest.grand_total):'—', latest?(latest.version+' · eff '+latest.effective_date):''),
+      kpi('CO/CNF 변경 횟수', String(sorted.length), 'MSA/ATP/WO 이후'),
+      kpi('WO v3 → 최신 증감', (latest&&C.payment_envelopes)?usd(latest.grand_total-C.payment_envelopes.grand_total):'—', 'Grand Total 기준'),
+    ]),
+    el('h3',{class:'subh'},'IQVIA CO/CNF 변경이력 (Effective date 순 · Δ = 직전 대비 예산 증감)'),
+    tableFrom([{k:'v',h:'CO/CNF'},{k:'e',h:'Effective'},{k:'g',h:'Grand Total',num:true},{k:'d',h:'Δ 예산',num:true},{k:'n',h:'항목수',num:true}], hrows),
+    withBudget.length?el('div',{},[el('div',{class:'controls',style:'margin-top:6px'},[el('span',{class:'small muted'},'예산 보기:'),selVer]), box]):null,
+  ].filter(Boolean));
+  p.append(card('D','IQVIA(CRO) 계약 변경이력 (CO/CNF) · Revised 예산','Change Notification Form 별 예산 개정', body));
 }
 
 const ECAT_ORDER=['식비','교통비','숙박비','Per Diem','IRB/승인비','기타'];

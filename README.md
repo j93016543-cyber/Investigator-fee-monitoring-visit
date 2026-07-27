@@ -61,7 +61,12 @@ dashboard/index.html  최종 대시보드 (Artifact)
 - **C**: 기관·대상자·방문 매트릭스 (열=Visit#, 행=Visit date/effective CTA/Investigator fee/Invoiceable/Paid date, 지급일 음영)
 - (참고) IQVIA WO 계약 — CRO 마스터 계약 버전 + 연구비 단가
 
-**모니터링 탭** — 계약 대비 visit 잔여 / D: 모니터링 계약·단가 / E: CRA 경비 / F: CRA Site Visit Report
+**모니터링 탭** — 계약 대비 visit 잔여 / D: 모니터링 계약·단가 + **IQVIA CO/CNF 변경이력·Revised 예산** / E: CRA 경비 / F: CRA Site Visit Report
+
+### IQVIA(CRO) 계약 입력 — 폴더 자동 파싱 (D)
+`data/source/iqvia/<CNF 폴더>/` 에 CO/CNF 폴더를 넣고 `ingest.py` 실행하면 `ingest/iqvia.py` 가
+버전(폴더명)·effective date(FE 파일명 날짜)·Budget Grid(항목별 Revised 총액, Grand Total)를 추출합니다.
+(원본은 `.gitignore`.)
 
 ### CTA (기관 임상시험계약) 입력 — 폴더 자동 파싱
 site별 CTA는 IQVIA WO(CRO 계약)와 별개입니다. 두 가지 방법:
