@@ -138,7 +138,7 @@ fees = store.get("investigator_fees", [])
 invs = store.get("pass_through_invoices", [])
 pays = store.get("payments", [])
 pending = store.get("pending_fees", [])
-pend_usd = sum(x["amount"] for x in pending if isinstance(x.get("amount"), (int, float)))
+pend_krw = sum(x["amount"] for x in pending if isinstance(x.get("amount"), (int, float)))
 env = C.get("payment_envelopes", {})
 sites_cta = sorted([s for s in scts if scts[s].get("ctas")], key=str)
 
@@ -156,7 +156,7 @@ kpis = [
     ("연구비(Investigator Grants) 계약 총액", env.get("investigator_grants_total"), "usd0", "WO v3 (USD)"),
     ("연구비 실지급 누계 (USD, 미국 site)", round(feeU, 2), "usd", "visit_activity! Visit Amount"),
     ("연구비 실지급 누계 (₩ WON, 한국 site)", round(feeK), "krw", "visit_activity! Visit Amount"),
-    ("연구비 지급예정 (TBD, 7월 · USD)", round(pend_usd, 2), "usd", "BWS Jul2026 (paid date=TBD)"),
+    ("연구비 지급예정 (TBD, 7월 · ₩WON)", round(pend_krw), "krw", "BWS Jul2026 (paid date=TBD)"),
     ("Invoiceable(Professional) 최대", env.get("professional_specialty_max"), "usd0", "WO v3"),
     ("현재 IQVIA 계약 예산(최신 CO)", (C.get("cnf_versions") or [{}])[-1].get("grand_total"), "usd0", "IQVIA CNF 최신"),
     ("연구비 실지급/지급예정 건수", f"{len(fees)} / {len(pending)}", None, "visit_activity / BWS"),
@@ -230,7 +230,7 @@ for k, qk in enumerate(sorted(sq)):
 r0 = r0 + len(sq) + 3
 ws.cell(r0, 1, "연구비 지급예정 (TBD · 7월, BWS Jul2026) — site별").font = Font(name=FONT, size=12, bold=True)
 r0 += 1
-for j, h in enumerate(["Site#", "기관", "건수", "금액(USD)"], 1):
+for j, h in enumerate(["Site#", "기관", "건수", "금액(₩WON)"], 1):
     c = ws.cell(r0, j, h); c.fill = HDR_FILL; c.font = HDR_FONT; c.border = BORDER
 psite = {}
 for x in pending:
@@ -242,7 +242,7 @@ for k, sk in enumerate(sorted(psite, key=lambda z: (z == "None", z))):
     ws.cell(rr, 1, sk).font = BASE
     ws.cell(rr, 2, site_name(sk) if sk != "None" else "(site 미지정)").font = BASE
     ws.cell(rr, 3, o["n"]).font = BASE
-    cu = ws.cell(rr, 4, round(o["u"], 2)); cu.number_format = '$#,##0.00'
+    cu = ws.cell(rr, 4, round(o["u"])); cu.number_format = '₩#,##0'
     for cc in range(1, 5):
         ws.cell(rr, cc).border = BORDER
 ws.column_dimensions["A"].width = 44
