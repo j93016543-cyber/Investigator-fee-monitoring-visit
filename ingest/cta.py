@@ -162,7 +162,7 @@ def parse_site_folder(site_dir):
     if subdirs:
         # 버전 폴더별 1개 CTA. site 루트의 낱개 문서(NL/노트 등)는 무시.
         for ver_dir in subdirs:
-            ver = re.sub(r"^\d+\.\s*", "", ver_dir.name).strip()  # "1. Initial" → "Initial"
+            ver = re.sub(r"^\d+(?:[.\)]\s*|\s+)", "", ver_dir.name).strip()  # "1. "/"01 "/"4.X"/"1) " 제거
             ctas.append(_cta_from_files(ver, list(ver_dir.rglob("*"))))
     else:
         # 하위폴더 없음 = 초기 CTA만 → site 루트 파일을 하나의 CTA로
