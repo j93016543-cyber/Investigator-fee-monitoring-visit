@@ -269,6 +269,121 @@ def parse_subject_visits(path):
     return records
 
 
+# CRA ER 경비 카테고리 매핑 (reason code -> 사용자 카테고리)
+EXPENSE_CATEGORY = {
+    "MEALX": "식비", "HOTEL": "숙박비", "DAILA": "Per Diem",
+    "TAXIX": "교통비", "BUS": "교통비", "TOLLX": "교통비", "PARKI": "교통비",
+    "MILEA": "교통비", "CAREN": "교통비",
+    "APFEE": "IRB/승인비", "LABFE": "기타", "COURI": "기타",
+    "SUPPL": "기타", "OTPRI": "기타",
+}
+
+
+def _hdr(ws, ncols=45):
+    return {s(ws.cell(1, c).value): c for c in range(1, ncols + 1) if ws.cell(1, c).value}
+
+
+def parse_visit_activity(path):
+    """연구비(대상자 방문별 지급) - B/C 소스."""
+    wb = openpyxl.load_workbook(path, data_only=True)
+    ws = wb.active
+    h = _hdr(ws, 20)
+    recs = []
+    for r in range(2, ws.max_row + 1):
+        if ws.cell(r, 1).value is None:
+            continue
+        g = lambda k, dc: s(ws.cell(r, h.get(k, dc)).value)
+        recs.append({
+            "kind": "연구비", "site": g("Site #", 4), "country": g("Country ", 5),
+            "payee": g("Payee", 3), "investigator": g("Investigator", 6),
+            "patient": g("Patient", 7), "visit": g("Visit", 8),
+            "visit_date": d(ws.cell(r, h.get("Visit Date", 9)).value),
+            "invoice_no": g("Site Invoice #", 10),
+            "amount": num(ws.cell(r, h.get("Visit Amount", 11)).value),
+            "currency": g("Currency", 12), "payment_no": g("Payment #", 13),
+            "payment_date": d(ws.cell(r, h.get("Payment Date", 14)).value),
+            "adhoc": g("Ad hoc", 15),
+        })
+    wb.close()
+    return recs
+
+
+def parse_invoice(path):
+    """Pass-through invoiceable (site invoice 상세) - B 소스."""
+    wb = openpyxl.load_workbook(path, data_only=True)
+    ws = wb.active
+    h = _hdr(ws, 15)
+    recs = []
+    for r in range(2, ws.max_row + 1):
+        if ws.cell(r, 1).value is None:
+            continue
+        g = lambda k, dc: s(ws.cell(r, h.get(k, dc)).value)
+        recs.append({
+            "kind": "invoiceable", "site": g("Site #", 4), "country": g("Country ", 5),
+            "payee": g("Payee", 3), "investigator": g("Investigator", 6),
+            "description": g("Description", 7),
+            "amount": num(ws.cell(r, h.get("Amount", 8)).value),
+            "currency": g("Currency", 9), "invoice_no": g("Site Invoice #", 10),
+            "payment_no": g("Payment #", 11), "transition": g("Transition", 12),
+            "payment_date": d(ws.cell(r, h.get("Payment Date", 13)).value),
+        })
+    wb.close()
+    return recs
+
+
+def parse_cra_visits(path):
+    """CRA Site Visit Report - F 소스 (CRA/site/방문일/DOS/횟수)."""
+    wb = openpyxl.load_workbook(path, data_only=True)
+    ws = wb.active
+    h = _hdr(ws, 40)
+    recs = []
+    for r in range(2, ws.max_row + 1):
+        mon = s(ws.cell(r, h.get("Monitor", 1)).value)
+        if not mon or "%Compliance" in str(mon):
+            continue
+        g = lambda k, dc: s(ws.cell(r, h.get(k, dc)).value)
+        recs.append({
+            "cra": mon, "site": g("Site #", 19), "pi": g("PI Name", 17),
+            "account": g("Account", 18), "country": g("Protocol Country", 6),
+            "city": g("City", 8), "visit_type": g("Visit Type", 20),
+            "status": g("Visit Status", 21),
+            "visit_start": d(ws.cell(r, h.get("Visit Start", 24)).value),
+            "visit_end": d(ws.cell(r, h.get("Visit End", 25)).value),
+            "dos": num(ws.cell(r, h.get("Days On Site", 26)).value),
+            "report_status": g("Report Status", 29),
+        })
+    wb.close()
+    return recs
+
+
+def parse_cra_expenses(path):
+    """CRA ER 경비 - E 소스 (CRA/site/카테고리/금액/일자)."""
+    wb = openpyxl.load_workbook(path, data_only=True)
+    ws = wb.active
+    h = _hdr(ws, 33)
+    recs = []
+    for r in range(3, ws.max_row + 1):
+        seq = ws.cell(r, h.get("Seq #", 1)).value
+        reason = s(ws.cell(r, h.get("Reason", 3)).value)
+        if seq is None and reason is None:
+            continue
+        g = lambda k, dc: s(ws.cell(r, h.get(k, dc)).value)
+        recs.append({
+            "seq": seq, "code": s(ws.cell(r, h.get("Category", 2)).value),
+            "reason": reason, "group": EXPENSE_CATEGORY.get(reason, "기타"),
+            "cra": g("Incurring Person", 11), "empl_id": g("Empl ID", 12),
+            "description": g("Description", 8), "country": g("Country", 10),
+            "trans_date": d(ws.cell(r, h.get("Trans Date", 9)).value),
+            "visit_date": d(ws.cell(r, h.get("Visit Date", 23)).value),
+            "amount": num(ws.cell(r, h.get("Amount", 15)).value),
+            "net_amount": num(ws.cell(r, h.get("Net Amount", 32)).value),
+            "patient_id": g("Patient ID", 22), "site": g("Investigator Site", 25),
+            "doc_id": g("Expenses Doc ID", 24),
+        })
+    wb.close()
+    return recs
+
+
 # ----------------------------------------------------------------------------- merge
 def upsert(target, new, keyfn):
     idx = {keyfn(x): i for i, x in enumerate(target)}
@@ -282,15 +397,19 @@ def upsert(target, new, keyfn):
 
 
 def load_store():
-    if STORE.exists():
-        return json.loads(STORE.read_text(encoding="utf-8"))
-    return {"meta": {}, "contract": {}, "vendor_status": [], "quarterly": [],
+    base = {"meta": {}, "contract": {}, "vendor_status": [], "quarterly": [],
             "payments": [], "monitoring_visits": {}, "billing_milestones": [],
-            "expense_forecast": [], "subject_visits": [], "sources": []}
+            "expense_forecast": [], "subject_visits": [],
+            "investigator_fees": [], "pass_through_invoices": [],
+            "cra_visits": [], "cra_expenses": [], "sources": []}
+    if STORE.exists():
+        loaded = json.loads(STORE.read_text(encoding="utf-8"))
+        base.update(loaded)  # 기존 데이터 유지 + 신규 키 기본값 보장
+    return base
 
 
 def norm_inv(x):
-    return (x or "").strip()
+    return str(x).strip() if x is not None else ""
 
 
 def main():
@@ -305,8 +424,11 @@ def main():
             if name.endswith((".xlsx", ".xlsm")):
                 wb = openpyxl.load_workbook(f, read_only=True)
                 sheets = set(wb.sheetnames)
+                # 활성 시트 헤더로 파일 유형 판별
+                aws = wb.active
+                hdr = {aws.cell(1, c).value for c in range(1, min(aws.max_column, 45) + 1)}
                 wb.close()
-                if "0. Budget Summary" in sheets or any("IQVIA" in x for x in sheets):
+                if "0. Budget Summary" in sheets or any("IQVIA" in str(x) for x in sheets):
                     b = parse_budget_tracker(f)
                     store["contract"]["tracker_meta"] = b["contract_meta"]
                     upsert(store["vendor_status"], b["vendor_status"], lambda x: x["vendor"])
@@ -317,7 +439,30 @@ def main():
                     upsert(store["payments"], b["ptc_invoices"],
                            lambda x: ("PTC", norm_inv(x.get("invoice_no"))))
                     processed.append((f.name, "budget_tracker"))
-                elif any(x == "Sheet1" for x in sheets) and "Sheet2" in sheets:
+                elif "PATIENT ACTIVITY" in sheets or "Visit Amount" in hdr:
+                    recs = parse_visit_activity(f)
+                    upsert(store["investigator_fees"], recs,
+                           lambda x: (norm_inv(x.get("payment_no")), x.get("patient"),
+                                      x.get("visit"), x.get("amount")))
+                    processed.append((f.name, f"visit_activity ({len(recs)} 연구비)"))
+                elif "PASS THROUGH" in sheets or ("Description" in hdr and "Site Invoice #" in hdr):
+                    recs = parse_invoice(f)
+                    upsert(store["pass_through_invoices"], recs,
+                           lambda x: (norm_inv(x.get("invoice_no")), x.get("description"),
+                                      x.get("amount"), norm_inv(x.get("payment_no"))))
+                    processed.append((f.name, f"invoice ({len(recs)} invoiceable)"))
+                elif "Monitor" in hdr and "Days On Site" in hdr:
+                    recs = parse_cra_visits(f)
+                    upsert(store["cra_visits"], recs,
+                           lambda x: (x.get("cra"), x.get("site"), x.get("visit_type"),
+                                      x.get("visit_start")))
+                    processed.append((f.name, f"cra_visits ({len(recs)} F)"))
+                elif "Incurring Person" in hdr or "Investigator Site" in hdr:
+                    recs = parse_cra_expenses(f)
+                    upsert(store["cra_expenses"], recs,
+                           lambda x: (norm_inv(x.get("doc_id")), x.get("seq")))
+                    processed.append((f.name, f"cra_expenses ({len(recs)} E)"))
+                elif "Sheet1" in sheets and "Sheet2" in sheets:
                     v = parse_visit_balance(f)
                     store["monitoring_visits"] = v["monitoring_visits"]
                     store["billing_milestones"] = v["billing_milestones"]
@@ -328,11 +473,13 @@ def main():
                     if recs:
                         upsert(store["subject_visits"], recs,
                                lambda x: (x["subject"], x["visit_folder"], x["visit_date"]))
-                        processed.append((f.name, "subject_visits"))
+                        processed.append((f.name, f"subject_visits ({len(recs)})"))
                     else:
                         processed.append((f.name, "skipped(unknown xlsx)"))
             elif name.endswith(".pdf"):
                 processed.append((f.name, "contract_pdf(→contracts.py)"))
+            elif name.endswith(".docx"):
+                processed.append((f.name, "contract_docx(→contracts.py)"))
         except Exception as e:  # noqa
             processed.append((f.name, f"ERROR: {e}"))
 
@@ -362,6 +509,10 @@ def main():
     print(f"  billing 마일스톤 : {len(store['billing_milestones'])}")
     print(f"  expense forecast : {len(store['expense_forecast'])}")
     print(f"  대상자 방문      : {len(store['subject_visits'])}")
+    print(f"  연구비(방문별)   : {len(store['investigator_fees'])}")
+    print(f"  invoiceable      : {len(store['pass_through_invoices'])}")
+    print(f"  CRA visit(F)     : {len(store['cra_visits'])}")
+    print(f"  CRA 경비(E)      : {len(store['cra_expenses'])}")
     print(f"\n저장: {STORE}")
 
 

@@ -34,33 +34,48 @@ dashboard/index.html  최종 대시보드 (Artifact)
 | 원본 파일 | 성격 | 반영 위치 |
 |---|---|---|
 | `IQVIA_MSA.pdf` / `IQVIA_ATP.pdf` / `IQVIA_WOv3.docx` | 계약서 | A · D (버전·항목별 단가) → `contracts.py` |
-| `project_budget_tracker.xlsx` | 예산/지급 원장 | 분기별 trend · A · B · D |
-| `visit_balance.xlsx` | 모니터링 visit 계약/실적 | 모니터링 trend · F |
-| `subject_visit_tracker.xlsx` | EDC 대상자 방문 | C |
+| `project_budget_tracker.xlsx` | 예산/지급 원장 | 분기별 trend · A · D |
+| `visit_activity.xlsx` | 대상자 방문별 **연구비** 지급 | B · C |
+| `Invoice.xlsx` (PASS THROUGH) | site invoiceable 상세 | B |
+| `visit_balance.xlsx` | 모니터링 visit 계약/실적 | 모니터링 trend · 계약대비 잔여 |
+| `subject_visit_tracker.xlsx` | EDC 대상자 방문 | (참고) |
+| `CRA_monitoring_ER.xlsx` | CRA 경비정산 | **E** (식비·교통·IRB·숙박·Per Diem) |
+| `CRA_Site_Visit_Report.xlsx` | CRA 모니터링 실적 | **F** (CRA별·site별 방문·DOS) |
 
 ## 누적(merge) 규칙
 
-- **지급/invoice**: `invoice_no + cost_type` 로 upsert (중복 자동 제거)
+- **CRO 지급/invoice**: `invoice_no + cost_type` 로 upsert
+- **연구비(방문별)**: `(payment_no, patient, visit, amount)` 로 upsert
+- **invoiceable**: `(invoice_no, description, amount, payment_no)` 로 upsert
+- **CRA visit(F)**: `(cra, site, visit_type, visit_start)` 로 upsert
+- **CRA 경비(E)**: `(doc_id, seq)` 로 upsert
 - **분기별 planned/actual**: `vendor+year+quarter` 로 최신값 갱신
 - **모니터링 visit 스냅샷**: 스냅샷 날짜별로 누적 (새 파일 = 새 스냅샷 컬럼)
-- **대상자 방문**: `(subject, visit_folder, date)` 로 upsert
 - **계약서**: `contracts.py` 의 `VERSIONS` / 항목표에 새 CO/WO 를 추가
+
+## 하위그룹 A~F (대시보드)
+
+**연구비 탭** — A: 계약서 버전·항목별 단가 / B: 연구비+invoiceable 상세 원장 / C: 기관·대상자·방문별 지급액 tracker
+**모니터링 탭** — 계약 대비 visit 잔여 / D: 모니터링 계약·단가 / E: CRA 경비 / F: CRA Site Visit Report
 
 ## 음영(shading) 검증 규칙
 
-- **B (지급 기록)**: 각 지급 금액이 유효 계약(WO v3)의 Payment Schedule·항목 단가와
-  일치하면 <span>🟩 계약 일치</span>, 계약서에서 찾지 못하면 <span>🟨 확인 필요</span>.
-- **F (모니터링 visit)**: 잔여가 음수면 🟥 계약 초과, 0이면 🟨 소진, 양수면 🟩 잔여.
+- **B (원장)**: 🟩 지급완료(payment date 존재) / 🟨 조정·취소(음수). 연구비 계약 대조는 C의 대상자 단가 기준.
+- **C (지급 tracker)**: 🟩 지급일 존재. 각 방문에 지급일 시점의 **유효 계약 버전**(effective date 기준)을 표시.
+- **E (CRA 경비)**: F 일치(해당 CRA·일자가 F 방문 ±10일 내) 🟩/🟨, 교통비가 계약 Monitoring Travel 단가($585/visit) 초과 시 🟨.
+- **계약대비 잔여**: 잔여 음수 🟥 초과 · 0 🟨 소진 · 양수 🟩 잔여.
 
 ## 현재 유효 계약 (Effective)
 
 `CO1_23Sep2025` (Budget Tracker 기준). 계약서 계층: MSA(2024-07-13) → ATP(2024-06-25) →
 **WO v3(2024-08-19, 항목별 단가 확정)** → CO1(2025-09-23, 현재 유효).
 
-## 아직 데이터가 필요한 부분 (파일 주시면 자동 반영)
+## 현재 반영 현황
 
-| 항목 | 필요 파일 | 현재 상태 |
-|---|---|---|
-| B: 방문별 **연구비 금액**·visit#·지급일별 음영 | `visit activity.xlsx`, `Invoice.xlsx` | 대상자·방문·방문일까지 반영, 금액 대기 |
-| E: **CRA 경비 상세**(이름·모니터링일·식비/교통비/IRB/숙박비/Per Diem·금액) | `CRA 모니터링 ER.xlsx` | 계약 단가(대조 기준)만 표시 |
-| F: **CRA별·Site별 DOS** 상세 | `CRA Site Visit Report.xlsx` | 계약 대비 visit 집계만 표시 |
+A~F 전부 실데이터로 채워져 있습니다 (연구비 방문별 지급, invoiceable, CRA 경비, CRA visit 실적 포함).
+매월 새 파일을 같은 이름으로 `data/source/`에 넣고 `ingest.py` → `build.py` 재실행하면 누적 갱신됩니다.
+
+### 참고 (선택적 개선 여지)
+- CRA 경비의 식비/숙박/Per Diem **1일 상한 rate**가 계약서에 명시돼 있으면 알려주세요 —
+  현재는 교통비만 계약 Monitoring Travel 단가($585/visit)로 대조합니다.
+- 통화: 연구비/ invoiceable은 USD·KRW 혼재 → 통화별로 분리 집계합니다.
