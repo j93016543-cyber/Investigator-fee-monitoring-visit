@@ -128,6 +128,34 @@ def extract_items(path):
     return items, meta
 
 
+MONTHS_FULL = {m: i + 1 for i, m in enumerate(
+    ["january", "february", "march", "april", "may", "june", "july",
+     "august", "september", "october", "november", "december"])}
+
+
+def pdf_meta(path):
+    """CTA amendment PDF에서 명시적 effective date / protocol version 추출.
+    - 'payable from <Month D, YYYY>' 또는 'is effective as of <Month D, YYYY>' (개정 자체의 발효일)
+    - 'Protocol Version X[.Y]'
+    원계약 발효일('effective as of ...' 앞에 is 없음)은 잡지 않도록 패턴 제한.
+    """
+    try:
+        from pdfminer.high_level import extract_text
+        t = extract_text(str(path), page_numbers=[0, 1, 2, 3])
+    except Exception:
+        return None, None
+    eff = None
+    m = (re.search(r"payable from ([A-Z][a-z]+)\s+(\d{1,2}),?\s+(\d{4})", t)
+         or re.search(r"\bis effective as of ([A-Z][a-z]+)\s+(\d{1,2}),?\s+(\d{4})", t))
+    if m and m.group(1).lower() in MONTHS_FULL:
+        try:
+            eff = datetime.date(int(m.group(3)), MONTHS_FULL[m.group(1).lower()], int(m.group(2))).isoformat()
+        except ValueError:
+            pass
+    pv = re.search(r"Protocol Version (\d+(?:\.\d+)?)", t)
+    return eff, (f"Version {pv.group(1)}" if pv else None)
+
+
 def _cta_from_files(version, files):
     dates = []
     for f in files:
@@ -143,6 +171,18 @@ def _cta_from_files(version, files):
                 meta = mt
             for lab, amts in compute_visit_costs(f).items():
                 vcosts.setdefault(lab, set()).update(amts)
+    # PDF-only 버전(budget xlsx 없음): PDF의 'effective and payable from' / 'is effective as of'
+    # 발효일과 Protocol Version 을 사용. (xlsx 폴더는 FE 파일명 날짜 유지 — 순서 안정)
+    pdfs = [f for f in files if f.suffix.lower() == ".pdf"
+            and any(k in f.name.lower() for k in ("cta", "amendment", "agreement", "clinical_trial"))]
+    for f in pdfs:
+        peff, ppv = pdf_meta(f)
+        if ppv and not meta.get("protocol_version"):
+            meta["protocol_version"] = ppv
+        if peff and not items:   # 예산 xlsx 없는 PDF-only 버전만 날짜 override
+            eff = peff
+        if peff:
+            break
     return {
         "version": version,
         "effective_date": eff,
@@ -231,15 +271,15 @@ def parse_site_folder(site_dir):
     """
     ctas = []
     subdirs = sorted([d for d in site_dir.iterdir() if d.is_dir()])
-    if subdirs:
-        # 버전 폴더별 1개 CTA. site 루트의 낱개 문서(NL/노트 등)는 무시.
-        for ver_dir in subdirs:
-            ver = re.sub(r"^\d+(?:[.\)]\s*|\s+)", "", ver_dir.name).strip()  # "1. "/"01 "/"4.X"/"1) " 제거
-            ctas.append(_cta_from_files(ver, list(ver_dir.rglob("*"))))
-    else:
-        # 하위폴더 없음 = 초기 CTA만 → site 루트 파일을 하나의 CTA로
-        root_files = [f for f in site_dir.iterdir() if f.is_file()]
-        if root_files:
+    for ver_dir in subdirs:
+        ver = re.sub(r"^\d+(?:[.\)]\s*|\s+)", "", ver_dir.name).strip()  # "1. "/"01 "/"4.X"/"1) " 제거
+        ctas.append(_cta_from_files(ver, list(ver_dir.rglob("*"))))
+    # site 루트 파일: 실제 CTA/agreement/budget 문서가 있으면 Initial 로 인정.
+    # (NL/노트 등 잡문서만 있으면 무시)
+    root_files = [f for f in site_dir.iterdir() if f.is_file()]
+    is_cta_doc = lambda f: re.search(r"cta|agreement|budget|regimen|clinical_trial", f.name, re.I)
+    if root_files and any(is_cta_doc(f) for f in root_files):
+        if not any((c.get("version") or "").lower().startswith("initial") for c in ctas):
             ctas.append(_cta_from_files("Initial", root_files))
     ctas.sort(key=lambda c: c["effective_date"] or "")
     return ctas

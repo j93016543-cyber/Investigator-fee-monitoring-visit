@@ -51504,6 +51504,16 @@
               ]
             },
             "n_files": 3
+          },
+          {
+            "version": "CTA Amendment #4 (PA14.2)",
+            "effective_date": "2026-02-13",
+            "protocol_version": "Version 14.2",
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
           }
         ],
         "source_folder": "Site 537",
@@ -52113,6 +52123,16 @@
               ]
             },
             "n_files": 3
+          },
+          {
+            "version": "CTA Amendment #3",
+            "effective_date": "2024-10-07",
+            "protocol_version": null,
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
           },
           {
             "version": "AMD#2_PA8",
@@ -54274,6 +54294,16 @@
               ]
             },
             "n_files": 2
+          },
+          {
+            "version": "CTA Amendment #5",
+            "effective_date": "2026-02-09",
+            "protocol_version": "Version 14.2",
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
           }
         ],
         "source_folder": "Site 541",
@@ -54285,11 +54315,57 @@
       },
       "543": {
         "name": "University of Michigan Comprehensive Cancer Center Michigan Medicine",
-        "ctas": []
+        "ctas": [
+          {
+            "version": "Initial",
+            "effective_date": "2026-02-10",
+            "protocol_version": null,
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
+          },
+          {
+            "version": "CTA Amendment #1",
+            "effective_date": "2026-04-02",
+            "protocol_version": "Version 14.2",
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
+          }
+        ],
+        "source_folder": "Site 543",
+        "cta_institution": null
       },
       "544": {
         "name": "Baylor University Medical Center",
-        "ctas": []
+        "ctas": [
+          {
+            "version": "Initial",
+            "effective_date": "2025-12-22",
+            "protocol_version": null,
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
+          },
+          {
+            "version": "CTA Amendment #1",
+            "effective_date": "2026-07-13",
+            "protocol_version": "Version 14.2",
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
+          }
+        ],
+        "source_folder": "Site 544",
+        "cta_institution": null
       },
       "545": {
         "name": "Emory University",
@@ -54303,6 +54379,16 @@
             "items": [],
             "visit_costs": {},
             "n_files": 2
+          },
+          {
+            "version": "CTA Amendment #1",
+            "effective_date": "2026-07-13",
+            "protocol_version": "Version 14.2",
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
           }
         ],
         "source_folder": "Site 545",
@@ -54511,6 +54597,16 @@
               ]
             },
             "n_files": 2
+          },
+          {
+            "version": "CTA Amendment #1",
+            "effective_date": "2026-04-22",
+            "protocol_version": "Version 14.2",
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
           }
         ],
         "source_folder": "Site 550",
@@ -54528,6 +54624,16 @@
             "items": [],
             "visit_costs": {},
             "n_files": 1
+          },
+          {
+            "version": "CTA Amendment #1",
+            "effective_date": "2026-05-14",
+            "protocol_version": "Version 14.2",
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
           }
         ],
         "source_folder": "Site 551",
@@ -54540,6 +54646,16 @@
             "version": "Initial",
             "effective_date": "2025-12-31",
             "protocol_version": null,
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
+          },
+          {
+            "version": "CTA Amendment #1",
+            "effective_date": "2026-02-09",
+            "protocol_version": "Version 14.2",
             "institution": null,
             "pi": null,
             "items": [],
@@ -65110,6 +65226,16 @@
               ]
             },
             "n_files": 2
+          },
+          {
+            "version": "CTA Amendment #4",
+            "effective_date": "2026-05-17",
+            "protocol_version": null,
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
           }
         ],
         "source_folder": "Site 822",
@@ -75427,15 +75553,17 @@
     }
   },
   "cta_counts": {
-    "537": 5,
-    "540": 3,
-    "541": 5,
-    "545": 1,
-    "550": 1,
-    "551": 1,
-    "552": 1,
+    "537": 6,
+    "540": 4,
+    "541": 6,
+    "543": 2,
+    "544": 2,
+    "545": 2,
+    "550": 2,
+    "551": 2,
+    "552": 2,
     "821": 10,
-    "822": 7,
+    "822": 8,
     "823": 7,
     "824": 6,
     "825": 8
