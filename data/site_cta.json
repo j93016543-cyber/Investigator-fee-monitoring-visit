@@ -1514,8 +1514,580 @@
       "source_folder": "Site 537"
     },
     "540": {
-      "name": "Oregon Health and Science University",
-      "ctas": []
+      "name": "OHSU Knight Cancer Institute",
+      "ctas": [
+        {
+          "version": "Initial",
+          "effective_date": "2023-01-18",
+          "protocol_version": "Version 4.0 \\ 17 November 2022",
+          "institution": "OHSU Knight Cancer Institute",
+          "pi": "Shivaani Kummar, MD",
+          "items": [
+            {
+              "item": "Informed Consent Process",
+              "amount": 150.0
+            },
+            {
+              "item": "Medical History (including cancer diagnosis and treatment)",
+              "amount": 130.0
+            },
+            {
+              "item": "Demographic Information",
+              "amount": 50.0
+            },
+            {
+              "item": "Assessment of Eligibility Criteria",
+              "amount": 75.0
+            },
+            {
+              "item": "Treatment Allocation",
+              "amount": 50.0
+            },
+            {
+              "item": "Drug Accountability",
+              "amount": 50.0
+            },
+            {
+              "item": "Creatinine Clearance Calculation (Cockcroft-Gault)",
+              "amount": 50.0
+            },
+            {
+              "item": "Corrected Calcium Calculation",
+              "amount": 50.0
+            },
+            {
+              "item": "Physical Examination (including vital signs, weight)",
+              "amount": 400.0
+            },
+            {
+              "item": "ECOG Performance Status",
+              "amount": 40.0
+            },
+            {
+              "item": "Clinical Safety Laboratory Blood Sample Collection (venipuncture)",
+              "amount": 29.0
+            },
+            {
+              "item": "Hematology (local lab)",
+              "amount": 54.0
+            },
+            {
+              "item": "Comprehensive Metabolic Panel (local lab)",
+              "amount": 66.0
+            },
+            {
+              "item": "Biochemistry (local lab) (includes amylase, lipase, magnesium, phosphorus, direct bilirubin, and LDH)",
+              "amount": 196.0
+            },
+            {
+              "item": "Urinalysis (local lab)",
+              "amount": 46.0
+            },
+            {
+              "item": "INR",
+              "amount": 32.0
+            },
+            {
+              "item": "PT & PTT",
+              "amount": 88.0
+            },
+            {
+              "item": "D-dimer",
+              "amount": 92.0
+            },
+            {
+              "item": "Fibrinogen (local lab)",
+              "amount": 79.0
+            },
+            {
+              "item": "HBsAg, HBcAb, HBsAb",
+              "amount": 289.0
+            },
+            {
+              "item": "Triplicate ECG_Regimen A only",
+              "amount": 836.43
+            },
+            {
+              "item": "Central ECG Submission",
+              "amount": 50.0
+            },
+            {
+              "item": "BAL0891 PK sampling",
+              "amount": 68.0
+            },
+            {
+              "item": "Spec. Handling (use w/PK)",
+              "amount": 50.0
+            },
+            {
+              "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST",
+              "amount": 300.0
+            },
+            {
+              "item": "Adverse Events Assessment",
+              "amount": 51.0
+            },
+            {
+              "item": "Review Concomitant Medications",
+              "amount": 50.0
+            },
+            {
+              "item": "Long-term follow-up",
+              "amount": 59.0
+            },
+            {
+              "item": "Trial Coordinator Fee Per Visit Hour",
+              "amount": 200.0
+            },
+            {
+              "item": "Principal Investigator's Fees without Exam Costs",
+              "amount": 175.0
+            },
+            {
+              "item": "Pharmacy Dispensing (BAL0891)",
+              "amount": 143.0
+            },
+            {
+              "item": "Data Entry (EDC)",
+              "amount": 60.0
+            },
+            {
+              "item": "Research Nurse/Nurse Practitioner (per hour)",
+              "amount": 120.0
+            },
+            {
+              "item": "Pharmacy Dispensing  (Carboplatin)",
+              "amount": 143.0
+            },
+            {
+              "item": "Total Cost Per Trial Subject",
+              "amount": 95174.11
+            },
+            {
+              "item": "Physical Examination (including vital signs, height and weight)",
+              "amount": 400.0
+            },
+            {
+              "item": "PT & PTT (local lab)",
+              "amount": 88.0
+            },
+            {
+              "item": "D-dimer (local lab)",
+              "amount": 92.0
+            },
+            {
+              "item": "ECG w/ Interpret. & Report_Regimen C only",
+              "amount": 836.43
+            },
+            {
+              "item": "BAL0891 PK sampling 11",
+              "amount": 68.0
+            },
+            {
+              "item": "Spec. Handling (use w/PK) 11",
+              "amount": 50.0
+            },
+            {
+              "item": "Tumor Response Criteria, RECIST WHO",
+              "amount": 300.0
+            },
+            {
+              "item": "Trial Coordinator Fee Per Visit",
+              "amount": 200.0
+            },
+            {
+              "item": "Physician's Fees without Exam Costs",
+              "amount": 175.0
+            },
+            {
+              "item": "Pharmacy Dispensing (Paclitaxel)",
+              "amount": 143.0
+            }
+          ],
+          "n_files": 3
+        },
+        {
+          "version": "Amd 1_PAV7.0",
+          "effective_date": "2024-03-08",
+          "protocol_version": "Version 7.0 / 23Jun2023",
+          "institution": "OHSU Knight Cancer Institute",
+          "pi": "Shivaani Kummar, MD",
+          "items": [
+            {
+              "item": "Informed Consent Process",
+              "amount": 150.0
+            },
+            {
+              "item": "Medical History (including cancer diagnosis and treatment)",
+              "amount": 130.0
+            },
+            {
+              "item": "Demographic Information",
+              "amount": 50.0
+            },
+            {
+              "item": "Assessment of Eligibility Criteria",
+              "amount": 75.0
+            },
+            {
+              "item": "Treatment Allocation",
+              "amount": 50.0
+            },
+            {
+              "item": "Drug Accountability",
+              "amount": 50.0
+            },
+            {
+              "item": "Creatinine Clearance Calculation (Cockcroft-Gault)",
+              "amount": 50.0
+            },
+            {
+              "item": "Corrected Calcium Calculation",
+              "amount": 50.0
+            },
+            {
+              "item": "Physical Examination (including vital signs, weight)",
+              "amount": 400.0
+            },
+            {
+              "item": "ECOG Performance Status",
+              "amount": 40.0
+            },
+            {
+              "item": "Clinical Safety Laboratory Blood Sample Collection (venipuncture)",
+              "amount": 29.0
+            },
+            {
+              "item": "Hematology (local lab)",
+              "amount": 54.0
+            },
+            {
+              "item": "Comprehensive Metabolic Panel (local lab)",
+              "amount": 66.0
+            },
+            {
+              "item": "Biochemistry (local lab) (includes amylase, lipase, magnesium, phosphorus, direct bilirubin, and LDH)",
+              "amount": 196.0
+            },
+            {
+              "item": "Urinalysis (local lab)",
+              "amount": 46.0
+            },
+            {
+              "item": "PT or INR  & PTT or aPTT",
+              "amount": 120.0
+            },
+            {
+              "item": "D-dimer",
+              "amount": 92.0
+            },
+            {
+              "item": "Fibrinogen (local lab)",
+              "amount": 79.0
+            },
+            {
+              "item": "HBsAg, HBcAb, HBsAb",
+              "amount": 289.0
+            },
+            {
+              "item": "HIV",
+              "amount": 76.0
+            },
+            {
+              "item": "Hepatitis C antibody (HepCAb)",
+              "amount": 89.0
+            },
+            {
+              "item": "Triplicate ECG",
+              "amount": 836.43
+            },
+            {
+              "item": "Central ECG Submission",
+              "amount": 50.0
+            },
+            {
+              "item": "BAL0891 PK sampling",
+              "amount": 68.0
+            },
+            {
+              "item": "Spec. Handling (use w/PK)",
+              "amount": 50.0
+            },
+            {
+              "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST",
+              "amount": 300.0
+            },
+            {
+              "item": "Adverse Events Assessment",
+              "amount": 51.0
+            },
+            {
+              "item": "Review Concomitant Medications",
+              "amount": 50.0
+            },
+            {
+              "item": "Long-term follow-up",
+              "amount": 59.0
+            },
+            {
+              "item": "Trial Coordinator Fee Per Visit",
+              "amount": 200.0
+            },
+            {
+              "item": "Principal Investigator's Fees without Exam Costs",
+              "amount": 175.0
+            },
+            {
+              "item": "Pharmacy Dispensing (BAL0891)",
+              "amount": 143.0
+            },
+            {
+              "item": "Data Entry (EDC)",
+              "amount": 60.0
+            },
+            {
+              "item": "Research Nurse/Nurse Practitioner (per hour)",
+              "amount": 120.0
+            },
+            {
+              "item": "Pharmacy Dispensing  (Carboplatin, sub study 2 only)",
+              "amount": 143.0
+            },
+            {
+              "item": "Total Cost Per Trial Subject",
+              "amount": 96474.08
+            },
+            {
+              "item": "Physical Examination (including vital signs, height and weight)",
+              "amount": 400.0
+            },
+            {
+              "item": "PT or INR & PTT or aPTT (local lab)",
+              "amount": 120.0
+            },
+            {
+              "item": "D-dimer (local lab)",
+              "amount": 92.0
+            },
+            {
+              "item": "ECG w/ Interpret. & Report",
+              "amount": 836.43
+            },
+            {
+              "item": "BAL0891 PK sampling 11",
+              "amount": 68.0
+            },
+            {
+              "item": "Spec. Handling (use w/PK) 11",
+              "amount": 50.0
+            },
+            {
+              "item": "Tumor Response Criteria, RECIST WHO",
+              "amount": 300.0
+            },
+            {
+              "item": "Physician's Fees without Exam Costs",
+              "amount": 175.0
+            },
+            {
+              "item": "Pharmacy Dispensing (Paclitaxel, sub study 3 only)",
+              "amount": 143.0
+            }
+          ],
+          "n_files": 3
+        },
+        {
+          "version": "AMD#2_PA8",
+          "effective_date": "2025-08-11",
+          "protocol_version": "Version 8.0 / 24 January 2024",
+          "institution": "OHSU Knight Cancer Institute",
+          "pi": "Shivaani Kummar, MD",
+          "items": [
+            {
+              "item": "Informed Consent Process",
+              "amount": 150.0
+            },
+            {
+              "item": "Medical History (including cancer diagnosis and treatment)",
+              "amount": 130.0
+            },
+            {
+              "item": "Demographic Information",
+              "amount": 50.0
+            },
+            {
+              "item": "Assessment of Eligibility Criteria",
+              "amount": 75.0
+            },
+            {
+              "item": "Treatment Allocation",
+              "amount": 50.0
+            },
+            {
+              "item": "Drug Accountability",
+              "amount": 50.0
+            },
+            {
+              "item": "Creatinine Clearance Calculation (Cockcroft-Gault)",
+              "amount": 50.0
+            },
+            {
+              "item": "Corrected Calcium Calculation",
+              "amount": 50.0
+            },
+            {
+              "item": "Physical Examination (including vital signs, weight)",
+              "amount": 703.99
+            },
+            {
+              "item": "ECOG Performance Status",
+              "amount": 40.0
+            },
+            {
+              "item": "Clinical Safety Laboratory Blood Sample Collection (venipuncture)",
+              "amount": 30.41
+            },
+            {
+              "item": "Hematology (local lab)",
+              "amount": 60.21
+            },
+            {
+              "item": "Comprehensive Metabolic Panel (local lab)",
+              "amount": 66.0
+            },
+            {
+              "item": "Biochemistry (local lab) (includes amylase, lipase, magnesium, phosphorus, direct bilirubin, and LDH)",
+              "amount": 196.0
+            },
+            {
+              "item": "Urinalysis (local lab)",
+              "amount": 47.57
+            },
+            {
+              "item": "PT or INR  & PTT or aPTT",
+              "amount": 122.32
+            },
+            {
+              "item": "D-dimer",
+              "amount": 92.0
+            },
+            {
+              "item": "Fibrinogen (local lab)",
+              "amount": 79.0
+            },
+            {
+              "item": "HBsAg, HBcAb, HBsAb",
+              "amount": 289.0
+            },
+            {
+              "item": "HIV",
+              "amount": 76.0
+            },
+            {
+              "item": "Hepatitis C antibody (HepCAb)",
+              "amount": 89.0
+            },
+            {
+              "item": "Triplicate ECG",
+              "amount": 916.6
+            },
+            {
+              "item": "Central ECG Submission",
+              "amount": 50.0
+            },
+            {
+              "item": "BAL0891 PK sampling",
+              "amount": 68.0
+            },
+            {
+              "item": "Spec. Handling (use w/PK)",
+              "amount": 50.0
+            },
+            {
+              "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST",
+              "amount": 300.0
+            },
+            {
+              "item": "Adverse Events Assessment",
+              "amount": 51.0
+            },
+            {
+              "item": "Review Concomitant Medications",
+              "amount": 50.0
+            },
+            {
+              "item": "Long-term follow-up",
+              "amount": 59.0
+            },
+            {
+              "item": "Trial Coordinator Fee Per Visit",
+              "amount": 200.0
+            },
+            {
+              "item": "Principal Investigator's Fees without Exam Costs",
+              "amount": 175.0
+            },
+            {
+              "item": "Pharmacy Dispensing (BAL0891)",
+              "amount": 143.0
+            },
+            {
+              "item": "Data Entry (EDC)",
+              "amount": 60.0
+            },
+            {
+              "item": "Research Nurse/Nurse Practitioner (per hour)",
+              "amount": 120.0
+            },
+            {
+              "item": "Total Cost Per Trial Subject",
+              "amount": 112528.11
+            },
+            {
+              "item": "Biochemistry (local lab)",
+              "amount": 196.0
+            },
+            {
+              "item": "Lipase",
+              "amount": 33.0
+            },
+            {
+              "item": "PT or INR & PTT or aPTT (local)",
+              "amount": 120.0
+            },
+            {
+              "item": "HBsAg qualitative",
+              "amount": 289.0
+            },
+            {
+              "item": "Hepatitis B Core Antibody (HBcAb)",
+              "amount": 31.0
+            },
+            {
+              "item": "Hep B Surf Ab (HBsAb)",
+              "amount": 32.0
+            },
+            {
+              "item": "Hepatitis C Antibody (HCVAb)",
+              "amount": 89.0
+            },
+            {
+              "item": "Trial Subject Reimbursement 5",
+              "amount": 54.0
+            },
+            {
+              "item": "Trial Subject Meal Reimbursement5",
+              "amount": 14.77
+            },
+            {
+              "item": "Bed Fee: Day Only; Per Visit",
+              "amount": 100.0
+            }
+          ],
+          "n_files": 2
+        }
+      ],
+      "source_folder": "Site 540"
     },
     "541": {
       "name": "University of Miami",
