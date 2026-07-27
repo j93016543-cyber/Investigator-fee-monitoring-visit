@@ -45191,7 +45191,7 @@
     "_comment": "CTA(기관 임상시험계약). data/source/cta/Site <번호>/ 폴더는 자동 파싱(폴더 우선). 폴더가 없는 site 는 여기 ctas 배열에 {version, effective_date, items:[{item,amount}]} 수기 입력.",
     "sites": {
       "537": {
-        "name": "Montefiore Medical Center",
+        "name": "Biomedical Research Alliance of New York, LLC",
         "ctas": [
           {
             "version": "Initial",
@@ -46700,10 +46700,11 @@
             "n_files": 3
           }
         ],
-        "source_folder": "Site 537"
+        "source_folder": "Site 537",
+        "cta_institution": "Montefiore Medical Center"
       },
       "540": {
-        "name": "OHSU Knight Cancer Institute",
+        "name": "Oregon Health and Science University",
         "ctas": [
           {
             "version": "Initial",
@@ -47276,7 +47277,8 @@
             "n_files": 2
           }
         ],
-        "source_folder": "Site 540"
+        "source_folder": "Site 540",
+        "cta_institution": "OHSU Knight Cancer Institute"
       },
       "541": {
         "name": "University of Miami",
@@ -48340,7 +48342,8 @@
             "n_files": 2
           }
         ],
-        "source_folder": "Site 541"
+        "source_folder": "Site 541",
+        "cta_institution": "University of Miami"
       },
       "542": {
         "name": "Hoag Memorial Hospital Presbyterian",
@@ -48367,10 +48370,11 @@
             "n_files": 2
           }
         ],
-        "source_folder": "Site 545"
+        "source_folder": "Site 545",
+        "cta_institution": null
       },
       "550": {
-        "name": "The University of Texas M.D. Anderson Cancer Center",
+        "name": "The University of Texas, MD Anderson Cancer Center",
         "ctas": [
           {
             "version": "Initial",
@@ -48479,7 +48483,8 @@
             "n_files": 2
           }
         ],
-        "source_folder": "Site 550"
+        "source_folder": "Site 550",
+        "cta_institution": "The University of Texas M.D. Anderson Cancer Center"
       },
       "551": {
         "name": "Yale-New Haven Hospital- Yale Cancer Center",
@@ -48494,7 +48499,8 @@
             "n_files": 1
           }
         ],
-        "source_folder": "Site 551"
+        "source_folder": "Site 551",
+        "cta_institution": null
       },
       "552": {
         "name": "Weill Medical College of Cornell University",
@@ -48509,7 +48515,8 @@
             "n_files": 1
           }
         ],
-        "source_folder": "Site 552"
+        "source_folder": "Site 552",
+        "cta_institution": null
       },
       "821": {
         "name": "Seoul National University Hospital",
@@ -53164,11 +53171,2091 @@
             "n_files": 1
           }
         ],
-        "source_folder": "Site 821"
+        "source_folder": "Site 821",
+        "cta_institution": "Seoul National University Hospital"
       },
       "822": {
         "name": "Severance Hospital, Yonsei University Health System",
-        "ctas": []
+        "ctas": [
+          {
+            "version": "Initial CTA",
+            "effective_date": "2023-04-27",
+            "protocol_version": "Version 4.0 / 17 November 2022",
+            "institution": "Seoul National University Hospital",
+            "pi": "SEOCK-AH IM",
+            "items": [
+              {
+                "item": "Informed Consent Process",
+                "amount": 100000.0
+              },
+              {
+                "item": "Medical History (including cancer diagnosis and treatment)",
+                "amount": 90000.0
+              },
+              {
+                "item": "Demographic Information",
+                "amount": 30000.0
+              },
+              {
+                "item": "Assessment of Eligibility Criteria",
+                "amount": 100000.0
+              },
+              {
+                "item": "Physical Examination (including vital signs, weight)",
+                "amount": 155000.0
+              },
+              {
+                "item": "ECOG Performance Status",
+                "amount": 16000.0
+              },
+              {
+                "item": "Hematology (local lab)",
+                "amount": 25000.0
+              },
+              {
+                "item": "Biochemistry (local lab)",
+                "amount": 100000.0
+              },
+              {
+                "item": "Amylase and Lipase (local lab)",
+                "amount": 28000.0
+              },
+              {
+                "item": "Urinalysis (local lab)",
+                "amount": 17500.0
+              },
+              {
+                "item": "Coagulation, including PT & PTT, INR, Fibrinogen (local lab)",
+                "amount": 60000.0
+              },
+              {
+                "item": "D-dimer (local lab)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Hepatitis B Surface Antigen (HBsAg)",
+                "amount": 36000.0
+              },
+              {
+                "item": "Hepatitis B Core Antibody (HBcAb)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Hep B Surf Ab (HBsAb)",
+                "amount": 36000.0
+              },
+              {
+                "item": "Hepatitis C Antibody (HCVAb)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Triplicate ECG_Regimen A only",
+                "amount": 30000.0
+              },
+              {
+                "item": "BAL0891 PK sampling",
+                "amount": 20000.0
+              },
+              {
+                "item": "Spec. Handling (use w/PK)",
+                "amount": 20000.0
+              },
+              {
+                "item": "Blood sampling for: ANC; Blood draws",
+                "amount": 30000.0
+              },
+              {
+                "item": "Blood sampling for: CSL; Blood draws",
+                "amount": 30000.0
+              },
+              {
+                "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST",
+                "amount": 107500.0
+              },
+              {
+                "item": "Adverse Events Assessment",
+                "amount": 40000.0
+              },
+              {
+                "item": "Review Concomitant Medications",
+                "amount": 40000.0
+              },
+              {
+                "item": "Long-term follow-up",
+                "amount": 50000.0
+              },
+              {
+                "item": "Trial Coordinator Fee Per Visit",
+                "amount": 75000.0
+              },
+              {
+                "item": "Principal Investigator's Fees without Exam Costs",
+                "amount": 150000.0
+              },
+              {
+                "item": "Trial Subject Reimbursement5",
+                "amount": 70000.0
+              },
+              {
+                "item": "Data Entry (EDC)",
+                "amount": 55000.0
+              },
+              {
+                "item": "Patient Registration Fee",
+                "amount": 30000.0
+              },
+              {
+                "item": "Costs Charged prior to Overhead (100%)",
+                "amount": 19948000.0
+              },
+              {
+                "item": "Overhead at 20%",
+                "amount": 3989600.0
+              },
+              {
+                "item": "Total Cost Per Trial Subject (120%)",
+                "amount": 23937600.0
+              },
+              {
+                "item": "C4 \\ Day 1 and beyond (each)",
+                "amount": 256300.0
+              },
+              {
+                "item": "C4 \\ Day 8 and beyond (each)",
+                "amount": 168100.0
+              },
+              {
+                "item": "C4 \\ Day 15 and beyond (each)",
+                "amount": 152100.0
+              },
+              {
+                "item": "Pharmacy Dispensing for BAL0891 per applicable visit; As not included in Trial & Non-Trial Procedure, it will be paid for each visit taking BAL0891 after invoice is issued.",
+                "amount": 5770.0
+              },
+              {
+                "item": "Pharmacy Dispensing for Carboplatin per applicable visit; As not included in Trial & Non-Trial Procedure, it will be paid for each visit taking Carboplatin after invoice is issued.",
+                "amount": 5770.0
+              },
+              {
+                "item": "Fee using site Filter and Normal saline for BAL0891 infusion",
+                "amount": 4000.0
+              },
+              {
+                "item": "Serum pregnancy test (for WOCBP only) 7",
+                "amount": 7000.0
+              },
+              {
+                "item": "Urine pregnancy test (for WOCBP only) 7",
+                "amount": 4000.0
+              },
+              {
+                "item": "Alternative days for BAL0891 PK sampling on C1 and C2, on Days: 5,7,12,14 and 17",
+                "amount": 4000.0
+              },
+              {
+                "item": "Alternative days for Spec. Handling (use w/PK) on C1 and C2, on Days: 5,7,12,14 and 17",
+                "amount": 4000.0
+              },
+              {
+                "item": "Alternative days for ECG: C1D7, C1D14, C2D14 and/or for unscheduled visit as clinically indicated",
+                "amount": 6000.0
+              },
+              {
+                "item": "Alternative days for Blood sampling for: ANC ; C1and C2 on Days: 5,12, and 17, and/or for unscheduled visit as clinically indicated",
+                "amount": 6000.0
+              },
+              {
+                "item": "Alternative days for Blood sampling for: CSL; C1 and C2 on Days: 7, 14,19,20 and 21, and/or unscheduled visit as clinically indicated",
+                "amount": 6000.0
+              },
+              {
+                "item": "Hematology for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 5000.0
+              },
+              {
+                "item": "Biochemistry for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 20000.0
+              },
+              {
+                "item": "Amylase and Lipase for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 5600.0
+              },
+              {
+                "item": "Urinalysis for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 3500.0
+              },
+              {
+                "item": "Coagulation for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 12000.0
+              },
+              {
+                "item": "D-dimer for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 8000.0
+              },
+              {
+                "item": "Patient Registration Fee at unscheduled visit as clinically indicated and/or long -term FU visit actually done",
+                "amount": 6000.0
+              },
+              {
+                "item": "Trial Subject Reimbursement if applicable (In the event long-term FU visit will be done by actual visit of patient)",
+                "amount": 7000.0
+              },
+              {
+                "item": "Triplicate ECG_Regimen B only (C1D2, C1D6, C2D2)",
+                "amount": 6000.0
+              },
+              {
+                "item": "Premedication for Carboplatin; a two-drug combination of palonosetron (0.25 g IV or 0.50 mg oral, on D1) and dexamethasone (8 mg IV or oral, D1–D3). If palonosetron is not available, any of the first generation 5-HT3 receptor antagonists may be used, preferably ondansetron or granisetron",
+                "amount": 20000.0
+              },
+              {
+                "item": "Grasin 300mg",
+                "amount": 26400.0
+              },
+              {
+                "item": "Grasin 150mg",
+                "amount": 15000.0
+              },
+              {
+                "item": "Leucostim 300mcg",
+                "amount": 12000.0
+              },
+              {
+                "item": "Leucostim 150mcg",
+                "amount": 8000.0
+              },
+              {
+                "item": "Neulapeg",
+                "amount": 130000.0
+              },
+              {
+                "item": "Neulasta",
+                "amount": 160000.0
+              },
+              {
+                "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST, if required per protocol8",
+                "amount": 21500.0
+              },
+              {
+                "item": "CT Scan (Chest (with contrast))8",
+                "amount": 96000.0
+              },
+              {
+                "item": "CT Scan (Chest (without contrast))8",
+                "amount": 80000.0
+              },
+              {
+                "item": "CT scan (Abdomen and Pelvis (with contrast))8",
+                "amount": 96000.0
+              },
+              {
+                "item": "CT Scan (Abdomen and Pelvis (without contrast))8",
+                "amount": 80000.0
+              },
+              {
+                "item": "MRI Scan (Chest (with contrast)) local8",
+                "amount": 200000.0
+              },
+              {
+                "item": "MRI scan (Chest (without contrast)) local8",
+                "amount": 180000.0
+              },
+              {
+                "item": "MRI Scan (Abdomen (with contrast)) (local)8",
+                "amount": 200000.0
+              },
+              {
+                "item": "MRI scan (Abdomen (without contrast) (local)8",
+                "amount": 180000.0
+              },
+              {
+                "item": "MRI scan (Pelvis (with contrast)) (local)8",
+                "amount": 200000.0
+              },
+              {
+                "item": "MRI scan (Pelvis (without contrast)) (local)8",
+                "amount": 180000.0
+              },
+              {
+                "item": "Whole body bone scan",
+                "amount": 60000.0
+              },
+              {
+                "item": "Optional liquid biopsy9",
+                "amount": 6000.0
+              },
+              {
+                "item": "Hospitalization fee for single room per night - as applicable",
+                "amount": 120000.0
+              },
+              {
+                "item": "Hospitalization fee for double room per night - as applicable",
+                "amount": 96000.0
+              },
+              {
+                "item": "Hotel accommodation per day - as applicable",
+                "amount": 30000.0
+              },
+              {
+                "item": "COVID-19 Test performed at the study site as needed10",
+                "amount": 26000.0
+              },
+              {
+                "item": "HIV 1 and 2 at screening visit as needed",
+                "amount": 6000.0
+              },
+              {
+                "item": "FSH, as applicable per Protocol",
+                "amount": 6000.0
+              },
+              {
+                "item": "HBV DNA RT-PCR test, as applicable per Protocol",
+                "amount": 36000.0
+              },
+              {
+                "item": "Hepatitis C virus RNA - PCR, as applicable per Protocol",
+                "amount": 60000.0
+              },
+              {
+                "item": "Fee using Day Care Center per night; Ward of clinical trial",
+                "amount": 36000.0
+              },
+              {
+                "item": "Fee using Day Care Center per day, Day only, as applicable per Protocol; within 6 hours; Ward of clinical trial",
+                "amount": 14000.0
+              },
+              {
+                "item": "Additional Fee using Day Care Center per day, Day only, as applicable per Protocol; if it exceeds 6 hours, it will be additionally paid separately from Fee using Day Care Center per day.; Ward of clinical trial",
+                "amount": 14000.0
+              },
+              {
+                "item": "Start-Up Fee; One-time non-refundable after paid",
+                "amount": 600000.0
+              },
+              {
+                "item": "Pharmacy Set-Up Fee; One-time non-refundable after paid",
+                "amount": 123600.0
+              },
+              {
+                "item": "Physical Examination (including vital signs, height and weight)",
+                "amount": 155000.0
+              },
+              {
+                "item": "Hepatitis B Surface Antigen (HBsAg) (local lab)",
+                "amount": 36000.0
+              },
+              {
+                "item": "Hepatitis B Core Antibody (HBcAb) (local lab)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Hep B Surf Ab (HBsAb) (local lab)",
+                "amount": 36000.0
+              },
+              {
+                "item": "Hepatitis C Antibody (HCVAb) (local lab)",
+                "amount": 40000.0
+              },
+              {
+                "item": "ECG w/ Interpret. & Report_Regimen C only",
+                "amount": 30000.0
+              },
+              {
+                "item": "BAL0891 PK sampling 10",
+                "amount": 20000.0
+              },
+              {
+                "item": "Spec. Handling (use w/PK) 10",
+                "amount": 20000.0
+              },
+              {
+                "item": "Tumor Response Criteria, RECIST WHO",
+                "amount": 107500.0
+              },
+              {
+                "item": "Physician's Fees without Exam Costs",
+                "amount": 150000.0
+              },
+              {
+                "item": "C4\\ Day 1 and beyond (each)",
+                "amount": 256300.0
+              },
+              {
+                "item": "C4\\ Day 8 and beyond (each)",
+                "amount": 168100.0
+              },
+              {
+                "item": "C4\\ Day 15 and beyond (each)",
+                "amount": 168100.0
+              },
+              {
+                "item": "C4\\ Day 22 and beyond (each)",
+                "amount": 152100.0
+              },
+              {
+                "item": "Pharmacy Dispensing for Paclitaxel per applicable visits; As not included in Trial & Non-Trial Procedure, it will be paid for each visit taking Paclitaxel after invoice is issued.",
+                "amount": 5770.0
+              },
+              {
+                "item": "Serum pregnancy test (for WOCBP only)7",
+                "amount": 7000.0
+              },
+              {
+                "item": "Urine pregnancy test (for WOCBP only)7",
+                "amount": 4000.0
+              },
+              {
+                "item": "Alternative day for ECG is C2D21 and/or for unscheduled visit as clinically indicated",
+                "amount": 6000.0
+              },
+              {
+                "item": "Alternative days for Blood sampling for: ANC; C1and C2 on Days: 5,10,19, and 24 and/or for unscheduled visit as clinically indicated",
+                "amount": 6000.0
+              },
+              {
+                "item": "Alternative days for Blood sampling for: CSL; C1and C2 on Days:  7, 12/13 or 14, 21 and 26/27 or 28 and/or for unscheduled visit as clinically indicated",
+                "amount": 6000.0
+              },
+              {
+                "item": "Alternative BAL0891 PK sampling on C1 and C2 on Days: 5,7,10, 19, 21 and 24",
+                "amount": 4000.0
+              },
+              {
+                "item": "Alternative Paclitaxel PK sampling on C1 and C2 on Day: 5",
+                "amount": 4000.0
+              },
+              {
+                "item": "Alternative days for Spec. Handling (use w/PK) on C1 and C2 on Days: 5,7,10, 19, 21 and 24",
+                "amount": 4000.0
+              },
+              {
+                "item": "ECG w/ Interpret. & Report Regimen D only (C1D1, C1D2,C1D6, C1D8, C2D1, C2D2,C2D8, C2D9, C2D15,C2D16, C2D22 and C3D1)",
+                "amount": 6000.0
+              },
+              {
+                "item": "Chest CT Scan w/ Contrast 8",
+                "amount": 96000.0
+              },
+              {
+                "item": "Chest CT Scan w/o Contrast 8",
+                "amount": 80000.0
+              },
+              {
+                "item": "Abdomen, Pelvis CT Scan w/ Contrast 8",
+                "amount": 96000.0
+              },
+              {
+                "item": "Abdomen Pelvis CT Scan w/o Contrast 8",
+                "amount": 80000.0
+              },
+              {
+                "item": "MRI of Chest w/ Contrast 8",
+                "amount": 200000.0
+              },
+              {
+                "item": "Chest MRI w/o Contras 8",
+                "amount": 180000.0
+              },
+              {
+                "item": "MRI of Abdomen w Contrast 8",
+                "amount": 200000.0
+              },
+              {
+                "item": "Abdomen MRI without Contrast 8",
+                "amount": 180000.0
+              },
+              {
+                "item": "Pelvic MRI w/ Contrast 8",
+                "amount": 200000.0
+              },
+              {
+                "item": "MRI of Pelvis w/o Contrast 8",
+                "amount": 180000.0
+              },
+              {
+                "item": "COVID-19 Test performed at the study site as needed11",
+                "amount": 26000.0
+              },
+              {
+                "item": "Premedication for Paclitaxel; Such premedication may consist of dexamethasone\n20 mg orally (PO) administered approximately 12 and 6 hours before paclitaxel,\ndiphenhydramine (or its equivalent) 50 mg IV 30 to 60 minutes prior to paclitaxel, and pantoprazole (40 mg) IV 30 to 60 minutes before paclitaxel",
+                "amount": 20000.0
+              },
+              {
+                "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST, if required per protocol 8",
+                "amount": 21500.0
+              },
+              {
+                "item": "Fee using Day Care Center per day, Day only, as applicable per Protocol; within 6 hours",
+                "amount": 14000.0
+              },
+              {
+                "item": "Additional Fee using Day Care Center per day, Day only, as applicable per Protocol; if it exceeds 6 hours, it will be additionally paid separately from Fee using Day Care Center per day.",
+                "amount": 14000.0
+              }
+            ],
+            "n_files": 3
+          },
+          {
+            "version": "CTA Amendment 1",
+            "effective_date": "2023-11-13",
+            "protocol_version": "Version 6.0 / 21Apr2023",
+            "institution": "Seoul National University Hospital",
+            "pi": "SEOCK-AH IM",
+            "items": [
+              {
+                "item": "Informed Consent Process",
+                "amount": 100000.0
+              },
+              {
+                "item": "Medical History (including cancer diagnosis and treatment)",
+                "amount": 90000.0
+              },
+              {
+                "item": "Demographic Information",
+                "amount": 30000.0
+              },
+              {
+                "item": "Assessment of Eligibility Criteria",
+                "amount": 100000.0
+              },
+              {
+                "item": "Physical Examination (including vital signs, weight)",
+                "amount": 155000.0
+              },
+              {
+                "item": "ECOG Performance Status",
+                "amount": 16000.0
+              },
+              {
+                "item": "Hematology (local lab)",
+                "amount": 25000.0
+              },
+              {
+                "item": "Biochemistry (local lab)",
+                "amount": 100000.0
+              },
+              {
+                "item": "Amylase and Lipase (local lab)",
+                "amount": 28000.0
+              },
+              {
+                "item": "Urinalysis (local lab)",
+                "amount": 17500.0
+              },
+              {
+                "item": "Coagulation, including PT & PTT, INR, Fibrinogen (local lab)",
+                "amount": 60000.0
+              },
+              {
+                "item": "D-dimer (local lab)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Hepatitis B Surface Antigen (HBsAg)",
+                "amount": 36000.0
+              },
+              {
+                "item": "Hepatitis B Core Antibody (HBcAb)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Hep B Surf Ab (HBsAb)",
+                "amount": 36000.0
+              },
+              {
+                "item": "Hepatitis C Antibody (HCVAb)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Triplicate ECG",
+                "amount": 30000.0
+              },
+              {
+                "item": "Trial Drug Administration BAL0891 (including Regimens: A & B where applicable)",
+                "amount": 150000.0
+              },
+              {
+                "item": "BAL0891 PK sampling",
+                "amount": 20000.0
+              },
+              {
+                "item": "Spec. Handling (use w/PK)",
+                "amount": 20000.0
+              },
+              {
+                "item": "Trial drug administration Carboplatin (Substudy 2 only)",
+                "amount": 150000.0
+              },
+              {
+                "item": "Blood sampling for: ANC",
+                "amount": 30000.0
+              },
+              {
+                "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST",
+                "amount": 107500.0
+              },
+              {
+                "item": "Adverse Events Assessment",
+                "amount": 40000.0
+              },
+              {
+                "item": "Review Concomitant Medications",
+                "amount": 40000.0
+              },
+              {
+                "item": "Long-term follow-up",
+                "amount": 50000.0
+              },
+              {
+                "item": "Trial Coordinator Fee Per Visit",
+                "amount": 75000.0
+              },
+              {
+                "item": "Principal Investigator's Fees without Exam Costs",
+                "amount": 150000.0
+              },
+              {
+                "item": "Trial Subject Reimbursement5",
+                "amount": 70000.0
+              },
+              {
+                "item": "Data Entry (EDC)",
+                "amount": 55000.0
+              },
+              {
+                "item": "Patient Registration Fee",
+                "amount": 30000.0
+              },
+              {
+                "item": "Costs Charged prior to Overhead (100%)",
+                "amount": 21130500.0
+              },
+              {
+                "item": "Overhead at 20%",
+                "amount": 4226100.0
+              },
+              {
+                "item": "Total Cost Per Trial Subject (120%)",
+                "amount": 25356600.0
+              },
+              {
+                "item": "C4 \\ Day 1 and beyond (each)",
+                "amount": 280300.0
+              },
+              {
+                "item": "C4 \\ Day 8 and beyond (each)",
+                "amount": 162100.0
+              },
+              {
+                "item": "C4 \\ Day 15 and beyond (each)",
+                "amount": 146100.0
+              },
+              {
+                "item": "Pharmacy Dispensing for BAL0891 per applicable visit; As not included in Trial & Non-Trial Procedure, it will be paid for each visit taking BAL0891 after invoice is issued.",
+                "amount": 5770.0
+              },
+              {
+                "item": "Pharmacy Dispensing for Carboplatin per applicable visit; As not included in Trial & Non-Trial Procedure, it will be paid for each visit taking Carboplatin after invoice is issued.",
+                "amount": 5770.0
+              },
+              {
+                "item": "Fee using site Filter and Normal saline for BAL0891 infusion",
+                "amount": 4000.0
+              },
+              {
+                "item": "Serum pregnancy test (for WOCBP only) 7",
+                "amount": 7000.0
+              },
+              {
+                "item": "Urine pregnancy test (for WOCBP only) 7",
+                "amount": 4000.0
+              },
+              {
+                "item": "Alternative days for BAL0891 PK sampling on C1 and C2, on Days: 5,7,12,14 and 17",
+                "amount": 4000.0
+              },
+              {
+                "item": "Alternative days for Spec. Handling (use w/PK) on C1 and C2, on Days: 5,7,12,14 and 17",
+                "amount": 4000.0
+              },
+              {
+                "item": "Alternative days for ECG: C1D7, C1D14, C2D14 and/or for unscheduled visit as clinically indicated",
+                "amount": 6000.0
+              },
+              {
+                "item": "Alternative days for Blood sampling for: ANC ; C1and C2 on Days: 5, 12, 14 (Regimen A) and 17, Days 19 or 20 or 21 and/or for unscheduled visit as clinically indicated",
+                "amount": 6000.0
+              },
+              {
+                "item": "Hematology for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 5000.0
+              },
+              {
+                "item": "Biochemistry for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 20000.0
+              },
+              {
+                "item": "Amylase and Lipase for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 5600.0
+              },
+              {
+                "item": "Urinalysis for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 3500.0
+              },
+              {
+                "item": "Coagulation for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 12000.0
+              },
+              {
+                "item": "D-dimer for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 8000.0
+              },
+              {
+                "item": "Patient Registration Fee at unscheduled visit as clinically indicated and/or long -term FU visit actually done",
+                "amount": 6000.0
+              },
+              {
+                "item": "Trial Subject Reimbursement if applicable (In the event long-term FU visit will be done by actual visit of patient)",
+                "amount": 7000.0
+              },
+              {
+                "item": "Triplicate ECG_Regimen B only (C1D2, C1D6, C2D2)",
+                "amount": 6000.0
+              },
+              {
+                "item": "Premedication for Carboplatin; a two-drug combination of palonosetron (0.25 g IV or 0.50 mg oral, on D1) and dexamethasone (8 mg IV or oral, D1–D3). If palonosetron is not available, any of the first generation 5-HT3 receptor antagonists may be used, preferably ondansetron or granisetron",
+                "amount": 20000.0
+              },
+              {
+                "item": "Grasin 300mg",
+                "amount": 26400.0
+              },
+              {
+                "item": "Grasin 150mg",
+                "amount": 15000.0
+              },
+              {
+                "item": "Leucostim 300mcg",
+                "amount": 12000.0
+              },
+              {
+                "item": "Leucostim 150mcg",
+                "amount": 8000.0
+              },
+              {
+                "item": "Neulapeg",
+                "amount": 130000.0
+              },
+              {
+                "item": "Neulasta",
+                "amount": 160000.0
+              },
+              {
+                "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST, if required per protocol8",
+                "amount": 21500.0
+              },
+              {
+                "item": "CT Scan (Chest (with contrast))8",
+                "amount": 96000.0
+              },
+              {
+                "item": "CT Scan (Chest (without contrast))8",
+                "amount": 80000.0
+              },
+              {
+                "item": "CT scan (Abdomen and Pelvis (with contrast))8",
+                "amount": 96000.0
+              },
+              {
+                "item": "CT Scan (Abdomen and Pelvis (without contrast))8",
+                "amount": 80000.0
+              },
+              {
+                "item": "MRI Scan (Chest (with contrast)) local8",
+                "amount": 200000.0
+              },
+              {
+                "item": "MRI scan (Chest (without contrast)) local8",
+                "amount": 180000.0
+              },
+              {
+                "item": "MRI Scan (Abdomen (with contrast)) (local)8",
+                "amount": 200000.0
+              },
+              {
+                "item": "MRI scan (Abdomen (without contrast) (local)8",
+                "amount": 180000.0
+              },
+              {
+                "item": "MRI scan (Pelvis (with contrast)) (local)8",
+                "amount": 200000.0
+              },
+              {
+                "item": "MRI scan (Pelvis (without contrast)) (local)8",
+                "amount": 180000.0
+              },
+              {
+                "item": "Whole body bone scan",
+                "amount": 60000.0
+              },
+              {
+                "item": "Optional liquid biopsy9",
+                "amount": 6000.0
+              },
+              {
+                "item": "Hospitalization fee for single room per night - as applicable",
+                "amount": 120000.0
+              },
+              {
+                "item": "Hospitalization fee for double room per night - as applicable",
+                "amount": 96000.0
+              },
+              {
+                "item": "Hotel accommodation per day - as applicable",
+                "amount": 30000.0
+              },
+              {
+                "item": "COVID-19 Test performed at the study site as needed10",
+                "amount": 26000.0
+              },
+              {
+                "item": "HIV 1 and 2 at screening visit as needed",
+                "amount": 6000.0
+              },
+              {
+                "item": "FSH, as applicable per Protocol",
+                "amount": 6000.0
+              },
+              {
+                "item": "HBV DNA RT-PCR test, as applicable per Protocol",
+                "amount": 36000.0
+              },
+              {
+                "item": "Hepatitis C virus RNA - PCR, as applicable per Protocol",
+                "amount": 60000.0
+              },
+              {
+                "item": "Hepatitis C antibody (HepCAb) at Screening if not performed prior to Screening Visit",
+                "amount": 8000.0
+              },
+              {
+                "item": "Fee using Day Care Center per night; Ward of clinical trial",
+                "amount": 36000.0
+              },
+              {
+                "item": "Fee using Day Care Center per day, Day only, as applicable per Protocol; within 6 hours; Ward of clinical trial",
+                "amount": 14000.0
+              },
+              {
+                "item": "Additional Fee using Day Care Center per day, Day only, as applicable per Protocol; if it exceeds 6 hours, it will be additionally paid separately from Fee using Day Care Center per day.; Ward of clinical trial",
+                "amount": 14000.0
+              },
+              {
+                "item": "Adverse Events Assessment (outside of scheduled timepoints)",
+                "amount": 8000.0
+              },
+              {
+                "item": "Review Concomitant Medications (outside of scheduled timepoints)",
+                "amount": 8000.0
+              },
+              {
+                "item": "Start-Up Fee; One-time non-refundable after paid",
+                "amount": 600000.0
+              },
+              {
+                "item": "Pharmacy Set-Up Fee; One-time non-refundable after paid",
+                "amount": 123600.0
+              },
+              {
+                "item": "Physical Examination (including vital signs, height and weight)",
+                "amount": 155000.0
+              },
+              {
+                "item": "Hepatitis B Surface Antigen (HBsAg) (local lab)",
+                "amount": 36000.0
+              },
+              {
+                "item": "Hepatitis B Core Antibody (HBcAb) (local lab)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Hep B Surf Ab (HBsAb) (local lab)",
+                "amount": 36000.0
+              },
+              {
+                "item": "Hepatitis C Antibody (HCVAb) (local lab)",
+                "amount": 40000.0
+              },
+              {
+                "item": "ECG w/ Interpret. & Report",
+                "amount": 30000.0
+              },
+              {
+                "item": "Trial Drug Administration BAL0891",
+                "amount": 150000.0
+              },
+              {
+                "item": "BAL0891 PK sampling 10",
+                "amount": 20000.0
+              },
+              {
+                "item": "Spec. Handling (use w/PK) 10",
+                "amount": 20000.0
+              },
+              {
+                "item": "Trial drug administration Paclitaxel (Substudy 3 only)",
+                "amount": 150000.0
+              },
+              {
+                "item": "Tumor Response Criteria, RECIST WHO",
+                "amount": 107500.0
+              },
+              {
+                "item": "Physician's Fees without Exam Costs",
+                "amount": 150000.0
+              },
+              {
+                "item": "C4\\ Day 1 and beyond (each)",
+                "amount": 280300.0
+              },
+              {
+                "item": "C4\\ Day 8 and beyond (each)",
+                "amount": 162100.0
+              },
+              {
+                "item": "C4\\ Day 15 and beyond (each)",
+                "amount": 192100.0
+              },
+              {
+                "item": "C4\\ Day 22 and beyond (each)",
+                "amount": 146100.0
+              },
+              {
+                "item": "Trial Drug Administration BAL0891 (including Regimens: C and D where applicable)",
+                "amount": 30000.0
+              },
+              {
+                "item": "Pharmacy Dispensing for Paclitaxel per applicable visits; As not included in Trial & Non-Trial Procedure, it will be paid for each visit taking Paclitaxel after invoice is issued.",
+                "amount": 5770.0
+              },
+              {
+                "item": "Serum pregnancy test (for WOCBP only)7",
+                "amount": 7000.0
+              },
+              {
+                "item": "Urine pregnancy test (for WOCBP only)7",
+                "amount": 4000.0
+              },
+              {
+                "item": "Alternative day for ECG is C2D21 and/or for unscheduled visit as clinically indicated",
+                "amount": 6000.0
+              },
+              {
+                "item": "Alternative days for Blood sampling for: ANC; C1and C2 on Days: 5,10, 12 (Regimen C), 19, 24, Days 26 or 27 or 28 and/or for unscheduled visit as clinically indicated",
+                "amount": 6000.0
+              },
+              {
+                "item": "Alternative BAL0891 PK sampling on C1 and C2 on Days: 5,7,10, 19, 21 and 24",
+                "amount": 4000.0
+              },
+              {
+                "item": "Alternative Paclitaxel PK sampling on C1 and C2 on Day: 5",
+                "amount": 4000.0
+              },
+              {
+                "item": "Alternative days for Spec. Handling (use w/PK) on C1 and C2 on Days: 5,7,10, 19, 21 and 24",
+                "amount": 4000.0
+              },
+              {
+                "item": "ECG w/ Interpret. & Report Regimen D only (C1D1, C1D2,C1D6, C1D8, C2D1, C2D2,C2D8, C2D9, C2D15,C2D16, C2D22 and C3D1)",
+                "amount": 6000.0
+              },
+              {
+                "item": "Chest CT Scan w/ Contrast 8",
+                "amount": 96000.0
+              },
+              {
+                "item": "Chest CT Scan w/o Contrast 8",
+                "amount": 80000.0
+              },
+              {
+                "item": "Abdomen, Pelvis CT Scan w/ Contrast 8",
+                "amount": 96000.0
+              },
+              {
+                "item": "Abdomen Pelvis CT Scan w/o Contrast 8",
+                "amount": 80000.0
+              },
+              {
+                "item": "MRI of Chest w/ Contrast 8",
+                "amount": 200000.0
+              },
+              {
+                "item": "Chest MRI w/o Contras 8",
+                "amount": 180000.0
+              },
+              {
+                "item": "MRI of Abdomen w Contrast 8",
+                "amount": 200000.0
+              },
+              {
+                "item": "Abdomen MRI without Contrast 8",
+                "amount": 180000.0
+              },
+              {
+                "item": "Pelvic MRI w/ Contrast 8",
+                "amount": 200000.0
+              },
+              {
+                "item": "MRI of Pelvis w/o Contrast 8",
+                "amount": 180000.0
+              },
+              {
+                "item": "COVID-19 Test performed at the study site as needed11",
+                "amount": 26000.0
+              },
+              {
+                "item": "Premedication for Paclitaxel; Such premedication may consist of dexamethasone\n20 mg orally (PO) administered approximately 12 and 6 hours before paclitaxel,\ndiphenhydramine (or its equivalent) 50 mg IV 30 to 60 minutes prior to paclitaxel, and pantoprazole (40 mg) IV 30 to 60 minutes before paclitaxel",
+                "amount": 20000.0
+              },
+              {
+                "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST, eachif required per protocol 8",
+                "amount": 21500.0
+              },
+              {
+                "item": "Fee using Day Care Center per day, Day only, as applicable per Protocol; within 6 hours",
+                "amount": 14000.0
+              },
+              {
+                "item": "Additional Fee using Day Care Center per day, Day only, as applicable per Protocol; if it exceeds 6 hours, it will be additionally paid separately from Fee using Day Care Center per day.",
+                "amount": 14000.0
+              },
+              {
+                "item": "BAL0891 PK sampling for Regimen D only, as applicable per Protocol",
+                "amount": 4000.0
+              },
+              {
+                "item": "Spec. Handling (use w/PK) for Regimen D only, as applicable per Protocol",
+                "amount": 4000.0
+              }
+            ],
+            "n_files": 3
+          },
+          {
+            "version": "PA6 Novation",
+            "effective_date": "2025-02-14",
+            "protocol_version": "Version 8.0 / 24 January 2024",
+            "institution": "Severance Hospital, Yonsei University Health System",
+            "pi": "SUN YOUNG RHA",
+            "items": [
+              {
+                "item": "Informed Consent Process",
+                "amount": 100000.0
+              },
+              {
+                "item": "Medical History (including cancer diagnosis and treatment)",
+                "amount": 90000.0
+              },
+              {
+                "item": "Demographic Information",
+                "amount": 30000.0
+              },
+              {
+                "item": "Assessment of Eligibility Criteria",
+                "amount": 100000.0
+              },
+              {
+                "item": "Physical Examination (including vital signs, weight)",
+                "amount": 155000.0
+              },
+              {
+                "item": "ECOG Performance Status",
+                "amount": 10000.0
+              },
+              {
+                "item": "Hematology (local lab)",
+                "amount": 25000.0
+              },
+              {
+                "item": "Biochemistry (local lab)",
+                "amount": 110000.0
+              },
+              {
+                "item": "Lipase (local lab)",
+                "amount": 28000.0
+              },
+              {
+                "item": "Urinalysis (local lab)",
+                "amount": 17500.0
+              },
+              {
+                "item": "Coagulation, including PT & PTT, INR, Fibrinogen (local lab)",
+                "amount": 65000.0
+              },
+              {
+                "item": "D-dimer (local lab)",
+                "amount": 35000.0
+              },
+              {
+                "item": "Hepatitis B Surface Antigen (HBsAg)",
+                "amount": 35000.0
+              },
+              {
+                "item": "Hepatitis B Core Antibody (HBcAb)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Hep B Surf Ab (HBsAb)",
+                "amount": 35000.0
+              },
+              {
+                "item": "Hepatitis C Antibody (HCVAb)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Triplicate ECG",
+                "amount": 30000.0
+              },
+              {
+                "item": "Trial Drug Administration BAL0891",
+                "amount": 150000.0
+              },
+              {
+                "item": "BAL0891 PK sampling",
+                "amount": 18000.0
+              },
+              {
+                "item": "Spec. Handling (use w/PK)",
+                "amount": 30000.0
+              },
+              {
+                "item": "Trial drug administration Carboplatin (Substudy 2 only)",
+                "amount": 150000.0
+              },
+              {
+                "item": "Blood sampling for: ANC",
+                "amount": 30000.0
+              },
+              {
+                "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST",
+                "amount": 107500.0
+              },
+              {
+                "item": "Adverse Events Assessment",
+                "amount": 40000.0
+              },
+              {
+                "item": "Review Concomitant Medications",
+                "amount": 45000.0
+              },
+              {
+                "item": "Long-term follow-up",
+                "amount": 50000.0
+              },
+              {
+                "item": "Trial Coordinator Fee Per Visit",
+                "amount": 75000.0
+              },
+              {
+                "item": "Principal Investigator's Fees without Exam Costs",
+                "amount": 150000.0
+              },
+              {
+                "item": "Trial Subject Reimbursement5",
+                "amount": 70000.0
+              },
+              {
+                "item": "Data Entry (EDC)",
+                "amount": 55000.0
+              },
+              {
+                "item": "Patient Registration Fee",
+                "amount": 30000.0
+              },
+              {
+                "item": "Costs Charged prior to Overhead",
+                "amount": 23452000.0
+              },
+              {
+                "item": "Overhead at 17.6470588235294%",
+                "amount": 4138588.24
+              },
+              {
+                "item": "Total Cost Per Trial Subject",
+                "amount": 27590588.24
+              },
+              {
+                "item": "C5 \\ Day 1 and beyond (each)",
+                "amount": 203029.0
+              },
+              {
+                "item": "C5 \\ Day 8 and beyond (each)",
+                "amount": 131559.0
+              },
+              {
+                "item": "C5 \\ Day 15  and beyond (each)",
+                "amount": 131559.0
+              },
+              {
+                "item": "Cycle 1 / Day 1 (Backfill Group)",
+                "amount": 249618.0
+              },
+              {
+                "item": "Cycle 1 / Day 2 (Backfill Group)",
+                "amount": 132882.0
+              },
+              {
+                "item": "Cycle 1 / Day 8 (Backfill Group)",
+                "amount": 223147.0
+              },
+              {
+                "item": "Cycle 1 / Day 9 (Backfill Group)",
+                "amount": 111706.0
+              },
+              {
+                "item": "Cycle 2 / Day 1 (Backfill Group)",
+                "amount": 249618.0
+              },
+              {
+                "item": "Cycle 2 / Day 2 (Backfill Group)",
+                "amount": 85235.0
+              },
+              {
+                "item": "Cycle 2 / Day 8 (Backfill Group)",
+                "amount": 223147.0
+              },
+              {
+                "item": "Cycle 2 / Day 9 (Backfill Group)",
+                "amount": 163853.0
+              },
+              {
+                "item": "Reconsent per case",
+                "amount": 8824.0
+              },
+              {
+                "item": "SAE Per Report",
+                "amount": 8824.0
+              },
+              {
+                "item": "Serum pregnancy test (for WOCBP only) 7",
+                "amount": 6176.0
+              },
+              {
+                "item": "Urine pregnancy test (for WOCBP only) 7",
+                "amount": 2029.0
+              },
+              {
+                "item": "Alternative days for BAL0891 PK sampling",
+                "amount": 3176.0
+              },
+              {
+                "item": "Alternative days for Spec. Handling (use w/PK)",
+                "amount": 5294.0
+              },
+              {
+                "item": "Alternative days for ECG",
+                "amount": 5294.0
+              },
+              {
+                "item": "Alternative days for Blood sampling for: ANC",
+                "amount": 5294.0
+              },
+              {
+                "item": "Hematology for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 4412.0
+              },
+              {
+                "item": "Biochemistry for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 19412.0
+              },
+              {
+                "item": "Lipase for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 4941.0
+              },
+              {
+                "item": "Urinalysis for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 3088.0
+              },
+              {
+                "item": "Coagulation for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 11471.0
+              },
+              {
+                "item": "D-dimer for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 6176.0
+              },
+              {
+                "item": "Patient Registration Fee at unscheduled visit as clinically indicated and/or long -term FU visit actually done",
+                "amount": 5294.0
+              },
+              {
+                "item": "Trial Subject Reimbursement if applicable (In the event long-term FU visit will be done by actual visit of patient)",
+                "amount": 6176.0
+              },
+              {
+                "item": "Premedication for Carboplatin; a two-drug combination of palonosetron (0.25 g IV or 0.50 mg oral, on D1) and dexamethasone (8 mg IV or oral, D1–D3). If palonosetron is not available, any of the first generation 5-HT3 receptor antagonists may be used, preferably ondansetron or granisetron",
+                "amount": 14118.0
+              },
+              {
+                "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST, if required at Screening and EoT per protocol",
+                "amount": 18971.0
+              },
+              {
+                "item": "CT Scan (Chest (with contrast))8",
+                "amount": 93529.0
+              },
+              {
+                "item": "CT Scan (Chest (without contrast))8",
+                "amount": 79412.0
+              },
+              {
+                "item": "CT scan (Abdomen and Pelvis (with contrast))8",
+                "amount": 97941.0
+              },
+              {
+                "item": "CT Scan (Abdomen and Pelvis (without contrast))8",
+                "amount": 79412.0
+              },
+              {
+                "item": "MRI Scan (Chest (with contrast)) local8",
+                "amount": 215294.0
+              },
+              {
+                "item": "MRI scan (Chest (without contrast)) local8",
+                "amount": 158824.0
+              },
+              {
+                "item": "MRI Scan (Abdomen & Pelvis (with contrast)) (local)8",
+                "amount": 260294.0
+              },
+              {
+                "item": "MRI scan (Abdomen & Pelvis (without contrast) (local)8",
+                "amount": 202941.0
+              },
+              {
+                "item": "Whole body bone scan",
+                "amount": 67941.0
+              },
+              {
+                "item": "Optional liquid biopsy9",
+                "amount": 5294.0
+              },
+              {
+                "item": "Hospitalization fee per night - as applicable",
+                "amount": 79412.0
+              },
+              {
+                "item": "COVID-19 Test as needed",
+                "amount": 22941.0
+              },
+              {
+                "item": "FSH, as applicable per Protocol",
+                "amount": 6176.0
+              },
+              {
+                "item": "HIV 1 and 2 at screening visit as needed",
+                "amount": 4324.0
+              },
+              {
+                "item": "HBV DNA RT-PCR test, as applicable per Protocol",
+                "amount": 29118.0
+              },
+              {
+                "item": "Hepatitis C virus RNA - PCR, as applicable per Protocol",
+                "amount": 49412.0
+              },
+              {
+                "item": "Hepatitis C antibody (HepCAb) at Screening if not performed prior to Screening Visit",
+                "amount": 7059.0
+              },
+              {
+                "item": "CTC Injection Service per day, Day only, as applicable per Protocol; including IP injection and/or PK sample and/or ECG",
+                "amount": 35294.0
+              },
+              {
+                "item": "Adverse Events Assessment (outside of scheduled timepoints)",
+                "amount": 7059.0
+              },
+              {
+                "item": "Review Concomitant Medications (outside of scheduled timepoints)",
+                "amount": 7941.0
+              },
+              {
+                "item": "Start-Up Fee; One-time non-refundable",
+                "amount": 441176.0
+              },
+              {
+                "item": "Pharmacy fee",
+                "amount": 2198824.0
+              },
+              {
+                "item": "Lipase",
+                "amount": 28000.0
+              },
+              {
+                "item": "PT or INR & PTT or aPTT, Fibrinogen (local lab)",
+                "amount": 65000.0
+              },
+              {
+                "item": "D-dimer",
+                "amount": 35000.0
+              },
+              {
+                "item": "HBsAg qualitative",
+                "amount": 35000.0
+              },
+              {
+                "item": "Triplicate ECG_Regimen A only",
+                "amount": 30000.0
+              },
+              {
+                "item": "Trial Drug Administration BAL0891 (including Regimens: A and B where applicable)",
+                "amount": 150000.0
+              },
+              {
+                "item": "Trial Subject Reimbursement 5",
+                "amount": 70000.0
+              },
+              {
+                "item": "Patient Registration Fee (applicable for South Korea)",
+                "amount": 30000.0
+              },
+              {
+                "item": "Overhead at 17.65%",
+                "amount": 2917545.0
+              },
+              {
+                "item": "C5 / Day 1 and beyond",
+                "amount": 218948.0
+              },
+              {
+                "item": "C5 / Day 8 and beyond",
+                "amount": 173941.0
+              },
+              {
+                "item": "C5 / Day 15 and beyond",
+                "amount": 131581.0
+              },
+              {
+                "item": "Serum pregnancy test (for WOCBP only7",
+                "amount": 6178.0
+              },
+              {
+                "item": "Urine pregnancy test (for WOCBP only7",
+                "amount": 2030.0
+              },
+              {
+                "item": "CT Scan ( Chest (without contrast))8",
+                "amount": 79425.0
+              },
+              {
+                "item": "MRI scan (Abdomen (without contrast) (local)8",
+                "amount": 202975.0
+              },
+              {
+                "item": "Bed fee, Day only, as applicable per Protocol",
+                "amount": 35300.0
+              },
+              {
+                "item": "HIV 1 antibody, as applicable per Protocol",
+                "amount": 4324.0
+              },
+              {
+                "item": "HIV 2 antibody, as applicable per Protocol",
+                "amount": 4324.0
+              },
+              {
+                "item": "Trial Drug Administration BAL0891 (including Regimens: A & B where applicable)",
+                "amount": 150000.0
+              },
+              {
+                "item": "C1 / Day 7 (Alternative visit to C1D6)",
+                "amount": 131559.0
+              },
+              {
+                "item": "C1\\ Day 14 (alternative to C1\\ Day 13)",
+                "amount": 131559.0
+              },
+              {
+                "item": "C2 / Day 7 (Alternative visit to C2D6)",
+                "amount": 105088.0
+              },
+              {
+                "item": "C2/D14 (Alternative visit to C2D13)",
+                "amount": 105088.0
+              },
+              {
+                "item": "Alternative days for ECG and/or for unscheduled visit as clinically indicated",
+                "amount": 5294.0
+              },
+              {
+                "item": "Alternative days for Blood sampling for: ANC and/or for unscheduled visit as clinically indicated",
+                "amount": 5294.0
+              },
+              {
+                "item": "Triplicate ECG_Regimen B only (C1D2, C1D6, C2D2)",
+                "amount": 5294.0
+              },
+              {
+                "item": "Neulasta PFS inj [6mg/Syringe]10",
+                "amount": 171176.0
+              },
+              {
+                "item": "Neulapeg PFS inj [6mg/Syringe]10",
+                "amount": 120000.0
+              },
+              {
+                "item": "Rolontis PFS inj [13.2 mg/Syringe]10",
+                "amount": 111176.0
+              },
+              {
+                "item": "Grasin prefilled inj [150 mcg/Syringe]10",
+                "amount": 15176.0
+              },
+              {
+                "item": "Grasin prefilled inj [300 mcg/Syringe]10",
+                "amount": 22941.0
+              },
+              {
+                "item": "Leucostim PFS inj [150 mcg/Syringe]10",
+                "amount": 6176.0
+              },
+              {
+                "item": "Leucostim PFS inj [300 mcg/Syringe]10",
+                "amount": 10941.0
+              },
+              {
+                "item": "MRI Brain11",
+                "amount": 296850.0
+              },
+              {
+                "item": "Physical Examination (including vital signs, height and weight)",
+                "amount": 155000.0
+              },
+              {
+                "item": "Coagulation, including PT & PTT, INR, Fbrinogen (local lab)",
+                "amount": 65000.0
+              },
+              {
+                "item": "Hepatitis B Surface Antigen (HBsAg) (local lab)",
+                "amount": 35000.0
+              },
+              {
+                "item": "Hepatitis B Core Antibody (HBcAb) (local lab)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Hep B Surf Ab (HBsAb) (local lab)",
+                "amount": 35000.0
+              },
+              {
+                "item": "Hepatitis C Antibody (HCVAb) (local lab)",
+                "amount": 40000.0
+              },
+              {
+                "item": "ECG w/ Interpret. & Report",
+                "amount": 30000.0
+              },
+              {
+                "item": "BAL0891 PK sampling 10",
+                "amount": 18000.0
+              },
+              {
+                "item": "Spec. Handling (use w/PK) 10",
+                "amount": 30000.0
+              },
+              {
+                "item": "Trial drug administration Paclitaxel (Substudy 3 only)",
+                "amount": 150000.0
+              },
+              {
+                "item": "Tumor Response Criteria, RECIST WHO",
+                "amount": 107500.0
+              },
+              {
+                "item": "Physician's Fees without Exam Costs",
+                "amount": 150000.0
+              },
+              {
+                "item": "C4\\ Day 1 and beyond (each)",
+                "amount": 243882.0
+              },
+              {
+                "item": "C4\\ Day 8 and beyond (each)",
+                "amount": 148147.0
+              },
+              {
+                "item": "C4\\ Day 15 and beyond (each)",
+                "amount": 148147.0
+              },
+              {
+                "item": "C4\\ Day 22 and beyond (each)",
+                "amount": 133324.0
+              },
+              {
+                "item": "Trial Drug Administration BAL0891 (including Regimens: C and D where applicable)",
+                "amount": 26471.0
+              },
+              {
+                "item": "Serum pregnancy test (for WOCBP only)7",
+                "amount": 6176.0
+              },
+              {
+                "item": "Urine pregnancy test (for WOCBP only)7",
+                "amount": 2029.0
+              },
+              {
+                "item": "Alternative day for ECG is C2D21, and/or for unscheduled visit as clinically indicated",
+                "amount": 5294.0
+              },
+              {
+                "item": "Alternative days for Blood sampling for: ANC; C1and C2 on Days: 5,10, 12 (Regimen C), 19, 24, Days 26 or 27 or 28 and/or for unscheduled visit as clinically indicated",
+                "amount": 5294.0
+              },
+              {
+                "item": "Alternative BAL0891 PK sampling on C1 and C2 on Days: 5,7,10, 19, 21 and 24",
+                "amount": 3176.0
+              },
+              {
+                "item": "Alternative Paclitaxel PK sampling on C1 and C2 on Day: 5",
+                "amount": 3176.0
+              },
+              {
+                "item": "Alternative days for Spec. Handling (use w/PK); BAL0891 PK or Paclitaxel PK",
+                "amount": 5294.0
+              },
+              {
+                "item": "ECG w/ Interpret. & Report Regimen D only (C1D1, C1D2, C1D6, C1D8, C2D1, C2D2, C2D8, C2D9, C2D15,C2D16, C2D22 and C3D1)",
+                "amount": 5294.0
+              },
+              {
+                "item": "Chest CT Scan w/ Contrast 8",
+                "amount": 93529.0
+              },
+              {
+                "item": "Chest CT Scan w/o Contrast 8",
+                "amount": 79412.0
+              },
+              {
+                "item": "Abdomen, Pelvis CT Scan w/ Contrast 8",
+                "amount": 97941.0
+              },
+              {
+                "item": "Abdomen Pelvis CT Scan w/o Contrast 8",
+                "amount": 79412.0
+              },
+              {
+                "item": "MRI of Chest w/ Contrast 8",
+                "amount": 215294.0
+              },
+              {
+                "item": "Chest MRI w/o Contras 8",
+                "amount": 158824.0
+              },
+              {
+                "item": "MRI of Abdomen & Pelvis w Contrast 8",
+                "amount": 260294.0
+              },
+              {
+                "item": "Abdomen & Pelvis MRI without Contrast 8",
+                "amount": 202941.0
+              },
+              {
+                "item": "Premedication for Paclitaxel; Such premedication may consist of dexamethasone\n20 mg orally (PO) administered approximately 12 and 6 hours before paclitaxel,\ndiphenhydramine (or its equivalent) 50 mg IV 30 to 60 minutes prior to paclitaxel, and pantoprazole (40 mg) IV 30 to 60 minutes before paclitaxel",
+                "amount": 14118.0
+              },
+              {
+                "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST, if required at Screening and EoT per protocol 8",
+                "amount": 18971.0
+              },
+              {
+                "item": "BAL0891 PK sampling for Regimen D only, as applicable per Protocol",
+                "amount": 3176.0
+              },
+              {
+                "item": "Spec. Handling (use w/PK) for Regimen D only, as applicable per Protocol",
+                "amount": 5294.0
+              },
+              {
+                "item": "C4 \\ Day 15 and beyond (each)",
+                "amount": 131559.0
+              },
+              {
+                "item": "Cycle 3 / Day 1 (Backfill Group)",
+                "amount": 243441.0
+              },
+              {
+                "item": "Cycle 3 / Day 8 (Backfill Group)",
+                "amount": 187853.0
+              },
+              {
+                "item": "Cycle 4 / Day 1 (Backfill Group)",
+                "amount": 243441.0
+              },
+              {
+                "item": "Cycle 4 / Day 8 (Backfill Group)",
+                "amount": 187853.0
+              }
+            ],
+            "n_files": 7
+          },
+          {
+            "version": "PA8 Novation",
+            "effective_date": "2025-02-14",
+            "protocol_version": "Version 8.0 / 24 January 2024",
+            "institution": "Severance Hospital, Yonsei University Health System",
+            "pi": "SUN YOUNG RHA",
+            "items": [
+              {
+                "item": "Informed Consent Process",
+                "amount": 100000.0
+              },
+              {
+                "item": "Medical History (including cancer diagnosis and treatment)",
+                "amount": 90000.0
+              },
+              {
+                "item": "Demographic Information",
+                "amount": 30000.0
+              },
+              {
+                "item": "Assessment of Eligibility Criteria",
+                "amount": 100000.0
+              },
+              {
+                "item": "Physical Examination (including vital signs, weight)",
+                "amount": 155000.0
+              },
+              {
+                "item": "ECOG Performance Status",
+                "amount": 10000.0
+              },
+              {
+                "item": "Hematology (local lab)",
+                "amount": 25000.0
+              },
+              {
+                "item": "Biochemistry (local lab)",
+                "amount": 110000.0
+              },
+              {
+                "item": "Lipase (local lab)",
+                "amount": 28000.0
+              },
+              {
+                "item": "Urinalysis (local lab)",
+                "amount": 17500.0
+              },
+              {
+                "item": "Coagulation, including PT & PTT, INR, Fibrinogen (local lab)",
+                "amount": 65000.0
+              },
+              {
+                "item": "D-dimer (local lab)",
+                "amount": 35000.0
+              },
+              {
+                "item": "Hepatitis B Surface Antigen (HBsAg)",
+                "amount": 35000.0
+              },
+              {
+                "item": "Hepatitis B Core Antibody (HBcAb)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Hep B Surf Ab (HBsAb)",
+                "amount": 35000.0
+              },
+              {
+                "item": "Hepatitis C Antibody (HCVAb)",
+                "amount": 40000.0
+              },
+              {
+                "item": "Triplicate ECG",
+                "amount": 30000.0
+              },
+              {
+                "item": "Trial Drug Administration BAL0891",
+                "amount": 150000.0
+              },
+              {
+                "item": "BAL0891 PK sampling",
+                "amount": 18000.0
+              },
+              {
+                "item": "Spec. Handling (use w/PK)",
+                "amount": 30000.0
+              },
+              {
+                "item": "Trial drug administration Carboplatin (Substudy 2 only)",
+                "amount": 150000.0
+              },
+              {
+                "item": "Blood sampling for: ANC",
+                "amount": 30000.0
+              },
+              {
+                "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST",
+                "amount": 107500.0
+              },
+              {
+                "item": "Adverse Events Assessment",
+                "amount": 40000.0
+              },
+              {
+                "item": "Review Concomitant Medications",
+                "amount": 45000.0
+              },
+              {
+                "item": "Long-term follow-up",
+                "amount": 50000.0
+              },
+              {
+                "item": "Trial Coordinator Fee Per Visit",
+                "amount": 75000.0
+              },
+              {
+                "item": "Principal Investigator's Fees without Exam Costs",
+                "amount": 150000.0
+              },
+              {
+                "item": "Trial Subject Reimbursement5",
+                "amount": 70000.0
+              },
+              {
+                "item": "Data Entry (EDC)",
+                "amount": 55000.0
+              },
+              {
+                "item": "Patient Registration Fee",
+                "amount": 30000.0
+              },
+              {
+                "item": "Costs Charged prior to Overhead",
+                "amount": 23452000.0
+              },
+              {
+                "item": "Overhead at 17.6470588235294%",
+                "amount": 4138588.24
+              },
+              {
+                "item": "Total Cost Per Trial Subject",
+                "amount": 27590588.24
+              },
+              {
+                "item": "C1 / Day 6 (Alternative visit to C1D5)",
+                "amount": 161206.0
+              },
+              {
+                "item": "C1\\ Day 14 (alternative to C1\\ Day 13)",
+                "amount": 136853.0
+              },
+              {
+                "item": "C2 / Day 6 (Alternative visit to C2D5)",
+                "amount": 110382.0
+              },
+              {
+                "item": "C2/D14 (Alternative visit to C2D13)",
+                "amount": 110382.0
+              },
+              {
+                "item": "Reconsent per case",
+                "amount": 8824.0
+              },
+              {
+                "item": "SAE Per Report",
+                "amount": 8824.0
+              },
+              {
+                "item": "Serum pregnancy test (for WOCBP only) 7",
+                "amount": 6176.0
+              },
+              {
+                "item": "Urine pregnancy test (for WOCBP only) 7",
+                "amount": 2029.0
+              },
+              {
+                "item": "Alternative days for BAL0891 PK sampling",
+                "amount": 3176.0
+              },
+              {
+                "item": "Alternative days for Spec. Handling (use w/PK)",
+                "amount": 5294.0
+              },
+              {
+                "item": "Alternative days for ECG",
+                "amount": 5294.0
+              },
+              {
+                "item": "Alternative days for Blood sampling for: ANC",
+                "amount": 5294.0
+              },
+              {
+                "item": "Hematology for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 4412.0
+              },
+              {
+                "item": "Biochemistry for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 19412.0
+              },
+              {
+                "item": "Lipase for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 4941.0
+              },
+              {
+                "item": "Urinalysis for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 3088.0
+              },
+              {
+                "item": "Coagulation for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 11471.0
+              },
+              {
+                "item": "D-dimer for Alternative days and/or for unscheduled visit as clinically indicated",
+                "amount": 6176.0
+              },
+              {
+                "item": "Patient Registration Fee at unscheduled visit as clinically indicated and/or long -term FU visit actually done",
+                "amount": 5294.0
+              },
+              {
+                "item": "Trial Subject Reimbursement if applicable (In the event long-term FU visit will be done by actual visit of patient)",
+                "amount": 6176.0
+              },
+              {
+                "item": "Premedication for Carboplatin; a two-drug combination of palonosetron (0.25 g IV or 0.50 mg oral, on D1) and dexamethasone (8 mg IV or oral, D1–D3). If palonosetron is not available, any of the first generation 5-HT3 receptor antagonists may be used, preferably ondansetron or granisetron",
+                "amount": 14118.0
+              },
+              {
+                "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST, if required at Screening and EoT per protocol",
+                "amount": 18971.0
+              },
+              {
+                "item": "CT Scan (Chest (with contrast))8",
+                "amount": 93529.0
+              },
+              {
+                "item": "CT Scan (Chest (without contrast))8",
+                "amount": 79412.0
+              },
+              {
+                "item": "CT scan (Abdomen and Pelvis (with contrast))8",
+                "amount": 97941.0
+              },
+              {
+                "item": "CT Scan (Abdomen and Pelvis (without contrast))8",
+                "amount": 79412.0
+              },
+              {
+                "item": "MRI Scan (Chest (with contrast)) local8",
+                "amount": 215294.0
+              },
+              {
+                "item": "MRI scan (Chest (without contrast)) local8",
+                "amount": 158824.0
+              },
+              {
+                "item": "MRI Scan (Abdomen & Pelvis (with contrast)) (local)8",
+                "amount": 260294.0
+              },
+              {
+                "item": "MRI scan (Abdomen & Pelvis (without contrast) (local)8",
+                "amount": 202941.0
+              },
+              {
+                "item": "Whole body bone scan",
+                "amount": 67941.0
+              },
+              {
+                "item": "Optional liquid biopsy9",
+                "amount": 5294.0
+              },
+              {
+                "item": "Hospitalization fee per night - as applicable",
+                "amount": 79412.0
+              },
+              {
+                "item": "COVID-19 Test as needed",
+                "amount": 22941.0
+              },
+              {
+                "item": "FSH, as applicable per Protocol",
+                "amount": 6176.0
+              },
+              {
+                "item": "HIV 1 and 2 at screening visit as needed",
+                "amount": 4324.0
+              },
+              {
+                "item": "HBV DNA RT-PCR test, as applicable per Protocol",
+                "amount": 29118.0
+              },
+              {
+                "item": "Hepatitis C virus RNA - PCR, as applicable per Protocol",
+                "amount": 49412.0
+              },
+              {
+                "item": "Hepatitis C antibody (HepCAb) at Screening if not performed prior to Screening Visit",
+                "amount": 7059.0
+              },
+              {
+                "item": "CTC Injection Service per day, Day only, as applicable per Protocol; including IP injection and/or PK sample and/or ECG",
+                "amount": 35294.0
+              },
+              {
+                "item": "Adverse Events Assessment (outside of scheduled timepoints)",
+                "amount": 7059.0
+              },
+              {
+                "item": "Review Concomitant Medications (outside of scheduled timepoints)",
+                "amount": 7941.0
+              },
+              {
+                "item": "Neulasta PFS inj [6mg/Syringe]10",
+                "amount": 171176.0
+              },
+              {
+                "item": "Neulapeg PFS inj [6mg/Syringe]10",
+                "amount": 120000.0
+              },
+              {
+                "item": "Rolontis PFS inj [13.2 mg/Syringe]10",
+                "amount": 111176.0
+              },
+              {
+                "item": "Grasin prefilled inj [150 mcg/Syringe]10",
+                "amount": 15176.0
+              },
+              {
+                "item": "Grasin prefilled inj [300 mcg/Syringe]10",
+                "amount": 22941.0
+              },
+              {
+                "item": "Leucostim PFS inj [150 mcg/Syringe]10",
+                "amount": 6176.0
+              },
+              {
+                "item": "Leucostim PFS inj [300 mcg/Syringe]10",
+                "amount": 10941.0
+              },
+              {
+                "item": "MRI Brain11",
+                "amount": 296850.0
+              },
+              {
+                "item": "Start-Up Fee; One-time non-refundable",
+                "amount": 441176.0
+              },
+              {
+                "item": "Pharmacy fee",
+                "amount": 2198824.0
+              }
+            ],
+            "n_files": 6
+          }
+        ],
+        "source_folder": "Site 822",
+        "cta_institution": "Seoul National University Hospital"
       },
       "823": {
         "name": "Korea University Medical Center",
@@ -53196,6 +55283,7 @@
     "550": 1,
     "551": 1,
     "552": 1,
-    "821": 9
+    "821": 9,
+    "822": 4
   }
 }

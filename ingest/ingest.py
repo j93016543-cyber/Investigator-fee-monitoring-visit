@@ -508,7 +508,9 @@ def main():
     for s in sorted(set(sites) | set(reg) | set(parsed)):
         if s in parsed:
             entry = parsed[s]
-            entry["name"] = entry.get("name") or (sites.get(s) or {}).get("name") or (reg.get(s) or {}).get("name")
+            # 기관명은 실제 지급/CRA 데이터 우선(계약 템플릿 Institution 오기재 방지)
+            entry["cta_institution"] = entry.get("name")
+            entry["name"] = (sites.get(s) or {}).get("name") or entry.get("name") or (reg.get(s) or {}).get("name")
             cta_source[s] = entry
         else:
             cta_source[s] = reg.get(s) or {"name": (sites.get(s) or {}).get("name"), "ctas": []}
