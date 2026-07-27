@@ -93,35 +93,46 @@ def extract_items(path):
     return items, meta
 
 
+def _cta_from_files(version, files):
+    dates = []
+    for f in files:
+        dates += parse_dates(f.name)
+    eff = max(dates).isoformat() if dates else None
+    items, meta = {}, {}
+    for f in files:
+        if f.suffix.lower() == ".xlsx":
+            it, mt = extract_items(f)
+            items.update(it)
+            if mt and not meta:
+                meta = mt
+    return {
+        "version": version,
+        "effective_date": eff,
+        "protocol_version": meta.get("protocol_version"),
+        "institution": meta.get("institution"),
+        "pi": meta.get("pi"),
+        "items": [{"item": k, "amount": v} for k, v in items.items()],
+        "n_files": len([f for f in files if f.is_file()]),
+    }
+
+
 def parse_site_folder(site_dir):
-    """'Site <번호>' 폴더 → ctas 리스트."""
+    """'Site <번호>' 폴더 → ctas 리스트.
+
+    - 버전 하위폴더(Initial / Amd1 / AMD#2 ...)가 있으면 폴더별 1개 CTA
+    - 하위폴더가 없고 파일이 site 폴더 바로 아래 있으면(초기 CTA만) → 'Initial' 1개
+    """
     ctas = []
-    for ver_dir in sorted([d for d in site_dir.iterdir() if d.is_dir()]):
-        files = list(ver_dir.rglob("*"))
-        # effective date = 폴더 내 파일명 최신 날짜
-        dates = []
-        for f in files:
-            dates += parse_dates(f.name)
-        eff = max(dates).isoformat() if dates else None
-        # 항목: budget 엑셀에서 추출 (여러 개면 병합)
-        items = {}
-        meta = {}
-        for f in files:
-            if f.suffix.lower() == ".xlsx":
-                it, mt = extract_items(f)
-                items.update(it)
-                if mt and not meta:
-                    meta = mt
-        ctas.append({
-            "version": ver_dir.name,
-            "effective_date": eff,
-            "protocol_version": meta.get("protocol_version"),
-            "institution": meta.get("institution"),
-            "pi": meta.get("pi"),
-            "items": [{"item": k, "amount": v} for k, v in items.items()],
-            "n_files": len([f for f in files if f.is_file()]),
-        })
-    # effective_date 순 정렬
+    subdirs = sorted([d for d in site_dir.iterdir() if d.is_dir()])
+    if subdirs:
+        # 버전 폴더별 1개 CTA. site 루트의 낱개 문서(NL/노트 등)는 무시.
+        for ver_dir in subdirs:
+            ctas.append(_cta_from_files(ver_dir.name, list(ver_dir.rglob("*"))))
+    else:
+        # 하위폴더 없음 = 초기 CTA만 → site 루트 파일을 하나의 CTA로
+        root_files = [f for f in site_dir.iterdir() if f.is_file()]
+        if root_files:
+            ctas.append(_cta_from_files("Initial", root_files))
     ctas.sort(key=lambda c: c["effective_date"] or "")
     return ctas
 

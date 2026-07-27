@@ -2091,7 +2091,1067 @@
     },
     "541": {
       "name": "University of Miami",
-      "ctas": []
+      "ctas": [
+        {
+          "version": "Initial",
+          "effective_date": "2023-08-04",
+          "protocol_version": "Version 5.0 / 06Feb2023",
+          "institution": "University of Miami",
+          "pi": "Frances Valdes-Albini, MD",
+          "items": [
+            {
+              "item": "Informed Consent Process",
+              "amount": 150.0
+            },
+            {
+              "item": "Medical History (including cancer diagnosis and treatment)",
+              "amount": 117.0
+            },
+            {
+              "item": "Demographic Information",
+              "amount": 45.0
+            },
+            {
+              "item": "Assessment of Eligibility Criteria",
+              "amount": 75.0
+            },
+            {
+              "item": "Physical Examination (including vital signs, weight)",
+              "amount": 435.0
+            },
+            {
+              "item": "ECOG Performance Status",
+              "amount": 35.0
+            },
+            {
+              "item": "Hematology (local lab)",
+              "amount": 45.0
+            },
+            {
+              "item": "Biochemistry (local lab)",
+              "amount": 90.0
+            },
+            {
+              "item": "Lipase",
+              "amount": 33.0
+            },
+            {
+              "item": "Urinalysis (local lab)",
+              "amount": 34.0
+            },
+            {
+              "item": "INR",
+              "amount": 32.0
+            },
+            {
+              "item": "PT & PTT",
+              "amount": 49.0
+            },
+            {
+              "item": "D-dimer",
+              "amount": 92.0
+            },
+            {
+              "item": "Fibrinogen (local lab)",
+              "amount": 30.0
+            },
+            {
+              "item": "HBsAg",
+              "amount": 68.0
+            },
+            {
+              "item": "HBcAb",
+              "amount": 31.0
+            },
+            {
+              "item": "HBsAb",
+              "amount": 32.0
+            },
+            {
+              "item": "HepCAb",
+              "amount": 89.0
+            },
+            {
+              "item": "Triplicate ECG_Regimen A only",
+              "amount": 315.0
+            },
+            {
+              "item": "Trial Drug Administration BAL0891 (including Regimens: A & B where applicable)",
+              "amount": 289.0
+            },
+            {
+              "item": "BAL0891 PK sampling",
+              "amount": 75.0
+            },
+            {
+              "item": "Spec. Handling (use w/PK)",
+              "amount": 60.0
+            },
+            {
+              "item": "Trial drug administration Carboplatin (Substudy 2 only)",
+              "amount": 210.0
+            },
+            {
+              "item": "Blood sampling for: ANC",
+              "amount": 59.0
+            },
+            {
+              "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST",
+              "amount": 248.0
+            },
+            {
+              "item": "Adverse Events Assessment",
+              "amount": 51.0
+            },
+            {
+              "item": "Review Concomitant Medications",
+              "amount": 50.0
+            },
+            {
+              "item": "Long-term follow-up",
+              "amount": 54.0
+            },
+            {
+              "item": "Trial Coordinator Fee Per Visit",
+              "amount": 259.0
+            },
+            {
+              "item": "Principal Investigator's Fees without Exam Costs",
+              "amount": 311.0
+            },
+            {
+              "item": "Trial  Subject Reimbursement5",
+              "amount": 54.0
+            },
+            {
+              "item": "Trial Subject Meal Reimbursement5",
+              "amount": 14.77
+            },
+            {
+              "item": "Pharmacy Dispensing (BAL0891)",
+              "amount": 150.0
+            },
+            {
+              "item": "Data Entry (EDC)",
+              "amount": 105.0
+            },
+            {
+              "item": "Bed Fee, Day Only",
+              "amount": 100.0
+            },
+            {
+              "item": "Pharmacy Dispensing  (Carboplatin, sub study 2 only)",
+              "amount": 150.0
+            },
+            {
+              "item": "Total Cost Per Trial Subject",
+              "amount": 82696.87
+            },
+            {
+              "item": "Physical Examination (including vital signs, height and weight)",
+              "amount": 435.0
+            },
+            {
+              "item": "PT & PTT (local lab)",
+              "amount": 49.0
+            },
+            {
+              "item": "D-dimer (local lab)",
+              "amount": 104.0
+            },
+            {
+              "item": "HBsAg (87340)",
+              "amount": 68.0
+            },
+            {
+              "item": "HBcAb (86705)",
+              "amount": 31.0
+            },
+            {
+              "item": "HBsAb (86706)",
+              "amount": 32.0
+            },
+            {
+              "item": "HepCAb (86704)",
+              "amount": 89.0
+            },
+            {
+              "item": "ECG w/ Interpret. & Report_Regimen C only",
+              "amount": 315.0
+            },
+            {
+              "item": "BAL0891 PK sampling 11",
+              "amount": 75.0
+            },
+            {
+              "item": "Spec. Handling (use w/PK) 11",
+              "amount": 60.0
+            },
+            {
+              "item": "Trial drug administration Paclitaxel (Substudy 3 only) Initial drug 1st hour",
+              "amount": 699.0
+            },
+            {
+              "item": "Tumor Response Criteria, RECIST WHO",
+              "amount": 248.0
+            },
+            {
+              "item": "Physician's Fees without Exam Costs",
+              "amount": 325.0
+            },
+            {
+              "item": "Trial Subject Reimbursement5",
+              "amount": 54.0
+            },
+            {
+              "item": "Pharmacy Dispensing (Paclitaxel, sub study 3 only)",
+              "amount": 150.0
+            }
+          ],
+          "n_files": 5
+        },
+        {
+          "version": "Amd1_PAV7.0",
+          "effective_date": "2023-11-01",
+          "protocol_version": "Version 7.0 / 23Jun2023",
+          "institution": "University of Miami",
+          "pi": "Frances Valdes-Albini, MD",
+          "items": [
+            {
+              "item": "Informed Consent Process",
+              "amount": 150.0
+            },
+            {
+              "item": "Medical History (including cancer diagnosis and treatment)",
+              "amount": 117.0
+            },
+            {
+              "item": "Demographic Information",
+              "amount": 45.0
+            },
+            {
+              "item": "Assessment of Eligibility Criteria",
+              "amount": 75.0
+            },
+            {
+              "item": "Physical Examination (including vital signs, weight)",
+              "amount": 435.0
+            },
+            {
+              "item": "ECOG Performance Status",
+              "amount": 35.0
+            },
+            {
+              "item": "Hematology (local lab)",
+              "amount": 45.0
+            },
+            {
+              "item": "Biochemistry (local lab)",
+              "amount": 90.0
+            },
+            {
+              "item": "Lipase",
+              "amount": 33.0
+            },
+            {
+              "item": "Urinalysis (local lab)",
+              "amount": 34.0
+            },
+            {
+              "item": "PT or INR & PTT or aPTT",
+              "amount": 49.0
+            },
+            {
+              "item": "D-dimer",
+              "amount": 92.0
+            },
+            {
+              "item": "Fibrinogen (local lab)",
+              "amount": 30.0
+            },
+            {
+              "item": "HBsAg",
+              "amount": 68.0
+            },
+            {
+              "item": "HBcAb",
+              "amount": 31.0
+            },
+            {
+              "item": "HBsAb",
+              "amount": 32.0
+            },
+            {
+              "item": "HepCAb",
+              "amount": 89.0
+            },
+            {
+              "item": "Triplicate ECG_Regimen A only",
+              "amount": 315.0
+            },
+            {
+              "item": "Trial Drug Administration BAL0891 (including Regimens: A & B where applicable)",
+              "amount": 289.0
+            },
+            {
+              "item": "BAL0891 PK sampling",
+              "amount": 75.0
+            },
+            {
+              "item": "Spec. Handling (use w/PK)",
+              "amount": 60.0
+            },
+            {
+              "item": "Trial drug administration Carboplatin (Substudy 2 only)",
+              "amount": 210.0
+            },
+            {
+              "item": "Blood sampling for: ANC",
+              "amount": 59.0
+            },
+            {
+              "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST",
+              "amount": 248.0
+            },
+            {
+              "item": "Adverse Events Assessment",
+              "amount": 51.0
+            },
+            {
+              "item": "Review Concomitant Medications",
+              "amount": 50.0
+            },
+            {
+              "item": "Long-term follow-up",
+              "amount": 54.0
+            },
+            {
+              "item": "Trial Coordinator Fee Per Visit",
+              "amount": 259.0
+            },
+            {
+              "item": "Principal Investigator's Fees without Exam Costs",
+              "amount": 311.0
+            },
+            {
+              "item": "Trial  Subject Reimbursement5",
+              "amount": 54.0
+            },
+            {
+              "item": "Trial Subject Meal Reimbursement5",
+              "amount": 14.77
+            },
+            {
+              "item": "Pharmacy Dispensing (BAL0891)",
+              "amount": 150.0
+            },
+            {
+              "item": "Data Entry (EDC)",
+              "amount": 105.0
+            },
+            {
+              "item": "Bed Fee, Day Only",
+              "amount": 100.0
+            },
+            {
+              "item": "Pharmacy Dispensing  (Carboplatin, sub study 2 only)",
+              "amount": 150.0
+            },
+            {
+              "item": "Total Cost Per Trial Subject",
+              "amount": 82174.63
+            },
+            {
+              "item": "Physical Examination (including vital signs, height and weight)",
+              "amount": 435.0
+            },
+            {
+              "item": "PT or INR & PTT or aPTT (local lab)",
+              "amount": 49.0
+            },
+            {
+              "item": "D-dimer (local lab)",
+              "amount": 104.0
+            },
+            {
+              "item": "HBsAg (87340)",
+              "amount": 68.0
+            },
+            {
+              "item": "HBcAb (86705)",
+              "amount": 31.0
+            },
+            {
+              "item": "HBsAb (86706)",
+              "amount": 32.0
+            },
+            {
+              "item": "HepCAb (86704)",
+              "amount": 89.0
+            },
+            {
+              "item": "ECG w/ Interpret. & Report_Regimen C only",
+              "amount": 315.0
+            },
+            {
+              "item": "BAL0891 PK sampling 11",
+              "amount": 75.0
+            },
+            {
+              "item": "Spec. Handling (use w/PK) 11",
+              "amount": 60.0
+            },
+            {
+              "item": "Trial drug administration Paclitaxel (Substudy 3 only) Initial drug 1st hour",
+              "amount": 699.0
+            },
+            {
+              "item": "Tumor Response Criteria, RECIST WHO",
+              "amount": 248.0
+            },
+            {
+              "item": "Physician's Fees without Exam Costs",
+              "amount": 325.0
+            },
+            {
+              "item": "Trial Subject Reimbursement5",
+              "amount": 54.0
+            },
+            {
+              "item": "Pharmacy Dispensing (Paclitaxel, sub study 3 only)",
+              "amount": 150.0
+            }
+          ],
+          "n_files": 3
+        },
+        {
+          "version": "CTA AMD#2_PA8",
+          "effective_date": "2025-02-13",
+          "protocol_version": "Version 8.0 / 24 January 2024",
+          "institution": "University of Miami",
+          "pi": "Frances Valdes-Albini, MD",
+          "items": [
+            {
+              "item": "Informed Consent Process",
+              "amount": 150.0
+            },
+            {
+              "item": "Medical History (including cancer diagnosis and treatment)",
+              "amount": 117.0
+            },
+            {
+              "item": "Demographic Information",
+              "amount": 45.0
+            },
+            {
+              "item": "Assessment of Eligibility Criteria",
+              "amount": 75.0
+            },
+            {
+              "item": "Physical Examination (including vital signs, weight)",
+              "amount": 435.0
+            },
+            {
+              "item": "ECOG Performance Status",
+              "amount": 35.0
+            },
+            {
+              "item": "Hematology (local lab)",
+              "amount": 45.0
+            },
+            {
+              "item": "Biochemistry (local lab)",
+              "amount": 90.0
+            },
+            {
+              "item": "Lipase",
+              "amount": 33.0
+            },
+            {
+              "item": "Urinalysis (local lab)",
+              "amount": 34.0
+            },
+            {
+              "item": "PT or INR & PTT or aPTT",
+              "amount": 49.0
+            },
+            {
+              "item": "D-dimer",
+              "amount": 92.0
+            },
+            {
+              "item": "Fibrinogen (local lab)",
+              "amount": 30.0
+            },
+            {
+              "item": "HBsAg",
+              "amount": 68.0
+            },
+            {
+              "item": "HBcAb",
+              "amount": 31.0
+            },
+            {
+              "item": "HBsAb",
+              "amount": 32.0
+            },
+            {
+              "item": "HepCAb",
+              "amount": 89.0
+            },
+            {
+              "item": "Triplicate ECG_Regimen A only",
+              "amount": 315.0
+            },
+            {
+              "item": "Trial Drug Administration BAL0891",
+              "amount": 289.0
+            },
+            {
+              "item": "BAL0891 PK sampling",
+              "amount": 75.0
+            },
+            {
+              "item": "Spec. Handling (use w/PK)",
+              "amount": 60.0
+            },
+            {
+              "item": "Trial drug administration Carboplatin (Substudy 2 only)",
+              "amount": 210.0
+            },
+            {
+              "item": "Blood sampling for: ANC",
+              "amount": 59.0
+            },
+            {
+              "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST",
+              "amount": 248.0
+            },
+            {
+              "item": "Adverse Events Assessment",
+              "amount": 51.0
+            },
+            {
+              "item": "Review Concomitant Medications",
+              "amount": 50.0
+            },
+            {
+              "item": "Long-term follow-up",
+              "amount": 54.0
+            },
+            {
+              "item": "Trial Coordinator Fee Per Visit",
+              "amount": 259.0
+            },
+            {
+              "item": "Principal Investigator's Fees without Exam Costs",
+              "amount": 311.0
+            },
+            {
+              "item": "Trial  Subject Reimbursement5",
+              "amount": 54.0
+            },
+            {
+              "item": "Trial Subject Meal Reimbursement5",
+              "amount": 14.77
+            },
+            {
+              "item": "Pharmacy Dispensing (BAL0891)",
+              "amount": 150.0
+            },
+            {
+              "item": "Data Entry (EDC)",
+              "amount": 105.0
+            },
+            {
+              "item": "Bed Fee, Day Only",
+              "amount": 100.0
+            },
+            {
+              "item": "Total Cost Per Trial Subject",
+              "amount": 90079.37
+            }
+          ],
+          "n_files": 2
+        },
+        {
+          "version": "CTA AMD#3_PA9",
+          "effective_date": "2025-04-30",
+          "protocol_version": "Version 9.0 / 08Jul2024",
+          "institution": "University of Miami",
+          "pi": "Frances Valdes-Albini, MD",
+          "items": [
+            {
+              "item": "Informed Consent Process",
+              "amount": 150.0
+            },
+            {
+              "item": "Medical History (including cancer diagnosis and treatment)",
+              "amount": 117.0
+            },
+            {
+              "item": "Demographic Information",
+              "amount": 45.0
+            },
+            {
+              "item": "Assessment of Eligibility Criteria",
+              "amount": 75.0
+            },
+            {
+              "item": "Physical Examination (including vital signs, weight)",
+              "amount": 435.0
+            },
+            {
+              "item": "ECOG Performance Status",
+              "amount": 35.0
+            },
+            {
+              "item": "Required liquid biopsy",
+              "amount": 169.0
+            },
+            {
+              "item": "Hematology (local lab)",
+              "amount": 45.0
+            },
+            {
+              "item": "Biochemistry (local lab)",
+              "amount": 90.0
+            },
+            {
+              "item": "Lipase (local lab)",
+              "amount": 33.0
+            },
+            {
+              "item": "Urinalysis (local lab)",
+              "amount": 34.0
+            },
+            {
+              "item": "PT or INR & PTT or aPTT (local lab)",
+              "amount": 49.0
+            },
+            {
+              "item": "D-dimer (local lab)",
+              "amount": 92.0
+            },
+            {
+              "item": "Fibrinogen (local lab)",
+              "amount": 30.0
+            },
+            {
+              "item": "HBsAg (local lab)",
+              "amount": 68.0
+            },
+            {
+              "item": "HBcAb (local lab)",
+              "amount": 31.0
+            },
+            {
+              "item": "HBsAb (local lab)",
+              "amount": 32.0
+            },
+            {
+              "item": "HepCAb (local lab)",
+              "amount": 89.0
+            },
+            {
+              "item": "Triplicate ECG",
+              "amount": 315.0
+            },
+            {
+              "item": "Trial Drug Administration BAL0891",
+              "amount": 289.0
+            },
+            {
+              "item": "BAL0891 PK sampling",
+              "amount": 75.0
+            },
+            {
+              "item": "Spec. Handling (use w/PK)",
+              "amount": 60.0
+            },
+            {
+              "item": "Blood sampling for: ANC",
+              "amount": 59.0
+            },
+            {
+              "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST",
+              "amount": 248.0
+            },
+            {
+              "item": "Adverse Events Assessment",
+              "amount": 51.0
+            },
+            {
+              "item": "Review Concomitant Medications",
+              "amount": 50.0
+            },
+            {
+              "item": "Long-term follow-up",
+              "amount": 54.0
+            },
+            {
+              "item": "Trial Coordinator Fee Per Visit",
+              "amount": 259.0
+            },
+            {
+              "item": "Principal Investigator's Fees without Exam Costs",
+              "amount": 311.0
+            },
+            {
+              "item": "Trial Subject Reimbursement 2",
+              "amount": 54.0
+            },
+            {
+              "item": "Trial Subject Meal Reimbursement 2",
+              "amount": 14.77
+            },
+            {
+              "item": "Pharmacy Dispensing (BAL0891)",
+              "amount": 150.0
+            },
+            {
+              "item": "Data Entry (EDC)",
+              "amount": 105.0
+            },
+            {
+              "item": "Bed Fee, Day Only",
+              "amount": 100.0
+            },
+            {
+              "item": "Total Cost Per Trial Subject",
+              "amount": 92177.85
+            },
+            {
+              "item": "Lipase",
+              "amount": 33.0
+            },
+            {
+              "item": "PT or INR & PTT or aPTT",
+              "amount": 49.0
+            },
+            {
+              "item": "D-dimer",
+              "amount": 92.0
+            },
+            {
+              "item": "HBsAg",
+              "amount": 68.0
+            },
+            {
+              "item": "HBcAb",
+              "amount": 31.0
+            },
+            {
+              "item": "HBsAb",
+              "amount": 32.0
+            },
+            {
+              "item": "HepCAb",
+              "amount": 89.0
+            },
+            {
+              "item": "Triplicate ECG_Regimen A only",
+              "amount": 315.0
+            },
+            {
+              "item": "HBsAg qualitative (local lab)",
+              "amount": 68.0
+            },
+            {
+              "item": "Hepatitis B Core Antibody (HBcAb) (local lab)",
+              "amount": 31.0
+            },
+            {
+              "item": "Hep B Surf Ab (HBsAb) (local lab)",
+              "amount": 32.0
+            },
+            {
+              "item": "Hepatitis C Antibody (HCVAb) (local lab)",
+              "amount": 89.0
+            },
+            {
+              "item": "Triplicate ECG w/ Interpret. & Report",
+              "amount": 315.0
+            },
+            {
+              "item": "Bed Fee: Day Only; Per Visit",
+              "amount": 100.0
+            },
+            {
+              "item": "Physical Examination (including vital signs, height and weight)",
+              "amount": 435.0
+            },
+            {
+              "item": "Hepatitis B Core Antibody HBcAb (local lab)",
+              "amount": 31.0
+            },
+            {
+              "item": "Hep B Surf Ab HBsAb (local lab)",
+              "amount": 32.0
+            },
+            {
+              "item": "Hepatitis C antibody (HCVAb) (local lab)",
+              "amount": 89.0
+            },
+            {
+              "item": "BAL0891 and Paclitaxel PK sampling",
+              "amount": 75.0
+            },
+            {
+              "item": "Trial drug administration Paclitaxel",
+              "amount": 699.0
+            },
+            {
+              "item": "Physician's Fees without Exam Costs",
+              "amount": 311.0
+            },
+            {
+              "item": "Pharmacy Dispensing (Paclitaxel)",
+              "amount": 150.0
+            }
+          ],
+          "n_files": 2
+        },
+        {
+          "version": "CTA AMD#4_PA13",
+          "effective_date": "2025-07-16",
+          "protocol_version": "Version 13.0 /21Apr2025",
+          "institution": "University of Miami",
+          "pi": "Frances Valdes-Albini, MD",
+          "items": [
+            {
+              "item": "Informed Consent Process",
+              "amount": 150.0
+            },
+            {
+              "item": "Medical History (including cancer diagnosis and treatment)",
+              "amount": 117.0
+            },
+            {
+              "item": "Demographic Information",
+              "amount": 45.0
+            },
+            {
+              "item": "Assessment of Eligibility Criteria",
+              "amount": 75.0
+            },
+            {
+              "item": "Physical Examination (including vital signs, weight)",
+              "amount": 435.0
+            },
+            {
+              "item": "ECOG Performance Status",
+              "amount": 35.0
+            },
+            {
+              "item": "Required liquid biopsy",
+              "amount": 169.0
+            },
+            {
+              "item": "Hematology (local lab)",
+              "amount": 45.0
+            },
+            {
+              "item": "Biochemistry (local lab)",
+              "amount": 90.0
+            },
+            {
+              "item": "Lipase (local lab)",
+              "amount": 33.0
+            },
+            {
+              "item": "Urinalysis (local lab)",
+              "amount": 34.0
+            },
+            {
+              "item": "PT or INR & PTT or aPTT (local lab)",
+              "amount": 49.0
+            },
+            {
+              "item": "D-dimer (local lab)",
+              "amount": 92.0
+            },
+            {
+              "item": "Fibrinogen (local lab)",
+              "amount": 30.0
+            },
+            {
+              "item": "HBsAg (local lab)",
+              "amount": 68.0
+            },
+            {
+              "item": "HBcAb (local lab)",
+              "amount": 31.0
+            },
+            {
+              "item": "HBsAb (local lab)",
+              "amount": 32.0
+            },
+            {
+              "item": "HepCAb (local lab)",
+              "amount": 89.0
+            },
+            {
+              "item": "Triplicate ECG",
+              "amount": 315.0
+            },
+            {
+              "item": "Trial Drug Administration BAL0891",
+              "amount": 289.0
+            },
+            {
+              "item": "BAL0891 PK sampling",
+              "amount": 75.0
+            },
+            {
+              "item": "Spec. Handling (use w/PK)",
+              "amount": 60.0
+            },
+            {
+              "item": "Blood sampling for: ANC",
+              "amount": 59.0
+            },
+            {
+              "item": "Tumor imaging assessments: Tumor Response Criteria, RECIST",
+              "amount": 248.0
+            },
+            {
+              "item": "Adverse Events Assessment",
+              "amount": 51.0
+            },
+            {
+              "item": "Review Concomitant Medications",
+              "amount": 50.0
+            },
+            {
+              "item": "Long-term follow-up",
+              "amount": 54.0
+            },
+            {
+              "item": "Trial Coordinator Fee Per Visit",
+              "amount": 259.0
+            },
+            {
+              "item": "Principal Investigator's Fees without Exam Costs",
+              "amount": 311.0
+            },
+            {
+              "item": "Trial Subject Reimbursement 2",
+              "amount": 54.0
+            },
+            {
+              "item": "Trial Subject Meal Reimbursement 2",
+              "amount": 14.77
+            },
+            {
+              "item": "Pharmacy Dispensing (BAL0891)",
+              "amount": 150.0
+            },
+            {
+              "item": "Data Entry (EDC)",
+              "amount": 105.0
+            },
+            {
+              "item": "Bed Fee, Day Only",
+              "amount": 100.0
+            },
+            {
+              "item": "Total Cost Per Trial Subject",
+              "amount": 92177.85
+            },
+            {
+              "item": "Lipase",
+              "amount": 33.0
+            },
+            {
+              "item": "PT or INR & PTT or aPTT",
+              "amount": 49.0
+            },
+            {
+              "item": "D-dimer",
+              "amount": 92.0
+            },
+            {
+              "item": "HBsAg",
+              "amount": 68.0
+            },
+            {
+              "item": "HBcAb",
+              "amount": 31.0
+            },
+            {
+              "item": "HBsAb",
+              "amount": 32.0
+            },
+            {
+              "item": "HepCAb",
+              "amount": 89.0
+            },
+            {
+              "item": "Triplicate ECG_Regimen A only",
+              "amount": 315.0
+            },
+            {
+              "item": "HBsAg qualitative (local lab)",
+              "amount": 68.0
+            },
+            {
+              "item": "Hepatitis B Core Antibody (HBcAb) (local lab)",
+              "amount": 31.0
+            },
+            {
+              "item": "Hep B Surf Ab (HBsAb) (local lab)",
+              "amount": 32.0
+            },
+            {
+              "item": "Hepatitis C Antibody (HCVAb) (local lab)",
+              "amount": 89.0
+            },
+            {
+              "item": "Triplicate ECG w/ Interpret. & Report",
+              "amount": 315.0
+            },
+            {
+              "item": "Bed Fee: Day Only; Per Visit",
+              "amount": 100.0
+            },
+            {
+              "item": "Physical Examination (including vital signs, height and weight)",
+              "amount": 435.0
+            },
+            {
+              "item": "Hepatitis B Core Antibody HBcAb (local lab)",
+              "amount": 31.0
+            },
+            {
+              "item": "Hep B Surf Ab HBsAb (local lab)",
+              "amount": 32.0
+            },
+            {
+              "item": "Hepatitis C antibody (HCVAb) (local lab)",
+              "amount": 89.0
+            },
+            {
+              "item": "BAL0891 and Paclitaxel PK sampling",
+              "amount": 75.0
+            },
+            {
+              "item": "Trial drug administration Paclitaxel",
+              "amount": 699.0
+            },
+            {
+              "item": "Physician's Fees without Exam Costs",
+              "amount": 311.0
+            },
+            {
+              "item": "Pharmacy Dispensing (Paclitaxel)",
+              "amount": 150.0
+            }
+          ],
+          "n_files": 2
+        }
+      ],
+      "source_folder": "Site 541"
     },
     "542": {
       "name": "Hoag Memorial Hospital Presbyterian",
@@ -2107,19 +3167,160 @@
     },
     "545": {
       "name": "Emory University",
-      "ctas": []
+      "ctas": [
+        {
+          "version": "Initial",
+          "effective_date": "2025-11-26",
+          "protocol_version": null,
+          "institution": null,
+          "pi": null,
+          "items": [],
+          "n_files": 2
+        }
+      ],
+      "source_folder": "Site 545"
     },
     "550": {
-      "name": "The University of Texas, MD Anderson Cancer Center",
-      "ctas": []
+      "name": "The University of Texas M.D. Anderson Cancer Center",
+      "ctas": [
+        {
+          "version": "Initial",
+          "effective_date": null,
+          "protocol_version": "Version 13.0 / 21Apr2025",
+          "institution": "The University of Texas M.D. Anderson Cancer Center",
+          "pi": "Courtney DiNardo",
+          "items": [
+            {
+              "item": "Informed Consent Process",
+              "amount": 250.0
+            },
+            {
+              "item": "Medical History (including cancer diagnosis and treatment)",
+              "amount": 117.0
+            },
+            {
+              "item": "Demographic Information",
+              "amount": 45.0
+            },
+            {
+              "item": "Assessment of Eligibility Criteria",
+              "amount": 80.0
+            },
+            {
+              "item": "ECOG Performance Status",
+              "amount": 50.0
+            },
+            {
+              "item": "Amylase (local lab)",
+              "amount": 30.49
+            },
+            {
+              "item": "Lipase (local lab)",
+              "amount": 48.2
+            },
+            {
+              "item": "C-reactive protein (CRP) (local lab)",
+              "amount": 57.68
+            },
+            {
+              "item": "Ferritin (local lab)",
+              "amount": 87.76
+            },
+            {
+              "item": "Triplicate ECG w/ Interpret. & Report",
+              "amount": 180.0
+            },
+            {
+              "item": "BAL0891 PK sampling",
+              "amount": 100.0
+            },
+            {
+              "item": "Peripheral blood",
+              "amount": 180.0
+            },
+            {
+              "item": "Biopsy; Staining and preparation of the samples including shipping and handling to central lab",
+              "amount": 300.0
+            },
+            {
+              "item": "ELN 2022 Disease response assessment",
+              "amount": 248.0
+            },
+            {
+              "item": "Adverse Events Assessment",
+              "amount": 60.0
+            },
+            {
+              "item": "Review Concomitant Medications",
+              "amount": 56.0
+            },
+            {
+              "item": "Long-term follow-up",
+              "amount": 65.0
+            },
+            {
+              "item": "Trial Coordinator Fee Per Visit",
+              "amount": 452.6
+            },
+            {
+              "item": "Principal Investigator's Fees without Exam Costs",
+              "amount": 401.26
+            },
+            {
+              "item": "Pharmacy Dispensing (BAL0891)",
+              "amount": 123.0
+            },
+            {
+              "item": "Data Entry (EDC)",
+              "amount": 301.73
+            },
+            {
+              "item": "Leukemia Dept core fee",
+              "amount": 179.49
+            },
+            {
+              "item": "Patient registration fee",
+              "amount": 250.0
+            },
+            {
+              "item": "Total Cost Per Trial Subject",
+              "amount": 76999.99
+            }
+          ],
+          "n_files": 2
+        }
+      ],
+      "source_folder": "Site 550"
     },
     "551": {
       "name": "Yale-New Haven Hospital- Yale Cancer Center",
-      "ctas": []
+      "ctas": [
+        {
+          "version": "Initial",
+          "effective_date": "2025-12-15",
+          "protocol_version": null,
+          "institution": null,
+          "pi": null,
+          "items": [],
+          "n_files": 1
+        }
+      ],
+      "source_folder": "Site 551"
     },
     "552": {
       "name": "Weill Medical College of Cornell University",
-      "ctas": []
+      "ctas": [
+        {
+          "version": "Initial",
+          "effective_date": "2025-12-31",
+          "protocol_version": null,
+          "institution": null,
+          "pi": null,
+          "items": [],
+          "n_files": 1
+        }
+      ],
+      "source_folder": "Site 552"
     },
     "821": {
       "name": "Seoul National University Hospital",
