@@ -12,10 +12,45 @@ data/source/cta/Site <번호>/<버전 폴더>/... 구조를 스캔해서 site �
 새 site 는 data/source/cta/ 에 'Site <번호>' 폴더째 넣으면 자동 인식된다.
 """
 import re
+import shutil
 import datetime
+import tempfile
+import subprocess
 from pathlib import Path
 
 import openpyxl
+
+XLS_EXTS = (".xlsx", ".xlsm", ".xls")
+
+
+def open_workbook(path):
+    """budget 엑셀 열기. .xls(실제로는 xlsx인 파일 포함) 도 처리.
+    1) .xlsx/.xlsm → 그대로
+    2) .xls → 복사 후 .xlsx 로 시도(확장자만 다른 경우 대부분 성공)
+    3) 실패 시 libreoffice 로 xlsx 변환
+    """
+    p = Path(path)
+    if p.suffix.lower() in (".xlsx", ".xlsm"):
+        return openpyxl.load_workbook(path, data_only=True)
+    tmp = tempfile.NamedTemporaryFile(suffix=".xlsx", delete=False)
+    tmp.close()
+    shutil.copy(path, tmp.name)
+    try:
+        return openpyxl.load_workbook(tmp.name, data_only=True)
+    except Exception:
+        pass
+    # libreoffice 변환 (진짜 레거시 .xls)
+    outdir = tempfile.mkdtemp()
+    try:
+        subprocess.run(["libreoffice", "--headless", "--convert-to", "xlsx",
+                        "--outdir", outdir, str(path)],
+                       capture_output=True, timeout=120)
+        conv = list(Path(outdir).glob("*.xlsx"))
+        if conv:
+            return openpyxl.load_workbook(conv[0], data_only=True)
+    except Exception:
+        pass
+    raise ValueError(f"cannot open {path.name}")
 
 MONTHS = {m: i + 1 for i, m in enumerate(
     ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"])}
@@ -57,7 +92,7 @@ def extract_items(path):
     items = {}
     meta = {}
     try:
-        wb = openpyxl.load_workbook(path, data_only=True, read_only=False)
+        wb = open_workbook(path)
     except Exception:
         return items, meta
     for ws in wb.worksheets:
@@ -100,7 +135,7 @@ def _cta_from_files(version, files):
     eff = max(dates).isoformat() if dates else None
     items, meta = {}, {}
     for f in files:
-        if f.suffix.lower() == ".xlsx":
+        if f.suffix.lower() in XLS_EXTS and not f.name.startswith("~"):
             it, mt = extract_items(f)
             items.update(it)
             if mt and not meta:
@@ -127,7 +162,8 @@ def parse_site_folder(site_dir):
     if subdirs:
         # 버전 폴더별 1개 CTA. site 루트의 낱개 문서(NL/노트 등)는 무시.
         for ver_dir in subdirs:
-            ctas.append(_cta_from_files(ver_dir.name, list(ver_dir.rglob("*"))))
+            ver = re.sub(r"^\d+\.\s*", "", ver_dir.name).strip()  # "1. Initial" → "Initial"
+            ctas.append(_cta_from_files(ver, list(ver_dir.rglob("*"))))
     else:
         # 하위폴더 없음 = 초기 CTA만 → site 루트 파일을 하나의 CTA로
         root_files = [f for f in site_dir.iterdir() if f.is_file()]
