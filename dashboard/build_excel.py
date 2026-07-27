@@ -266,17 +266,58 @@ for s in sites_cta:
 sheet("A. CTA 변경이력", ["CTA Version", "Effective Date", "Protocol Ver.", "항목수", "Δ항목"],
       rowsA, widths=[44, 16, 28, 10, 10], numcols={4: "int"})
 
-# ============================================================ A2. CTA 항목별비용
-rowsAI = []
+# ============================================================ A2. CTA 항목별비용 (피벗: 행=항목, 열=CTA 버전)
+wsA2 = wb.create_sheet("A2. CTA 항목별비용")
+wsA2.sheet_view.showGridLines = False
+wsA2["A1"] = "CTA 항목별 비용 — 버전별 비교 (음영 = 직전 버전 대비 단가 변경)"
+wsA2["A1"].font = Font(name=FONT, size=12, bold=True, color="0D7680")
+a2r = 3
+a2maxcols = 2
 for s in sites_cta:
     cur = site_cur(s)
-    for c in sorted(scts[s]["ctas"], key=lambda c: c.get("effective_date") or ""):
-        for it in c.get("items", []):
-            rowsAI.append({"Site#": s, "Cur": cur, "CTA Version": c["version"],
-                           "Effective": c.get("effective_date") or "—",
-                           "항목(Trial Procedure)": it.get("item"), "Selected Cost": it.get("amount")})
-sheet("A2. CTA 항목별비용", ["Site#", "Cur", "CTA Version", "Effective", "항목(Trial Procedure)", "Selected Cost"],
-      rowsAI, widths=[7, 6, 26, 12, 60, 16], money_cols={6: "Cur"})
+    versions = [c for c in sorted(scts[s]["ctas"], key=lambda c: c.get("effective_date") or "") if c.get("items")]
+    if not versions:
+        continue
+    a2maxcols = max(a2maxcols, 1 + len(versions))
+    proc_order, seen, costmap = [], set(), {}
+    for vi, c in enumerate(versions):
+        for it in c["items"]:
+            nm = it["item"]
+            if nm not in seen:
+                seen.add(nm); proc_order.append(nm)
+            costmap.setdefault(nm, {})[vi] = it.get("amount")
+    hc = wsA2.cell(a2r, 1, f"Site {s} — {site_name(s)}  ·  통화 {cur}")
+    hc.font = Font(name=FONT, size=11, bold=True, color="0D7680"); a2r += 1
+    c0 = wsA2.cell(a2r, 1, "항목 (Trial Procedure)"); c0.fill = HDR_FILL; c0.font = HDR_FONT; c0.border = BORDER
+    c0.alignment = Alignment(vertical="center", wrap_text=True)
+    for vi, c in enumerate(versions):
+        cc = wsA2.cell(a2r, 2 + vi, f"{c['version']}\n{c.get('effective_date') or '—'}")
+        cc.fill = HDR_FILL; cc.font = HDR_FONT; cc.border = BORDER
+        cc.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    a2r += 1
+    for nm in proc_order:
+        rc = wsA2.cell(a2r, 1, nm); rc.font = BASE; rc.border = BORDER
+        rc.alignment = Alignment(vertical="center", wrap_text=True)
+        prev = None
+        for vi, c in enumerate(versions):
+            cost = costmap[nm].get(vi)
+            cell = wsA2.cell(a2r, 2 + vi); cell.border = BORDER; cell.font = BASE
+            cell.alignment = Alignment(horizontal="right")
+            if isinstance(cost, (int, float)):
+                cell.value = cost; cell.number_format = money_fmt(cur)
+                if isinstance(prev, (int, float)) and abs(cost - prev) > 0.005:
+                    cell.fill = SHADE["warn"]
+                prev = cost
+            elif cost is not None:
+                cell.value = str(cost); prev = None
+            else:
+                cell.value = "—"
+        a2r += 1
+    a2r += 1
+wsA2.column_dimensions["A"].width = 52
+for j in range(2, a2maxcols + 1):
+    wsA2.column_dimensions[get_column_letter(j)].width = 16
+wsA2.freeze_panes = "B3"
 
 # ============================================================ B. 지급원장 (계약대조 포함 — req1,3)
 rowsB = []
