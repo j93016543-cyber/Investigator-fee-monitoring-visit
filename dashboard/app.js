@@ -137,11 +137,23 @@ function renderA(p, fees, invs){
     const ctas=ctaList(s); const eff=ctaAt(s, null);
     let ctaTbl;
     if(ctas.length){
-      const crows=ctas.slice().sort((a,b)=>String(a.effective_date).localeCompare(b.effective_date))
-        .map(c=>({v:c.version, e:c.effective_date, n:(c.items||[]).length, _cls:(eff&&c.version===eff.version)?'eff':''}));
-      ctaTbl=tableFrom([{k:'v',h:'CTA Version'},{k:'e',h:'Effective Date'},{k:'n',h:'항목 수',num:true}], crows);
+      const sorted=ctas.slice().sort((a,b)=>String(a.effective_date).localeCompare(b.effective_date));
+      const crows=sorted.map(c=>({v:c.version, e:c.effective_date, pv:c.protocol_version||'', n:(c.items||[]).length, _cls:(eff&&c.version===eff.version)?'eff':''}));
+      const verTbl=tableFrom([{k:'v',h:'CTA Version'},{k:'e',h:'Effective Date'},{k:'pv',h:'Protocol Ver.'},{k:'n',h:'항목 수',num:true}], crows);
+      // 항목별 비용 뷰어
+      const selVer=el('select',{}, sorted.map(c=>el('option',{value:c.version, selected: eff&&c.version===eff.version?'selected':null},`${c.version} (${c.effective_date||'—'})`)));
+      const itemsBox=el('div',{});
+      function drawItems(){ itemsBox.innerHTML='';
+        const c=sorted.find(x=>x.version===selVer.value)||sorted[sorted.length-1];
+        const its=(c.items||[]).map(i=>({i:i.item, a: (typeof i.amount==='number')?usd2(i.amount):(i.amount||'—')}));
+        itemsBox.append(tableFrom([{k:'i',h:'항목 (Trial Procedure)'},{k:'a',h:'Selected Cost(USD)',num:true}], its, {tall:true}));
+      }
+      selVer.onchange=drawItems; drawItems();
+      ctaTbl=el('div',{},[verTbl,
+        el('div',{class:'controls',style:'margin-top:12px'},[el('span',{class:'small muted'},'항목 보기:'),selVer]),
+        itemsBox]);
     } else {
-      ctaTbl=el('div',{class:'note pending',html:'<span>⚠️</span><div><b>이 site의 CTA 미입력:</b> <code>data/site_cta.json</code> 의 해당 site <code>ctas</code> 배열에 <code>{version, effective_date, items:[{item,amount}]}</code> 를 추가하면 A/B/C에 자동 반영됩니다.</div>'});
+      ctaTbl=el('div',{class:'note pending',html:'<span>⚠️</span><div><b>이 site의 CTA 미입력:</b> <code>data/source/cta/Site '+s+'/</code> 폴더에 버전별 계약서를 넣거나, <code>data/site_cta.json</code> 에 수기 입력하면 A/B/C에 자동 반영됩니다.</div>'});
     }
     const qs={}; sf.forEach(x=>{ const k=qkey(x.payment_date); if(!k) return; (qs[k]=qs[k]||{fee:0,feeK:0,inv:0,dates:[]}); if(x.currency==='KRW') qs[k].feeK+=x.amount||0; else qs[k].fee+=x.amount||0; if(x.payment_date) qs[k].dates.push(x.payment_date); });
     si.forEach(x=>{ const k=qkey(x.payment_date); if(!k) return; (qs[k]=qs[k]||{fee:0,feeK:0,inv:0,dates:[]}); qs[k].inv=(qs[k].inv||0)+(x.currency==='KRW'?0:x.amount||0); });

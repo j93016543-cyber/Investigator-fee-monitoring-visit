@@ -495,14 +495,29 @@ def main():
             sites.setdefault(str(v["site"]), {"name": v.get("account"), "country": v.get("country")})
     store["sites"] = sites
 
-    # CTA(기관 임상시험계약) 레지스트리 - 사용자가 편집하는 파일
+    # CTA(기관 임상시험계약) 레지스트리
+    #  - data/source/cta/Site <번호>/ 폴더가 있으면 자동 파싱(폴더 우선)
+    #  - 폴더가 없는 site 는 site_cta.json 의 수기 입력값 유지
+    import cta as cta_mod  # noqa: E402
     cta_path = ROOT / "data" / "site_cta.json"
-    if not cta_path.exists():
-        seed = {"_comment": "각 site의 CTA(기관 임상시험계약) 버전을 채우면 연구비 A/B/C에 자동 반영됩니다. "
-                            "각 site의 ctas 배열에 {version, effective_date, items:[{item,amount}]} 를 추가하세요.",
-                "sites": {s: {"name": (sites[s] or {}).get("name"), "ctas": []} for s in sorted(sites)}}
-        cta_path.write_text(json.dumps(seed, ensure_ascii=False, indent=2), encoding="utf-8")
-    store["site_cta"] = json.loads(cta_path.read_text(encoding="utf-8"))
+    existing = json.loads(cta_path.read_text(encoding="utf-8")) if cta_path.exists() else {}
+    reg = existing.get("sites", {}) if isinstance(existing, dict) else {}
+    # 폴더 자동 파싱
+    parsed = cta_mod.parse_cta_root(SRC / "cta")
+    cta_source = {}
+    for s in sorted(set(sites) | set(reg) | set(parsed)):
+        if s in parsed:
+            entry = parsed[s]
+            entry["name"] = entry.get("name") or (sites.get(s) or {}).get("name") or (reg.get(s) or {}).get("name")
+            cta_source[s] = entry
+        else:
+            cta_source[s] = reg.get(s) or {"name": (sites.get(s) or {}).get("name"), "ctas": []}
+    out = {"_comment": "CTA(기관 임상시험계약). data/source/cta/Site <번호>/ 폴더는 자동 파싱(폴더 우선). "
+                       "폴더가 없는 site 는 여기 ctas 배열에 {version, effective_date, items:[{item,amount}]} 수기 입력.",
+           "sites": cta_source}
+    cta_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+    store["site_cta"] = out
+    store["cta_counts"] = {s: len(v.get("ctas", [])) for s, v in cta_source.items() if v.get("ctas")}
 
     store["meta"] = {
         "protocol": "TTK-CS-101",

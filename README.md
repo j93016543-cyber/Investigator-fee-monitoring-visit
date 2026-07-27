@@ -63,10 +63,25 @@ dashboard/index.html  최종 대시보드 (Artifact)
 
 **모니터링 탭** — 계약 대비 visit 잔여 / D: 모니터링 계약·단가 / E: CRA 경비 / F: CRA Site Visit Report
 
-### CTA (기관 임상시험계약) 입력
-site별 CTA는 IQVIA WO(CRO 계약)와 별개입니다. `data/site_cta.json` 의 각 site `ctas` 배열에
-`{"version":"CTA v1.0","effective_date":"2024-01-15","items":[{"item":"C1D1","amount":1900}]}`
-형식으로 추가하면 A/B/C 의 "effective CTA version / date" 가 방문·지급일 시점 기준으로 자동 채워집니다.
+### CTA (기관 임상시험계약) 입력 — 폴더 자동 파싱
+site별 CTA는 IQVIA WO(CRO 계약)와 별개입니다. 두 가지 방법:
+
+**① 폴더 통째로 (권장)** — `data/source/cta/Site <번호>/<버전 폴더>/` 구조로 넣고 `ingest.py` 실행:
+```
+data/source/cta/
+  Site 537/
+    Initial/                 ← CTA + budget 엑셀
+    Amd1_PA V7.0/
+    CTA AMD#2_PA8/
+    CTA AMD#3_PA9&PA13/
+```
+`ingest/cta.py` 가 각 버전 폴더에서 **version(폴더명)·effective date(파일명 날짜)·Protocol version·기관·PI·항목별 비용(budget 엑셀)** 을 자동 추출해 `data/site_cta.json` 에 기록합니다.
+(원본 계약서 파일은 용량이 커서 git 제외 — `.gitignore`. 추출된 `site_cta.json` 만 커밋됩니다.)
+
+**② 수기 입력** — 폴더가 없는 site 는 `data/site_cta.json` 의 `sites.<번호>.ctas` 배열에
+`{"version":"CTA v1.0","effective_date":"2024-01-15","items":[{"item":"...","amount":1900}]}` 추가.
+
+→ A/B/C 의 "effective CTA version / date" 가 방문·지급일 시점 기준으로 자동 매칭됩니다.
 
 ## 음영(shading) 검증 규칙
 
