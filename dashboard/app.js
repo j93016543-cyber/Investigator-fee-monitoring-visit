@@ -17,44 +17,42 @@ function money(v, cur, dp){ if(v==null) return '—';
 const normName = s => String(s||'').toLowerCase().replace(/[\s,]/g,'');
 const C = DATA.contract;
 
-/* ---------- contract reference amounts / helpers ---------- */
-const REFS = [];
-(C.payment_schedule||[]).forEach(p=>REFS.push(Math.abs(p.amount)));
-(C.wo_budget||[]).forEach(b=>{ if(b.total) REFS.push(Math.abs(b.total)); });
-(C.investigator_rates||[]).forEach(r=>{ REFS.push(r.total); REFS.push(r.cost_per_unit); });
-function matchContract(amount){ if(amount==null) return null; const a=Math.abs(amount);
-  return REFS.some(r=> Math.abs(a-r) <= Math.max(1, r*0.005)) ? 'good' : 'warn'; }
+/* ---------- contract refs / helpers ---------- */
 const VERS=(C.versions||[]).filter(v=>v.effective_date).slice().sort((a,b)=>a.effective_date.localeCompare(b.effective_date));
-function contractAt(date){ if(!date) return C.effective_version; let out=VERS[0];
-  for(const v of VERS){ if(v.effective_date<=date) out=v; } return out?out.version:C.effective_version; }
+function contractAt(date){ if(!date) return C.effective_version; let out=VERS[0]; for(const v of VERS){ if(v.effective_date<=date) out=v; } return out?out.version:C.effective_version; }
 function daysBetween(a,b){ if(!a||!b) return 1e9; return Math.abs((new Date(a)-new Date(b))/86400000); }
+function siteName(s){ const o=(DATA.sites||{})[String(s)]; return o&&o.name?o.name:''; }
+function ctaList(site){ const sc=(DATA.site_cta||{}).sites||{}; return (sc[String(site)]||{}).ctas||[]; }
+function ctaAt(site, date){ const arr=ctaList(site).filter(c=>c.effective_date).slice().sort((a,b)=>a.effective_date.localeCompare(b.effective_date));
+  if(!arr.length) return null; if(!date) return arr[arr.length-1]; let out=null; for(const c of arr){ if(c.effective_date<=date) out=c; } return out||arr[0]; }
+function realDate(d){ return (d && !String(d).startsWith('2000-01-01'))? d : ''; }
+function parseVisit(v){ if(!v) return {label:'', order:99999};
+  if(/screen/i.test(v)) return {label:'Screening', order:0};
+  const m=String(v).match(/C(\d+)\s*[_ ]?D([0-9]+(?:_[0-9A-Za-z]+)?)/i);
+  if(m){ const cyc=+m[1], dn=parseInt(m[2],10)||0; return {label:`C${cyc}D${m[2]}`, order:cyc*1000+dn}; }
+  return {label:String(v).replace(/^BF\s*V[\d_]+_P\d+S\d+_?/,'').trim()||String(v), order:98000}; }
+function qkey(d){ if(!d) return null; const y=+d.slice(0,4), m=+d.slice(5,7); return `${y} ${Math.floor((m-1)/3)+1}Q`; }
 
 /* ---------- SVG charts ---------- */
 const TT = $('#tt');
 function showTT(html, ev){ TT.innerHTML=html; TT.style.opacity=1;
-  const p=8, w=TT.offsetWidth, h=TT.offsetHeight;
-  let x=ev.clientX+14, y=ev.clientY+14;
-  if(x+w>innerWidth-p) x=ev.clientX-w-14; if(y+h>innerHeight-p) y=ev.clientY-h-14;
-  TT.style.left=x+'px'; TT.style.top=y+'px'; }
+  const p=8, w=TT.offsetWidth, h=TT.offsetHeight; let x=ev.clientX+14, y=ev.clientY+14;
+  if(x+w>innerWidth-p) x=ev.clientX-w-14; if(y+h>innerHeight-p) y=ev.clientY-h-14; TT.style.left=x+'px'; TT.style.top=y+'px'; }
 function hideTT(){ TT.style.opacity=0; }
 const SVGNS='http://www.w3.org/2000/svg';
 const sv = (t,a={}) => { const n=document.createElementNS(SVGNS,t); for(const k in a) n.setAttribute(k,a[k]); return n; };
 function barChart(host, {labels, series, yfmt=usd, height=260}){
-  const W=Math.max(560, labels.length*Math.max(64, series.length*26+30)), H=height;
-  const m={t:16,r:14,b:46,l:64}, iw=W-m.l-m.r, ih=H-m.t-m.b;
+  const W=Math.max(560, labels.length*Math.max(64, series.length*26+30)), H=height, m={t:16,r:14,b:46,l:64}, iw=W-m.l-m.r, ih=H-m.t-m.b;
   const max=Math.max(1,...series.flatMap(s=>s.vals.map(v=>v||0)));
-  const svg=sv('svg',{viewBox:`0 0 ${W} ${H}`,width:W,height:H,role:'img'});
-  const g=sv('g',{transform:`translate(${m.l},${m.t})`}); svg.append(g);
+  const svg=sv('svg',{viewBox:`0 0 ${W} ${H}`,width:W,height:H,role:'img'}); const g=sv('g',{transform:`translate(${m.l},${m.t})`}); svg.append(g);
   const gg=sv('g',{class:'grid'}); g.append(gg);
-  for(let i=0;i<=4;i++){ const y=ih-ih*i/4;
-    gg.append(sv('line',{x1:0,y1:y,x2:iw,y2:y,'stroke-width':1,opacity:i?.5:1}));
+  for(let i=0;i<=4;i++){ const y=ih-ih*i/4; gg.append(sv('line',{x1:0,y1:y,x2:iw,y2:y,'stroke-width':1,opacity:i?.5:1}));
     const tx=sv('text',{x:-10,y:y+4,'text-anchor':'end','font-size':11}); tx.textContent=yfmt(max*i/4); g.append(tx); }
   const bw=iw/labels.length, inner=Math.min(bw-14, series.length*30), sw=inner/series.length;
   labels.forEach((lab,i)=>{ const x0=i*bw+(bw-inner)/2;
     series.forEach((s,si)=>{ const v=s.vals[i]||0, bh=Math.max(0, ih*v/max), x=x0+si*sw, y=ih-bh;
       const r=sv('rect',{x:x+2,y,width:Math.max(0,sw-4),height:bh,rx:4,fill:s.color}); r.style.cursor='pointer';
-      r.addEventListener('mousemove',ev=>showTT(`<div class="tt-t">${lab}</div>${s.name}: <b>${yfmt(v)}</b>`,ev));
-      r.addEventListener('mouseleave',hideTT); g.append(r); });
+      r.addEventListener('mousemove',ev=>showTT(`<div class="tt-t">${lab}</div>${s.name}: <b>${yfmt(v)}</b>`,ev)); r.addEventListener('mouseleave',hideTT); g.append(r); });
     const tx=sv('text',{x:i*bw+bw/2,y:ih+18,'text-anchor':'middle','font-size':11}); tx.textContent=lab; g.append(tx); });
   const wrap=el('div',{class:'svg-wrap'}); wrap.append(svg); host.append(wrap);
 }
@@ -112,110 +110,160 @@ function renderFee(){
     kpi('IQVIA 지급 완료', usd(tm.paid_usd||st.paid), (st.pct_remaining!=null?`잔여 ${pct(st.pct_remaining)}`:''), tm.budget_usd?(tm.paid_usd/tm.budget_usd):null),
   ]));
 
-  // 분기별 trend
   const q=(DATA.quarterly||[]).filter(x=>x.vendor==='IQVIA'&&(x.planned||x.actual)).sort((a,b)=>a.year-b.year||a.quarter-b.quarter);
   const cb=el('div',{},[legend([{name:'Planned',color:'var(--s1)'},{name:'Actual',color:'var(--s2)'}])]);
   barChart(cb, {labels:q.map(x=>`'${String(x.year).slice(2)} Q${x.quarter}`), series:[
-    {name:'Planned',color:'var(--s1)',vals:q.map(x=>x.planned)},{name:'Actual',color:'var(--s2)',vals:q.map(x=>x.actual)},
-  ], yfmt:v=>'$'+(v/1e6).toFixed(v>=1e6?1:2)+'M'});
+    {name:'Planned',color:'var(--s1)',vals:q.map(x=>x.planned)},{name:'Actual',color:'var(--s2)',vals:q.map(x=>x.actual)}], yfmt:v=>'$'+(v/1e6).toFixed(v>=1e6?1:2)+'M'});
   p.append(card('TREND','분기별 지급 연구비 (IQVIA, USD)','계획 대비 실제 지급액 · 분기별',cb));
 
-  // A — 계약서 & 항목별 단가
+  renderA(p, fees, invs);
+  renderB(p, fees, invs);
+  renderC(p, fees, invs);
+  renderWO(p);
+}
+
+/* A — 기관별 CTA & 지급 요약 (Site별) */
+function renderA(p, fees, invs){
+  const sites=[...new Set([...fees,...invs].map(x=>x.site).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b)));
+  const ctrl=el('div',{class:'controls'});
+  const selSite=el('select',{}, sites.map(s=>el('option',{value:s},`Site ${s} — ${siteName(s)}`)));
+  ctrl.append(el('span',{class:'small muted'},'Site:'),selSite);
+  const holder=el('div',{});
+  function draw(){ holder.innerHTML='';
+    const s=selSite.value;
+    const sf=fees.filter(x=>String(x.site)===s), si=invs.filter(x=>String(x.site)===s);
+    const feeU=sum(sf.filter(x=>x.currency==='USD'),x=>x.amount), feeK=sum(sf.filter(x=>x.currency==='KRW'),x=>x.amount);
+    const invU=sum(si.filter(x=>x.currency==='USD'),x=>x.amount), invK=sum(si.filter(x=>x.currency==='KRW'),x=>x.amount);
+    const ctas=ctaList(s); const eff=ctaAt(s, null);
+    let ctaTbl;
+    if(ctas.length){
+      const crows=ctas.slice().sort((a,b)=>String(a.effective_date).localeCompare(b.effective_date))
+        .map(c=>({v:c.version, e:c.effective_date, n:(c.items||[]).length, _cls:(eff&&c.version===eff.version)?'eff':''}));
+      ctaTbl=tableFrom([{k:'v',h:'CTA Version'},{k:'e',h:'Effective Date'},{k:'n',h:'항목 수',num:true}], crows);
+    } else {
+      ctaTbl=el('div',{class:'note pending',html:'<span>⚠️</span><div><b>이 site의 CTA 미입력:</b> <code>data/site_cta.json</code> 의 해당 site <code>ctas</code> 배열에 <code>{version, effective_date, items:[{item,amount}]}</code> 를 추가하면 A/B/C에 자동 반영됩니다.</div>'});
+    }
+    const qs={}; sf.forEach(x=>{ const k=qkey(x.payment_date); if(!k) return; (qs[k]=qs[k]||{fee:0,feeK:0,inv:0,dates:[]}); if(x.currency==='KRW') qs[k].feeK+=x.amount||0; else qs[k].fee+=x.amount||0; if(x.payment_date) qs[k].dates.push(x.payment_date); });
+    si.forEach(x=>{ const k=qkey(x.payment_date); if(!k) return; (qs[k]=qs[k]||{fee:0,feeK:0,inv:0,dates:[]}); qs[k].inv=(qs[k].inv||0)+(x.currency==='KRW'?0:x.amount||0); });
+    const qrows=Object.keys(qs).sort().map(k=>{ const o=qs[k]; const ds=o.dates.filter(Boolean).sort();
+      return {q:k, pd: ds.length?(ds[0]+(ds[ds.length-1]!==ds[0]?' ~ '+ds[ds.length-1]:'')):'—',
+        fee:(o.fee?('$'+Math.round(o.fee).toLocaleString()):'')+((o.fee&&o.feeK)?' / ':'')+(o.feeK?('₩'+Math.round(o.feeK).toLocaleString()):'')||'—',
+        inv:o.inv?usd(o.inv):'—', _shade:{fee:'good'}}; });
+    holder.append(el('div',{class:'kpis'},[
+      kpi('Total Investigator fee (지급)', '$'+Math.round(feeU).toLocaleString(), feeK?`+ ₩${Math.round(feeK).toLocaleString()}`:''),
+      kpi('Total Invoiceable (지급)', invU?('$'+Math.round(invU).toLocaleString()):('₩'+Math.round(invK).toLocaleString()), `${si.length}건`),
+      kpi('현재 유효 CTA', eff?eff.version:'미입력', eff?('eff. '+eff.effective_date):'site_cta.json 입력'),
+      kpi('대상자 / 방문', new Set(sf.map(x=>x.patient)).size+'명', new Set(sf.map(x=>x.patient+'|'+x.visit)).size+' 방문'),
+    ]));
+    holder.append(el('h3',{class:'subh'},'적용 CTA (기관 임상시험계약)')); holder.append(ctaTbl);
+    holder.append(el('h3',{class:'subh'},'분기별 지급 (paid date 기준) — Investigator fee / Invoiceable'));
+    holder.append(tableFrom([{k:'q',h:'분기'},{k:'pd',h:'Paid date'},{k:'fee',h:'Investigator fee',num:true},{k:'inv',h:'Invoiceable',num:true}], qrows));
+  }
+  selSite.onchange=draw; draw();
+  p.append(card('A','기관별 계약(CTA) · 지급 요약', 'Site별 · Total Investigator fee · 분기별 · 적용 CTA', el('div',{},[ctrl,holder])));
+}
+
+/* B — 11-컬럼 원장 */
+function renderB(p, fees, invs){
+  const rows=[];
+  fees.forEach(x=>{ const pv=parseVisit(x.visit); const c=ctaAt(x.site, x.payment_date||realDate(x.visit_date));
+    rows.push({t:'Investigator fee', country:x.country, site:x.site, subj:x.patient, visit:pv.label, vdate:realDate(x.visit_date),
+      desc:x.visit, amount:x.amount, cur:x.currency, cta:c, pdate:x.payment_date, order:pv.order}); });
+  invs.forEach(x=>{ const c=ctaAt(x.site, x.payment_date);
+    rows.push({t:'Invoice', country:x.country, site:x.site, subj:'', visit:'', vdate:'',
+      desc:x.description, amount:x.amount, cur:x.currency, cta:c, pdate:x.payment_date, order:1e9}); });
+  const sites=[...new Set(rows.map(r=>r.site).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b)));
+  const ctrl=el('div',{class:'controls'});
+  const selSite=el('select',{},[el('option',{value:''},'모든 Site'),...sites.map(s=>el('option',{value:s},'Site '+s))]);
+  const selType=el('select',{},[el('option',{value:''},'전체'),el('option',{value:'Investigator fee'},'Investigator fee'),el('option',{value:'Invoice'},'Invoice')]);
+  const qq=el('input',{type:'search',placeholder:'검색 (대상자/설명/visit)'});
+  const cnt=el('span',{class:'small muted'});
+  ctrl.append(el('span',{class:'small muted'},'필터:'),selSite,selType,qq,el('span',{class:'spacer'}),cnt);
+  const holder=el('div',{});
+  const cols=[{k:'country',h:'Country'},{k:'sname',h:'site name'},{k:'site',h:'site #'},{k:'t',h:'Invoice/Investigator fee'},
+    {k:'subj',h:'subject #'},{k:'visit',h:'Visit #'},{k:'vdate',h:'Visit date'},{k:'desc',h:'description'},
+    {k:'amt',h:'Amount',num:true},{k:'cv',h:'effective CTA version'},{k:'ce',h:'CTA effective date'}];
+  function draw(){ holder.innerHTML='';
+    const fs=selSite.value, ft=selType.value, fq=qq.value.trim().toLowerCase();
+    let rs=rows.filter(r=>(!fs||String(r.site)===fs)&&(!ft||r.t===ft)&&(!fq||[r.subj,r.desc,r.visit].some(v=>String(v||'').toLowerCase().includes(fq))));
+    cnt.textContent=`${rs.length.toLocaleString()}건`;
+    const rr=rs.slice(0,600).map(r=>{ const neg=r.amount<0;
+      return {country:r.country, sname:siteName(r.site), site:r.site, t:chip(r.t==='Invoice'?'mute':'acc',r.t),
+        subj:r.subj, visit:r.visit, vdate:r.vdate, desc:r.desc, amt:money(r.amount,r.cur),
+        cv:r.cta?r.cta.version:'—', ce:r.cta?r.cta.effective_date:'—',
+        _shade:{amt: neg?'warn':(r.pdate?'good':null), cv: r.cta?null:'warn'}}; });
+    holder.append(tableFrom(cols,rr,{tall:true}));
+    if(rs.length>600) holder.append(el('div',{class:'small muted',style:'padding:8px 12px'},`상위 600건 표시 (총 ${rs.length.toLocaleString()}). Site/검색으로 좁히세요.`));
+  }
+  selSite.onchange=draw; selType.onchange=draw; qq.oninput=draw; draw();
+  const body=el('div',{},[
+    el('div',{class:'note',html:'<span>ℹ️</span><div><b>연구비 원장</b> (템플릿 11컬럼). <b>effective CTA</b>는 방문/지급일 시점의 site CTA(<code>site_cta.json</code>). 음영: <span class="chip good">지급완료</span>/<span class="chip warn">조정·취소(음수)</span>, CTA 미입력 시 노랑.</div>'}),
+    ctrl, holder ]);
+  p.append(card('B','지급 원장 (Country · site · subject · visit · Amount · CTA)','연구비 + invoiceable 라인 상세', body, false));
+}
+
+/* C — 대상자 × 방문 매트릭스 */
+function renderC(p, fees, invs){
+  const idx={};
+  fees.forEach(x=>{ if(!x.site||!x.patient) return; const pv=parseVisit(x.visit);
+    const S=idx[x.site]=idx[x.site]||{}, P=S[x.patient]=S[x.patient]||{}, V=P[pv.label]=P[pv.label]||{u:0,k:0,dates:[],vdate:'',order:pv.order};
+    if(x.currency==='KRW') V.k+=x.amount||0; else V.u+=x.amount||0;
+    if(x.payment_date) V.dates.push(x.payment_date); if(!V.vdate) V.vdate=realDate(x.visit_date); });
+  const sites=Object.keys(idx).sort((a,b)=>String(a).localeCompare(String(b)));
+  const ctrl=el('div',{class:'controls'});
+  const selSite=el('select',{}, sites.map(s=>el('option',{value:s},`Site ${s} — ${siteName(s)}`)));
+  const selSubj=el('select',{});
+  ctrl.append(el('span',{class:'small muted'},'Site:'),selSite,el('span',{class:'small muted'},'대상자:'),selSubj);
+  const holder=el('div',{});
+  function fillSubj(){ const P=idx[selSite.value]||{}; selSubj.innerHTML='';
+    selSubj.append(el('option',{value:'*'},'전체 대상자')); Object.keys(P).sort().forEach(pt=>selSubj.append(el('option',{value:pt},pt))); }
+  function subjBlock(site, pt){
+    const P=(idx[site]||{})[pt]||{};
+    const vis=Object.keys(P).map(l=>({l,...P[l]})).sort((a,b)=>a.order-b.order);
+    const eff=ctaAt(site, null);
+    const head=el('tr',{},[el('th',{},'Visit #'),...vis.map(v=>el('th',{class:'num'},v.l))]);
+    function row(label, cellFn){ return el('tr',{}, [el('td',{style:'font-weight:650;color:var(--ink-2)'},label), ...vis.map(v=>cellFn(v))]); }
+    const tb=el('tbody',{},[
+      row('Visit date', v=>el('td',{class:'num'},v.vdate||'—')),
+      row('effective CTA', v=>{ const c=ctaAt(site, (v.dates[0]||v.vdate)); return el('td',{class:'num'+(c?'':' shade-warn')}, c?c.version:'—'); }),
+      row('CTA effective date', v=>{ const c=ctaAt(site,(v.dates[0]||v.vdate)); return el('td',{class:'num'}, c?c.effective_date:'—'); }),
+      row('Investigator fee', v=>{ const str=(v.u?('$'+Math.round(v.u).toLocaleString()):'')+((v.u&&v.k)?' / ':'')+(v.k?('₩'+Math.round(v.k).toLocaleString()):''); const paid=v.dates.length>0;
+        return el('td',{class:'num'+(paid?' shade-good':'')}, str||'—'); }),
+      row('Invoiceable item', v=>el('td',{class:'num muted'},'—')),
+      row('Paid date', v=>{ const ds=v.dates.filter(Boolean).sort(); return el('td',{class:'num'+(ds.length?' shade-good':'')}, ds[ds.length-1]||'—'); }),
+    ]);
+    const tbl=el('div',{class:'tbl-scroll'},el('table',{},[el('thead',{},head),tb]));
+    return el('div',{style:'margin-bottom:18px'},[
+      el('div',{class:'flex',style:'margin:4px 0 8px'},[el('span',{class:'chip acc'},pt),
+        el('span',{class:'small muted'},`방문 ${vis.length} · Region ${(fees.find(f=>f.patient===pt)||{}).country||''}`),
+        eff&&el('span',{class:'small muted'},`유효 CTA: ${eff.version}`)].filter(Boolean)),
+      tbl ]);
+  }
+  function draw(){ holder.innerHTML='';
+    const site=selSite.value, pt=selSubj.value;
+    holder.append(el('div',{class:'note',html:'<span>ℹ️</span><div>열=Visit, 행=지표. <b>지급일(Paid date)·연구비 셀 음영</b> <span class="chip good">지급</span>. Invoiceable은 site 단위라 방문별 매핑 없음(B 원장 참조). effective CTA는 <code>site_cta.json</code> 입력 시 채워집니다.</div>'}));
+    const P=idx[site]||{}; const pts= pt==='*'? Object.keys(P).sort() : [pt];
+    pts.slice(0,15).forEach(x=>holder.append(subjBlock(site,x)));
+    if(pt==='*'&&Object.keys(P).length>15) holder.append(el('div',{class:'small muted'},`상위 15명 표시 (총 ${Object.keys(P).length}명). 대상자를 선택하세요.`));
+  }
+  selSite.onchange=()=>{fillSubj();draw();}; selSubj.onchange=draw; fillSubj(); draw();
+  p.append(card('C','기관 · 대상자 · 방문 매트릭스', 'Visit별 연구비·지급일·적용 CTA (지급일 음영)', el('div',{},[ctrl,holder]), false));
+}
+
+/* IQVIA WO 계약 참고 */
+function renderWO(p){
   const vrows=(C.versions||[]).map(v=>({version:v.version,type:v.type,eff:v.effective_date,term:v.term,
     total: v.grand_total?usd(v.grand_total):'—', note:v.note, _cls: v.is_effective?'eff':''}));
   const brows=(C.wo_budget||[]).map(b=>({item:b.item,unit:b.unit||'',qty:b.qty!=null?nfmt(b.qty):'',
     uc:b.unit_cost!=null?usd2(b.unit_cost):'', tot:b.total!=null?usd(b.total):'',
     _cls:(b.kind==='section'?'sec':b.kind==='sub'?'sub':b.kind==='subtotal'?'subtotal':b.kind==='total'?'total':'')}));
   const aWrap=el('div',{},[
-    el('h3',{class:'subh'},'계약 버전 이력 (음영 = 현재 유효 계약)'),
+    el('h3',{class:'subh'},'IQVIA 계약(WO/CO) 버전 이력 — CRO 마스터 계약 (음영=현재 유효)'),
     tableFrom([{k:'version',h:'버전'},{k:'type',h:'유형'},{k:'eff',h:'Effective'},{k:'term',h:'기간'},{k:'total',h:'총액',num:true},{k:'note',h:'비고'}],vrows),
-    el('h3',{class:'subh'},'WO v3 항목별 단가 (Attachment 2) — Unit · 단가 · 총액'),
+    el('h3',{class:'subh'},'WO v3 항목별 단가 (Attachment 2) — 연구비 단가: Investigator Payments NA/AP'),
     tableFrom([{k:'item',h:'항목'},{k:'unit',h:'Unit'},{k:'qty',h:'수량',num:true},{k:'uc',h:'단가(USD)',num:true},{k:'tot',h:'총액(USD)',num:true}],brows,{tall:true}),
   ]);
-  p.append(card('A','기관별 계약서 · 항목별 비용', `${C.vendor} · 계약번호 ${C.contract_number}`, aWrap));
-
-  // B — 연구비 & invoiceable 상세 원장
-  renderB(p, fees, invs);
-  // C — 기관·대상자·방문별 tracker
-  renderC(p, fees, invs);
-}
-
-function renderB(p, fees, invs){
-  const rows=[];
-  fees.forEach(x=>rows.push({t:'연구비', site:x.site, payee:x.payee, inv_name:x.investigator, patient:x.patient,
-    desc:x.visit, invoice:x.invoice_no, country:x.country, date:x.payment_date||x.visit_date, amount:x.amount,
-    cur:x.currency, pno:x.payment_no, pdate:x.payment_date, adhoc:x.adhoc}));
-  invs.forEach(x=>rows.push({t:'invoiceable', site:x.site, payee:x.payee, inv_name:x.investigator, patient:'',
-    desc:x.description, invoice:x.invoice_no, country:x.country, date:x.payment_date, amount:x.amount,
-    cur:x.currency, pno:x.payment_no, pdate:x.payment_date}));
-  const sites=[...new Set(rows.map(r=>r.site).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b)));
-  const ctrl=el('div',{class:'controls'});
-  const selSite=el('select',{},[el('option',{value:''},'모든 Site'),...sites.map(s=>el('option',{value:s},'Site '+s))]);
-  const selType=el('select',{},[el('option',{value:''},'전체'),el('option',{value:'연구비'},'연구비'),el('option',{value:'invoiceable'},'invoiceable')]);
-  const q=el('input',{type:'search',placeholder:'검색 (환자/설명/invoice#)'});
-  const cnt=el('span',{class:'small muted'});
-  ctrl.append(el('span',{class:'small muted'},'필터:'),selSite,selType,q,el('span',{class:'spacer'}),cnt);
-  const holder=el('div',{});
-  const cols=[{k:'t',h:'구분'},{k:'site',h:'Site#'},{k:'payee',h:'기관(Payee)'},{k:'inv_name',h:'Investigator'},
-    {k:'patient',h:'대상자'},{k:'desc',h:'Description / Visit'},{k:'invoice',h:'Invoice #'},{k:'date',h:'지급/방문일'},
-    {k:'amt',h:'금액',num:true},{k:'pno',h:'Payment#'},{k:'chk',h:'상태'}];
-  function draw(){ holder.innerHTML='';
-    const fs=selSite.value, ft=selType.value, fq=q.value.trim().toLowerCase();
-    let rs=rows.filter(r=>(!fs||String(r.site)===fs)&&(!ft||r.t===ft)&&(!fq||[r.patient,r.desc,r.invoice].some(v=>String(v||'').toLowerCase().includes(fq))));
-    cnt.textContent=`${rs.length.toLocaleString()}건 · 연구비 $${Math.round(sum(rs.filter(r=>r.t==='연구비'&&r.cur==='USD'),r=>r.amount)).toLocaleString()} / ₩${Math.round(sum(rs.filter(r=>r.t==='연구비'&&r.cur==='KRW'),r=>r.amount)).toLocaleString()}`;
-    const rr=rs.slice(0,500).map(r=>{ const neg=r.amount<0;
-      const status= neg?chip('warn','조정/취소'): r.pdate?chip('good','지급완료'):chip('mute','대기');
-      return {t:chip(r.t==='연구비'?'acc':'mute',r.t), site:r.site, payee:r.payee, inv_name:r.inv_name, patient:r.patient||'',
-        desc:r.desc, invoice:r.invoice||'', date:r.date||'', amt:money(r.amount,r.cur), pno:r.pno||'', chk:status,
-        _shade:{amt: neg?'warn':(r.pdate?'good':null)} }; });
-    holder.append(tableFrom(cols,rr,{tall:true}));
-    if(rs.length>500) holder.append(el('div',{class:'small muted',style:'padding:8px 12px'},`상위 500건 표시 (총 ${rs.length.toLocaleString()}). Site/검색으로 좁히세요.`));
-  }
-  selSite.onchange=draw; selType.onchange=draw; q.oninput=draw; draw();
-  const body=el('div',{},[
-    el('div',{class:'note',html:'<span>ℹ️</span><div><b>구성:</b> <b>연구비</b>=대상자 방문별 지급(visit activity), <b>invoiceable</b>=site invoice 상세(Invoice PASS THROUGH). 음영: <span class="chip good">지급완료</span>(초록)/<span class="chip warn">조정·취소(음수)</span>(노랑). 연구비 계약 대조(대상자 단가)는 C에서 확인.</div>'}),
-    ctrl, holder ]);
-  p.append(card('B','지급 · Invoice 상세 원장 (연구비 + invoiceable)','site·대상자·visit·invoice#·결재·지급액', body, false));
-}
-
-function renderC(p, fees, invs){
-  // 대상자별 rollup
-  const byP={};
-  fees.forEach(x=>{ const k=x.patient||('site'+x.site); (byP[k]=byP[k]||{patient:x.patient,site:x.site,payee:x.payee,region:x.country,
-    feeU:0,feeK:0,invU:0,invK:0,visits:new Set(),dates:[]}); const o=byP[k];
-    if(x.currency==='KRW') o.feeK+=x.amount||0; else o.feeU+=x.amount||0;
-    if(x.visit) o.visits.add(x.visit); if(x.payment_date) o.dates.push(x.payment_date); });
-  invs.forEach(x=>{ // invoice는 site 단위 → 해당 site 대상자에 합산하지 않고 별도 site 집계
-  });
-  const invBySite={};
-  invs.forEach(x=>{ const s=x.site||'?'; (invBySite[s]=invBySite[s]||{U:0,K:0,n:0}); if(x.currency==='KRW') invBySite[s].K+=x.amount||0; else invBySite[s].U+=x.amount||0; invBySite[s].n++; });
-  const patients=Object.values(byP).filter(o=>o.patient);
-  const sites=[...new Set(patients.map(o=>o.site).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b)));
-  const ctrl=el('div',{class:'controls'});
-  const selSite=el('select',{},[el('option',{value:''},'모든 Site'),...sites.map(s=>el('option',{value:s},'Site '+s))]);
-  const cnt=el('span',{class:'small muted'});
-  ctrl.append(el('span',{class:'small muted'},'필터:'),selSite,el('span',{class:'spacer'}),cnt);
-  const holder=el('div',{});
-  const cols=[{k:'site',h:'Site#'},{k:'payee',h:'기관'},{k:'patient',h:'대상자'},{k:'region',h:'Region'},
-    {k:'visits',h:'방문수',num:true},{k:'fee',h:'연구비 합',num:true},{k:'range',h:'지급일'},{k:'ver',h:'적용 계약'},{k:'st',h:'상태'}];
-  function draw(){ holder.innerHTML='';
-    const fs=selSite.value;
-    const rs=patients.filter(o=>!fs||String(o.site)===fs).sort((a,b)=>String(a.site).localeCompare(String(b.site))||String(a.patient).localeCompare(String(b.patient)));
-    cnt.textContent=`대상자 ${rs.length}명 · 방문 ${sum(rs,o=>o.visits.size)}건`;
-    const rr=rs.map(o=>{ const dts=o.dates.filter(Boolean).sort(); const last=dts[dts.length-1], first=dts[0];
-      const feeStr=(o.feeU?('$'+Math.round(o.feeU).toLocaleString()):'')+(o.feeU&&o.feeK?' / ':'')+(o.feeK?('₩'+Math.round(o.feeK).toLocaleString()):'')||'—';
-      const paid=dts.length>0;
-      return {site:o.site, payee:o.payee, patient:o.patient, region:o.region,
-        visits:o.visits.size, fee:feeStr, range: first?(first+(last&&last!==first?' ~ '+last:'')):'—',
-        ver: contractAt(last||first), st: paid?chip('good','지급'):chip('mute','대기'),
-        _shade:{fee: paid?'good':null}}; });
-    holder.append(tableFrom(cols,rr,{tall:true}));
-  }
-  selSite.onchange=draw; draw();
-  const body=el('div',{},[
-    el('div',{class:'note',html:'<span>ℹ️</span><div><b>기관별·대상자별·방문별 지급액</b> 집계입니다. <b>연구비 합</b>은 visit activity 기준, <b>적용 계약</b>은 지급일 시점의 유효 계약 버전(effective date 기준)입니다. 음영 <span class="chip good">지급</span> = 지급일 존재. site 단위 invoiceable 합계는 B 원장에서 확인.</div>'}),
-    ctrl, holder ]);
-  p.append(card('C','기관별 · 대상자별 · 방문별 Tracker','연구비+invoice 지급액 · 지급일 · 적용 계약 version', body));
+  p.append(card('참고','IQVIA WO 계약 (CRO 마스터 · 연구비 단가)', `${C.vendor} · 계약번호 ${C.contract_number}`, aWrap));
 }
 
 /* =====================================================================
@@ -258,7 +306,6 @@ function renderMon(){
     {name:'계약',color:'var(--s1)',vals:cats.map(c=>c.contracted)},{name:'실적(최신)',color:'var(--s3)',vals:cats.map(c=>c.latest)}], yfmt:nfmt, height:240});
   p.append(card('TREND','카테고리별 계약 vs 실적','Site Selection · SIV · IMV · Co-IMV · COV',catBody));
 
-  // 계약 대비 visit 잔여 (visit_balance)
   const fcols=[{k:'group',h:'카테고리'},{k:'act',h:'Activity'},{k:'con',h:'계약',num:true},
     ...snaps.map((s,i)=>({k:'s'+i,h:s,num:true})),{k:'bal',h:'잔여',num:true}];
   const frows=rows.map(r=>{ const o={group:(r.activity?'':r.group)||'', act:r.activity||r.group||'', con:r.contracted!=null?nfmt(r.contracted):'',
@@ -270,7 +317,6 @@ function renderMon(){
     el('div',{class:'note',html:'<span>ℹ️</span><div><b>음영:</b> 잔여 <span class="chip crit">음수</span>=계약 초과, <span class="chip warn">0</span>=소진, <span class="chip good">양수</span>=잔여.</div>'}),
     tableFrom(fcols,frows,{tall:true}) ]), false));
 
-  // D — 계약(모니터링)
   const drows=[['Site Initiation Visit (SIV)',uc.SIV],['Site Qualification Visit (SQV)',uc.SQV],['SQV by Phone',uc.SQV_phone],
     ['IMV — One-Day',uc.IMV_1day],['IMV — Two-Day',uc.IMV_2day],['Remote IMV — One-Day',uc.IMV_remote_1day],
     ['Remote IMV — Two-Day',uc.IMV_remote_2day],['Close-Out Visit (COV)',uc.COV],
@@ -287,11 +333,9 @@ function renderMon(){
 
 const ECAT_ORDER=['식비','교통비','숙박비','Per Diem','IRB/승인비','기타'];
 function renderE(p, cexp, cvis){
-  // F 매칭 인덱스: CRA(normalized) -> visit_start dates
   const cIdx={}; cvis.forEach(v=>{ const k=normName(v.cra); (cIdx[k]=cIdx[k]||[]).push(v.visit_start); });
   function fMatch(x){ const arr=cIdx[normName(x.cra)]; if(!arr) return 'warn';
     const d=x.visit_date||x.trans_date; return arr.some(vs=>daysBetween(vs,d)<=10)?'good':'warn'; }
-  // 카테고리 요약
   const catSum={}; ECAT_ORDER.forEach(c=>catSum[c]=0);
   cexp.forEach(x=>{ const g=x.group||'기타'; catSum[g]=(catSum[g]||0)+(x.net_amount!=null?x.net_amount:x.amount||0); });
   const chips=el('div',{class:'flex',style:'margin-bottom:12px'}, ECAT_ORDER.map(c=>
@@ -315,8 +359,7 @@ function renderE(p, cexp, cvis){
       const trav=x.group==='교통비'&&amt>(C.monitoring_unit_costs||{}).Monitoring_Travel_per_visit;
       return {cra:x.cra, site:x.site, cat:chip('acc',x.group), reason:x.reason, desc:x.description,
         tdate:x.trans_date||'', vdate:x.visit_date||'', amt:usd2(amt),
-        fm: fm==='good'?chip('good','일치'):chip('warn','미확인'),
-        _shade:{amt: trav?'warn':null, fm: fm}}; });
+        fm: fm==='good'?chip('good','일치'):chip('warn','미확인'), _shade:{amt: trav?'warn':null, fm: fm}}; });
     holder.append(tableFrom(cols,rr,{tall:true}));
   }
   selCra.onchange=draw; selSite.onchange=draw; selCat.onchange=draw; draw();
@@ -327,7 +370,6 @@ function renderE(p, cexp, cvis){
 }
 
 function renderF(p, cvis){
-  // CRA × site pivot
   const piv={};
   cvis.forEach(v=>{ const k=(v.cra||'?')+'|'+(v.site||'?'); (piv[k]=piv[k]||{cra:v.cra,site:v.site,account:v.account,n:0,dos:0,types:{}});
     const o=piv[k]; o.n++; o.dos+=v.dos||0; o.types[v.visit_type]=(o.types[v.visit_type]||0)+1; });

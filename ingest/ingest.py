@@ -484,6 +484,26 @@ def main():
             processed.append((f.name, f"ERROR: {e}"))
 
     store["sources"] = [f.name for f in files]
+
+    # 사이트 레지스트리 (site# -> name/country)
+    sites = {}
+    for x in store["investigator_fees"] + store["pass_through_invoices"]:
+        if x.get("site"):
+            sites.setdefault(str(x["site"]), {"name": x.get("payee"), "country": x.get("country")})
+    for v in store["cra_visits"]:
+        if v.get("site"):
+            sites.setdefault(str(v["site"]), {"name": v.get("account"), "country": v.get("country")})
+    store["sites"] = sites
+
+    # CTA(기관 임상시험계약) 레지스트리 - 사용자가 편집하는 파일
+    cta_path = ROOT / "data" / "site_cta.json"
+    if not cta_path.exists():
+        seed = {"_comment": "각 site의 CTA(기관 임상시험계약) 버전을 채우면 연구비 A/B/C에 자동 반영됩니다. "
+                            "각 site의 ctas 배열에 {version, effective_date, items:[{item,amount}]} 를 추가하세요.",
+                "sites": {s: {"name": (sites[s] or {}).get("name"), "ctas": []} for s in sorted(sites)}}
+        cta_path.write_text(json.dumps(seed, ensure_ascii=False, indent=2), encoding="utf-8")
+    store["site_cta"] = json.loads(cta_path.read_text(encoding="utf-8"))
+
     store["meta"] = {
         "protocol": "TTK-CS-101",
         "sponsor_cro": "IQVIA (CRO)",

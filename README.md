@@ -55,8 +55,18 @@ dashboard/index.html  최종 대시보드 (Artifact)
 
 ## 하위그룹 A~F (대시보드)
 
-**연구비 탭** — A: 계약서 버전·항목별 단가 / B: 연구비+invoiceable 상세 원장 / C: 기관·대상자·방문별 지급액 tracker
+**연구비 탭**
+- **A**: 기관별(Site) CTA·지급 요약 — Total Investigator fee, 분기별(paid date 기준), 적용 CTA
+- **B**: 지급 원장 (Country·site·subject·Visit#·Visit date·description·Amount·effective CTA version·CTA effective date)
+- **C**: 기관·대상자·방문 매트릭스 (열=Visit#, 행=Visit date/effective CTA/Investigator fee/Invoiceable/Paid date, 지급일 음영)
+- (참고) IQVIA WO 계약 — CRO 마스터 계약 버전 + 연구비 단가
+
 **모니터링 탭** — 계약 대비 visit 잔여 / D: 모니터링 계약·단가 / E: CRA 경비 / F: CRA Site Visit Report
+
+### CTA (기관 임상시험계약) 입력
+site별 CTA는 IQVIA WO(CRO 계약)와 별개입니다. `data/site_cta.json` 의 각 site `ctas` 배열에
+`{"version":"CTA v1.0","effective_date":"2024-01-15","items":[{"item":"C1D1","amount":1900}]}`
+형식으로 추가하면 A/B/C 의 "effective CTA version / date" 가 방문·지급일 시점 기준으로 자동 채워집니다.
 
 ## 음영(shading) 검증 규칙
 

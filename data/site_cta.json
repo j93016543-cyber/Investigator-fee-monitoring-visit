@@ -1,0 +1,69 @@
+{
+  "_comment": "각 site의 CTA(기관 임상시험계약) 버전을 채우면 연구비 A/B/C에 자동 반영됩니다. 각 site의 ctas 배열에 {version, effective_date, items:[{item,amount}]} 를 추가하세요.",
+  "sites": {
+    "537": {
+      "name": "Biomedical Research Alliance of New York, LLC",
+      "ctas": []
+    },
+    "540": {
+      "name": "Oregon Health and Science University",
+      "ctas": []
+    },
+    "541": {
+      "name": "University of Miami",
+      "ctas": []
+    },
+    "542": {
+      "name": "Hoag Memorial Hospital Presbyterian",
+      "ctas": []
+    },
+    "543": {
+      "name": "University of Michigan Comprehensive Cancer Center Michigan Medicine",
+      "ctas": []
+    },
+    "544": {
+      "name": "Baylor University Medical Center",
+      "ctas": []
+    },
+    "545": {
+      "name": "Emory University",
+      "ctas": []
+    },
+    "550": {
+      "name": "The University of Texas, MD Anderson Cancer Center",
+      "ctas": []
+    },
+    "551": {
+      "name": "Yale-New Haven Hospital- Yale Cancer Center",
+      "ctas": []
+    },
+    "552": {
+      "name": "Weill Medical College of Cornell University",
+      "ctas": []
+    },
+    "821": {
+      "name": "Seoul National University Hospital",
+      "ctas": []
+    },
+    "822": {
+      "name": "Severance Hospital, Yonsei University Health System",
+      "ctas": []
+    },
+    "823": {
+      "name": "Korea University Medical Center",
+      "ctas": []
+    },
+    "824": {
+      "name": "Samsung Medical Center",
+      "ctas": []
+    },
+    "825": {
+      "name": "Asan Medical Center",
+      "ctas": []
+    },
+    "826": {
+      "name": "The Catholic University of Korea Seoul St. Mary's Hospital",
+      "ctas": []
+    }
+  }
+}
