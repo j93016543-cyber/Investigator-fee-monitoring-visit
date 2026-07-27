@@ -94,6 +94,25 @@ def visit_cost_match(actual, costs):
     return "warn"
 
 
+def contract_check(site, cur, amt, costs, has_cta):
+    """계약대조: 통화가 CTA 예산 통화(site_cur)와 다르면 비교하지 않음."""
+    if not has_cta:
+        return "계약없음", None
+    if cur and cur != site_cur(site):
+        return "통화상이(대조제외)", None      # 예: BWS 지급예정 USD vs 한국 CTA ₩
+    if costs is None:
+        return "계약외 절차", None
+    m = visit_cost_match(amt, costs)
+    return {"good": "일치", "warn": "초과", "crit": "미달"}.get(m, "—"), m
+
+
+def cta_cost_str(site, costs):
+    if not costs:
+        return "—"
+    sym = "₩" if site_cur(site) == "KRW" else "$"
+    return f"{sym}{costs[0]:,.0f}" + (f"~{costs[-1]:,.0f}" if costs[-1] != costs[0] else "")
+
+
 def numfmt(cell, kind):
     cell.number_format = {"usd": '#,##0.00', "usd0": '#,##0', "int": '#,##0', "krw": '₩#,##0',
                           "pct": '0.0"%"'}.get(kind, 'General')
@@ -326,19 +345,11 @@ for x in fees:
     c = cta_at(x.get("site"), vd or x.get("payment_date"))
     amt = x.get("amount"); neg = isinstance(amt, (int, float)) and amt < 0
     costs = c.get("visit_costs", {}).get(lab) if c else None
-    if not c:
-        chk, shade = "계약없음", "warn"
-    elif costs is None:
-        chk, shade = "계약외 절차", "warn"   # 계약/프로토콜에 없는 방문·절차 (req3)
-    else:
-        m = visit_cost_match(amt, costs)
-        chk = {"good": "일치", "warn": "초과", "crit": "미달"}.get(m, "—")
-        shade = m
+    chk, shade = contract_check(x.get("site"), x.get("currency"), amt, costs, bool(c))
     rowsB.append({"Country": x.get("country"), "site name": site_name(x.get("site")), "site #": x.get("site"),
                   "구분": "Investigator fee", "subject #": x.get("patient"), "Visit #": lab, "Visit date": vd,
                   "description": x.get("visit"), "Amount": amt, "Cur": x.get("currency"),
-                  "CTA 계약금액": (f"{costs[0]:,.0f}~{costs[-1]:,.0f}" if costs and costs[0] != costs[-1]
-                                 else (f"{costs[0]:,.0f}" if costs else "—")),
+                  "CTA 계약금액": cta_cost_str(x.get("site"), costs),
                   "계약대조": chk, "effective CTA": c["version"] if c else "—",
                   "CTA eff date": c["effective_date"] if c else "—",
                   "Payment #": x.get("payment_no"), "Paid date": x.get("payment_date"),
@@ -357,13 +368,12 @@ for x in pending:  # 지급예정(TBD) — BWS Jul2026
     lab, _ = parse_visit(x.get("visit")); vd = real_date(x.get("visit_date"))
     c = cta_at(x.get("site"), vd or x.get("trans_date"))
     costs = c.get("visit_costs", {}).get(lab) if c else None
-    m = visit_cost_match(x.get("amount"), costs) if costs else None
+    chk, m = contract_check(x.get("site"), x.get("currency"), x.get("amount"), costs, bool(c))
     rowsB.append({"Country": x.get("country"), "site name": site_name(x.get("site")), "site #": x.get("site"),
                   "구분": "Investigator fee (지급예정)", "subject #": x.get("patient"), "Visit #": lab, "Visit date": vd,
                   "description": x.get("visit"), "Amount": x.get("amount"), "Cur": x.get("currency"),
-                  "CTA 계약금액": (f"{costs[0]:,.0f}~{costs[-1]:,.0f}" if costs and costs[0] != costs[-1]
-                                 else (f"{costs[0]:,.0f}" if costs else "—")),
-                  "계약대조": {"good": "일치", "warn": "초과", "crit": "미달"}.get(m, "—" if c else "계약없음"),
+                  "CTA 계약금액": cta_cost_str(x.get("site"), costs),
+                  "계약대조": chk,
                   "effective CTA": c["version"] if c else "—", "CTA eff date": c["effective_date"] if c else "—",
                   "Payment #": "", "Paid date": "TBD", "비고": "7월 지급예정(IQVIA 전달, Trans " + str(x.get("trans_date")) + ")",
                   "_shade": {"Paid date": "info", "계약대조": m}})
