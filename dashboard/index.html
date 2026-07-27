@@ -286,10 +286,57 @@ function renderFee(){
     {name:'Planned',color:'var(--s1)',vals:q.map(x=>x.planned)},{name:'Actual',color:'var(--s2)',vals:q.map(x=>x.actual)}], yfmt:v=>'$'+(v/1e6).toFixed(v>=1e6?1:2)+'M'});
   p.append(card('TREND','분기별 지급 연구비 (IQVIA, USD)','계획 대비 실제 지급액 · 분기별',cb));
 
+  renderCTAHistory(p);
   renderA(p, fees, invs);
   renderB(p, fees, invs);
   renderC(p, fees, invs);
   renderWO(p);
+}
+
+/* A — 기관별 CTA 변경이력 & Effective date (전체 개요) */
+function renderCTAHistory(p){
+  const scs=(DATA.site_cta||{}).sites||{};
+  const sites=Object.keys(scs).filter(s=>(scs[s].ctas||[]).length).sort((a,b)=>String(a).localeCompare(String(b)));
+  if(!sites.length){ return; }
+  const totVers=sum(sites,s=>scs[s].ctas.length);
+
+  // 개요: site 1행
+  const ovCols=[{k:'site',h:'Site#'},{k:'name',h:'기관'},{k:'n',h:'버전',num:true},
+    {k:'first',h:'최초 Effective'},{k:'eff',h:'현재 유효 CTA'},{k:'effd',h:'현재 Effective'}];
+  const ovRows=sites.map(s=>{ const cs=scs[s].ctas.slice().sort((a,b)=>String(a.effective_date||'').localeCompare(b.effective_date||''));
+    const withDate=cs.filter(c=>c.effective_date);
+    const eff=ctaAt(s,null);
+    return {site:s, name:siteName(s)||scs[s].name||'', n:cs.length,
+      first: withDate.length?withDate[0].effective_date:'—',
+      eff: eff?eff.version:'—', effd: eff?(eff.effective_date||'—'):'—'}; });
+
+  // 변경이력 상세: site별 섹션 + 버전 (Δ항목)
+  const logCols=[{k:'v',h:'CTA Version'},{k:'e',h:'Effective Date'},{k:'pv',h:'Protocol Ver.'},{k:'n',h:'항목수',num:true},{k:'d',h:'Δ항목',num:true}];
+  const logRows=[];
+  sites.forEach(s=>{
+    logRows.push({v:`Site ${s} — ${siteName(s)||scs[s].name||''}`, e:'',pv:'',n:'',d:'', _cls:'sec'});
+    const cs=scs[s].ctas.slice().sort((a,b)=>String(a.effective_date||'').localeCompare(b.effective_date||''));
+    const eff=ctaAt(s,null);
+    let prev=null;
+    cs.forEach(c=>{ const n=(c.items||[]).length; const delta= prev==null?null:(n-prev);
+      logRows.push({v:c.version, e:c.effective_date||'—', pv:c.protocol_version||'—', n:n||'—',
+        d: delta==null?'—':(delta>0?'+'+delta:String(delta)),
+        _cls:(eff&&c.version===eff.version)?'eff':''});
+      prev=n; });
+  });
+
+  const body=el('div',{},[
+    el('div',{class:'kpis'},[
+      kpi('CTA 관리 기관', sites.length+'개', '연구비 A 하위그룹'),
+      kpi('총 CTA 버전', totVers+'개', '전 기관 누적'),
+      kpi('미입력 기관', String([...new Set([...(DATA.investigator_fees||[]),...(DATA.pass_through_invoices||[])].map(x=>String(x.site)).filter(Boolean))].filter(s=>!(scs[s]&&(scs[s].ctas||[]).length)).length), 'CTA 폴더 대기'),
+    ]),
+    el('h3',{class:'subh'},'기관별 CTA 현황 (한눈에)'),
+    tableFrom(ovCols, ovRows),
+    el('h3',{class:'subh'},'CTA 변경이력 (Effective date 순 · Δ항목 = 직전 버전 대비 항목 증감)'),
+    tableFrom(logCols, logRows, {tall:true}),
+  ]);
+  p.append(card('A','기관별 CTA 변경이력 · Effective date','전 기관 계약 버전 타임라인', body));
 }
 
 /* A — 기관별 CTA & 지급 요약 (Site별) */
@@ -342,7 +389,7 @@ function renderA(p, fees, invs){
     holder.append(tableFrom([{k:'q',h:'분기'},{k:'pd',h:'Paid date'},{k:'fee',h:'Investigator fee',num:true},{k:'inv',h:'Invoiceable',num:true}], qrows));
   }
   selSite.onchange=draw; draw();
-  p.append(card('A','기관별 계약(CTA) · 지급 요약', 'Site별 · Total Investigator fee · 분기별 · 적용 CTA', el('div',{},[ctrl,holder])));
+  p.append(card('A','기관별 CTA 상세 · 지급 요약', 'Site별 · Total Investigator fee · 분기별 · 적용 CTA · 항목별 비용', el('div',{},[ctrl,holder])));
 }
 
 /* B — 11-컬럼 원장 */
