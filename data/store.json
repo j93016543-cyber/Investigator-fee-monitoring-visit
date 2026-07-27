@@ -1,0 +1,5620 @@
+{
+  "meta": {
+    "protocol": "TTK-CS-101",
+    "sponsor_cro": "IQVIA (CRO)",
+    "generated_note": "ingest.py 로 생성. 새 파일은 data/source/ 에 추가 후 재실행."
+  },
+  "contract": {
+    "vendor": "IQVIA RDS Inc. (CRO)",
+    "contract_number": "LAB97701",
+    "protocol": "TTK-CS-101",
+    "ip": "BAL0891",
+    "effective_version": "CO1_23Sep2025",
+    "effective_date": "2025-09-23",
+    "versions": [
+      {
+        "type": "MSA",
+        "doc_no": "CO24-133",
+        "version": "MSA (Master Service Agreement)",
+        "effective_date": "2024-07-13",
+        "governing_law": "Singapore",
+        "term": "5년 또는 계약업무 종료 시까지",
+        "note": "기본 이용약관. 단가는 하위 WO/ATP에서 책정.",
+        "is_effective": false
+      },
+      {
+        "type": "ATP",
+        "doc_no": "CO24-114",
+        "version": "ATP (Authorization to Proceed)",
+        "effective_date": "2024-06-25",
+        "governing_law": "Singapore",
+        "term": "계약일로부터 3개월, 자동연장 없음",
+        "grand_total": 297156.95,
+        "note": "AML study 초기 3개월. 총액 선지급 후 reconciliation.",
+        "is_effective": false
+      },
+      {
+        "type": "WO",
+        "doc_no": "LAB97701_WOv3_19Aug24",
+        "version": "Work Order v3",
+        "effective_date": "2024-08-19",
+        "governing_law": "Singapore",
+        "term": "전체 study (61.15 개월, 2024-06-30 ~ 2029-07-29)",
+        "grand_total": 16032808.97,
+        "note": "전체 study 예산 확정본. 항목별 단가/Payment Schedule 포함.",
+        "is_effective": false
+      },
+      {
+        "type": "CO",
+        "doc_no": null,
+        "version": "CO1_23Sep2025",
+        "effective_date": "2025-09-23",
+        "governing_law": "Singapore",
+        "term": "Change Order 1 (현재 유효)",
+        "note": "현재 유효 계약(Budget Tracker 기준).",
+        "is_effective": true
+      }
+    ],
+    "payment_envelopes": {
+      "professional_specialty_max": 6618167.57,
+      "investigator_grants_total": 8321417.0,
+      "investigator_advance": 1248213.0,
+      "passthrough_excl_investigator": 1093224.41,
+      "passthrough_advance": 137619.42,
+      "grand_total": 16032808.97
+    },
+    "study_assumptions": {
+      "timeline_months": 61.15,
+      "countries": [
+        "KOR",
+        "USA"
+      ],
+      "sites_identified": 63,
+      "sites_selected": 13,
+      "sites_activated": 19,
+      "patients_screened": 210,
+      "patients_enrolled": 168,
+      "patients_complete": 152,
+      "by_country": [
+        {
+          "country": "South Korea",
+          "identified": 35,
+          "selected": 7,
+          "active": 11,
+          "screened": 130,
+          "enrolled": 104,
+          "completed": 94
+        },
+        {
+          "country": "USA",
+          "identified": 28,
+          "selected": 6,
+          "active": 8,
+          "screened": 80,
+          "enrolled": 64,
+          "completed": 58
+        }
+      ]
+    },
+    "investigator_rates": [
+      {
+        "region": "North America",
+        "unit": "Patient",
+        "qty": 80,
+        "cost_per_unit": 43173.9,
+        "total": 3453912.0
+      },
+      {
+        "region": "Asia Pacific",
+        "unit": "Patient",
+        "qty": 130,
+        "cost_per_unit": 37442.35,
+        "total": 4867505.0
+      }
+    ],
+    "wo_budget": [
+      {
+        "item": "Direct Expenses (Core Services)",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "section"
+      },
+      {
+        "item": "Project Start-up/Initiation",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "sub"
+      },
+      {
+        "item": "Study Setup and Plan Development",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 10208.82,
+        "total": 10208.82,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Project Training",
+        "unit": "Training",
+        "qty": 1,
+        "unit_cost": 122413.94,
+        "total": 122413.94,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "IQVIA Translation Services",
+        "unit": "Country",
+        "qty": 2,
+        "unit_cost": 30599.0,
+        "total": 61198.0,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total: Project Start-up",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 193820.76,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "Site Start-up Services",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "sub"
+      },
+      {
+        "item": "Site Identified",
+        "unit": "Site",
+        "qty": 11,
+        "unit_cost": 6058.86,
+        "total": 66647.42,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Core Document Package - Informed Consent",
+        "unit": "ICF(s)",
+        "qty": 4,
+        "unit_cost": 2237.57,
+        "total": 8950.27,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Core Document Package",
+        "unit": "Core Document Package",
+        "qty": 19,
+        "unit_cost": 754.01,
+        "total": 14326.11,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Core Document Package (Amendments) w/ ICF change",
+        "unit": "Master ICF Amendment",
+        "qty": 8,
+        "unit_cost": 4106.83,
+        "total": 32854.63,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Core Document Package (Notifications)",
+        "unit": "Notification",
+        "qty": 132,
+        "unit_cost": 189.79,
+        "total": 25052.57,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Activation",
+        "unit": "Site",
+        "qty": 19,
+        "unit_cost": 7084.02,
+        "total": 134596.44,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Contract",
+        "unit": "Site",
+        "qty": 19,
+        "unit_cost": 2923.93,
+        "total": 55554.68,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Contract Amendments",
+        "unit": "Total Contract Amendment",
+        "qty": 27,
+        "unit_cost": 1652.25,
+        "total": 44610.84,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Clinical Trial Submission to Central/Local IRBs and EC(s)",
+        "unit": "Site",
+        "qty": 11,
+        "unit_cost": 3406.89,
+        "total": 37475.78,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Substantial Amendment",
+        "unit": "Amendment",
+        "qty": 2,
+        "unit_cost": 65192.26,
+        "total": 130384.51,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Import/Export License",
+        "unit": "License",
+        "qty": 1,
+        "unit_cost": 6521.89,
+        "total": 6521.89,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "RA Amendments",
+        "unit": "Amendment",
+        "qty": 10,
+        "unit_cost": 2647.58,
+        "total": 26475.83,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Initial RA Amendment Project Start Up",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 3689.67,
+        "total": 3689.67,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Ethics Committee Amendment",
+        "unit": "Amendment",
+        "qty": 54,
+        "unit_cost": 2206.47,
+        "total": 119149.4,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "ICF Site Info Personalization",
+        "unit": "Sites",
+        "qty": 19,
+        "unit_cost": 224.75,
+        "total": 4270.26,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Preparation and QC of CSR Submissions",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 806.7,
+        "total": 806.7,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total: Site Start-up",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 711367.0,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "Clinical Site Monitoring and Site Management",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "sub"
+      },
+      {
+        "item": "Onsite Transition Visits (South Korea)",
+        "unit": "Transition Visit",
+        "qty": 5,
+        "unit_cost": 2336.79,
+        "total": 11683.96,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Onsite Transition Visits (USA)",
+        "unit": "Transition Visit",
+        "qty": 2,
+        "unit_cost": 4050.16,
+        "total": 8100.32,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Remote Onsite Transition Visits (USA)",
+        "unit": "Transition Visit",
+        "qty": 1,
+        "unit_cost": 2984.33,
+        "total": 2984.33,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Document Review for South Korea Transition",
+        "unit": "Site",
+        "qty": 5,
+        "unit_cost": 353.95,
+        "total": 1769.75,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Document Review for USA Transition",
+        "unit": "Site",
+        "qty": 3,
+        "unit_cost": 632.18,
+        "total": 1896.55,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Qualification Visit (SQV)",
+        "unit": "Qual Visit",
+        "qty": 6,
+        "unit_cost": 2325.61,
+        "total": 13953.67,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Qualification Visit by Phone",
+        "unit": "Qual Call",
+        "qty": 7,
+        "unit_cost": 438.11,
+        "total": 3066.77,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Initiation Visit (SIV)",
+        "unit": "SIV Visit",
+        "qty": 11,
+        "unit_cost": 2619.94,
+        "total": 28819.38,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Interim Site Monitoring Visit (IMV) - One-Day",
+        "unit": "IMV Visit",
+        "qty": 365,
+        "unit_cost": 3052.53,
+        "total": 1114172.51,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Interim Site Monitoring Visit (IMV) - Two-Day",
+        "unit": "IMV Visit",
+        "qty": 81,
+        "unit_cost": 4092.57,
+        "total": 331497.83,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Remote IMV - One-Day",
+        "unit": "Remote IMV Visit",
+        "qty": 92,
+        "unit_cost": 3215.9,
+        "total": 295862.8,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Remote IMV - Two-Day",
+        "unit": "Remote IMV Visit",
+        "qty": 15,
+        "unit_cost": 5030.91,
+        "total": 75463.65,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Essential Document / TMF Maintenance",
+        "unit": "Enroll-to-FU Month",
+        "qty": 51,
+        "unit_cost": 9468.77,
+        "total": 482907.32,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Closeout Visit (COV)",
+        "unit": "Closeout Visits",
+        "qty": 19,
+        "unit_cost": 3742.13,
+        "total": 71100.4,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Management",
+        "unit": "Site Month",
+        "qty": 898,
+        "unit_cost": 676.95,
+        "total": 607896.88,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Electronic Investigator Site File Software (eISF)",
+        "unit": "Site",
+        "qty": 19,
+        "unit_cost": 2712.45,
+        "total": 51536.53,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "CTMS Transfer",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 150000.0,
+        "total": 150000.0,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Data Integration Services",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 18326.38,
+        "total": 18326.38,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total: Clinical Monitoring & Site Mgmt",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 3271039.02,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "Project Management and Support",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "sub"
+      },
+      {
+        "item": "Project Management (Pre-Study)",
+        "unit": "Pre-study Month",
+        "qty": 5,
+        "unit_cost": 73424.31,
+        "total": 367121.56,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Project Management (Ongoing)",
+        "unit": "Enroll/Treatment Month",
+        "qty": 27,
+        "unit_cost": 53560.49,
+        "total": 1446133.21,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Project Management (Closeout)",
+        "unit": "Closeout Month",
+        "qty": 5,
+        "unit_cost": 15953.26,
+        "total": 79766.31,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Project Management (Long Term Follow-up)",
+        "unit": "LTFU/DBL Month",
+        "qty": 25,
+        "unit_cost": 50463.88,
+        "total": 1261597.02,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "DLRT Charter Creation and Review",
+        "unit": "Charter",
+        "qty": 2,
+        "unit_cost": 743.66,
+        "total": 1487.32,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "IQVIA DrugDev",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 188748.2,
+        "total": 188748.2,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Vendor Management Office",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 213486.0,
+        "total": 213486.0,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total: Project Management",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 3558339.6,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "Meetings",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "sub"
+      },
+      {
+        "item": "Meetings - Kick-off Meeting",
+        "unit": "Meeting",
+        "qty": 1,
+        "unit_cost": 13595.13,
+        "total": 13595.13,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Customer Teleconferences",
+        "unit": "Meeting",
+        "qty": 142,
+        "unit_cost": 758.87,
+        "total": 107758.93,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Meetings - Internal Team Meetings",
+        "unit": "Meeting*CRA",
+        "qty": 1054,
+        "unit_cost": 100.73,
+        "total": 106172.93,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "DLRM",
+        "unit": "Meeting",
+        "qty": 17,
+        "unit_cost": 1580.93,
+        "total": 26875.73,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Transition/Wrap-up Meetings (KR+USA, 6 lines)",
+        "unit": "Meeting",
+        "qty": 24,
+        "unit_cost": null,
+        "total": 21813.27,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "LRSU to CRA handover meeting",
+        "unit": "Site",
+        "qty": 11,
+        "unit_cost": 144.12,
+        "total": 1585.28,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total: Meetings",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 274801.27,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "End of Study Activities",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "sub"
+      },
+      {
+        "item": "Submission of End of Trial Notifications",
+        "unit": "Site",
+        "qty": 19,
+        "unit_cost": 161.25,
+        "total": 3063.78,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total: End of Study",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 3063.78,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "Sub-total Direct Costs (Core CRO Services)",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 8012431.43,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "Discount (Bottomline)",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": -741196.04,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "One Time Discount for Work Order only",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": -653067.82,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total Discounted Direct Costs (Professional/Specialty)",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 6618167.57,
+        "cost_type": "Direct",
+        "kind": "total"
+      },
+      {
+        "item": "Pass-Through Costs (Core Services)",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "PTC",
+        "kind": "section"
+      },
+      {
+        "item": "Office Supplies",
+        "unit": "Notebook",
+        "qty": 19,
+        "unit_cost": 1689.21,
+        "total": 32095.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Monitoring Travel",
+        "unit": "Visit",
+        "qty": 465,
+        "unit_cost": 585.0,
+        "total": 272025.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Regulatory/IRB/EC fees",
+        "unit": "Estimated Total",
+        "qty": 19,
+        "unit_cost": 14516.42,
+        "total": 275811.92,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Document Indexing, QC and File Review",
+        "unit": "Document",
+        "qty": 7975,
+        "unit_cost": 0.08,
+        "total": 598.13,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Printing",
+        "unit": "Site",
+        "qty": 19,
+        "unit_cost": 11.26,
+        "total": 214.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Teleconferences",
+        "unit": "Teleconference",
+        "qty": 264,
+        "unit_cost": 21.0,
+        "total": 5544.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Miscellaneous Administrative Overhead",
+        "unit": "active sites x months",
+        "qty": 898,
+        "unit_cost": 33.0,
+        "total": 29634.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Informed Consent Form",
+        "unit": "ICF",
+        "qty": 40,
+        "unit_cost": 1523.25,
+        "total": 60930.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "DocuSign",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 35.36,
+        "total": 35.36,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Clario",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 416337.0,
+        "total": 416337.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Investigator Grants and Vendor",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "PTC",
+        "kind": "section"
+      },
+      {
+        "item": "Investigator Payments (North America)",
+        "unit": "Patient",
+        "qty": 80,
+        "unit_cost": 43173.9,
+        "total": 3453912.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Investigator Payments (Asia Pacific)",
+        "unit": "Patient",
+        "qty": 130,
+        "unit_cost": 37442.35,
+        "total": 4867505.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total Pass-through Costs",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 9414641.41,
+        "cost_type": "PTC",
+        "kind": "total"
+      },
+      {
+        "item": "Project Grand Total",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 16032808.97,
+        "cost_type": "Total",
+        "kind": "total"
+      }
+    ],
+    "payment_schedule": [
+      {
+        "month": "Jun-2024",
+        "milestone": "Pre-Payment Due Upon ATP Execution",
+        "pct": 4.09,
+        "amount": 270676.37
+      },
+      {
+        "month": "Aug-2024",
+        "milestone": "Pre-Payment Due Upon WO Execution",
+        "pct": 10.91,
+        "amount": 722048.76
+      },
+      {
+        "month": "Oct-2024",
+        "milestone": "Sign off transition checklist",
+        "pct": 10.0,
+        "amount": 661816.76
+      },
+      {
+        "month": "Dec-2024",
+        "milestone": "First SIV for additional solid tumor site",
+        "pct": 9.0,
+        "amount": 595635.08
+      },
+      {
+        "month": "Feb-2025",
+        "milestone": "First IRB submission of AML site",
+        "pct": 9.0,
+        "amount": 595635.08
+      },
+      {
+        "month": "Apr-2025",
+        "milestone": "First IRB approval of AML site",
+        "pct": 7.0,
+        "amount": 463271.73
+      },
+      {
+        "month": "Jun-2025",
+        "milestone": "30% of Monitoring Visits & Reports Completed",
+        "pct": 7.0,
+        "amount": 463271.73
+      },
+      {
+        "month": "Aug-2025",
+        "milestone": "90% of Site Initiation Visits & Reports Completed",
+        "pct": 7.0,
+        "amount": 463271.73
+      },
+      {
+        "month": "Oct-2025",
+        "milestone": "40% of Monitoring Visits & Reports Completed",
+        "pct": 7.0,
+        "amount": 463271.73
+      },
+      {
+        "month": "Dec-2025",
+        "milestone": "45% of Monitoring Visits & Reports Completed",
+        "pct": 6.0,
+        "amount": 397090.05
+      },
+      {
+        "month": "Mar-2026",
+        "milestone": "50% of Monitoring Visits & Reports Completed",
+        "pct": 6.0,
+        "amount": 397090.05
+      },
+      {
+        "month": "May-2026",
+        "milestone": "60% of Monitoring Visits & Reports Completed",
+        "pct": 5.0,
+        "amount": 330908.38
+      },
+      {
+        "month": "Jul-2026",
+        "milestone": "65% of Monitoring Visits & Reports Completed",
+        "pct": 5.0,
+        "amount": 330908.38
+      },
+      {
+        "month": "Oct-2026",
+        "milestone": "70% of Monitoring Visits & Reports Completed",
+        "pct": 4.0,
+        "amount": 264726.7
+      },
+      {
+        "month": "Jan-2027",
+        "milestone": "80% of Monitoring Visits & Reports Completed",
+        "pct": 4.0,
+        "amount": 264726.7
+      },
+      {
+        "month": "Jun-2027",
+        "milestone": "85% of Monitoring Visits & Reports Completed",
+        "pct": 3.0,
+        "amount": 198545.03
+      },
+      {
+        "month": "Nov-2027",
+        "milestone": "90% of Monitoring Visits & Reports Completed",
+        "pct": 3.0,
+        "amount": 198545.03
+      },
+      {
+        "month": "Jun-2028",
+        "milestone": "95% of Monitoring Visits & Reports Completed",
+        "pct": 3.0,
+        "amount": 198545.03
+      },
+      {
+        "month": "Mar-2029",
+        "milestone": "Completion of In-treatment follow-up of last patient",
+        "pct": 3.0,
+        "amount": 198545.03
+      },
+      {
+        "month": "May-2029",
+        "milestone": "100% Site close out",
+        "pct": 2.0,
+        "amount": 132363.35
+      },
+      {
+        "month": "Aug-2029",
+        "milestone": "Credit of residual Pre-Payment",
+        "pct": -15.0,
+        "amount": -992725.13
+      }
+    ],
+    "contracted_visits": [
+      {
+        "type": "Site Selection Visits (Total)",
+        "count": 13,
+        "detail": {
+          "Teleconference": 7,
+          "Onsite": 6
+        }
+      },
+      {
+        "type": "Site Initiation Visits (SIV)",
+        "count": 11,
+        "unit_cost": 2619.94
+      },
+      {
+        "type": "Interim Monitoring Visits (IMV, Total)",
+        "count": 553,
+        "detail": {
+          "1-Day Onsite": 365,
+          "2-Day Onsite": 81,
+          "1-Day Remote": 92,
+          "2-Day Remote": 15
+        }
+      },
+      {
+        "type": "Close Out Visits (COV)",
+        "count": 19,
+        "unit_cost": 3742.13
+      },
+      {
+        "type": "Total Site Monitoring Visits",
+        "count": 596
+      }
+    ],
+    "monitoring_unit_costs": {
+      "SIV": 2619.94,
+      "SQV": 2325.61,
+      "SQV_phone": 438.11,
+      "IMV_1day": 3052.53,
+      "IMV_2day": 4092.57,
+      "IMV_remote_1day": 3215.9,
+      "IMV_remote_2day": 5030.91,
+      "COV": 3742.13,
+      "Monitoring_Travel_per_visit": 585.0,
+      "Regulatory_IRB_EC_per_site": 14516.42
+    },
+    "atp_items": [
+      {
+        "item": "Direct Expenses (Core Services)",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "section"
+      },
+      {
+        "item": "Project Start-up/Initiation",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "sub"
+      },
+      {
+        "item": "Study Setup and Plan Development",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 10208.82,
+        "total": 10208.82,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Project Training",
+        "unit": "Training",
+        "qty": 1,
+        "unit_cost": 122413.94,
+        "total": 122413.94,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "IQVIA Translation Services",
+        "unit": "Country",
+        "qty": 2,
+        "unit_cost": 30599.0,
+        "total": 61198.0,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total: Project Start-up",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 193820.76,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "Site Start-up Services",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "sub"
+      },
+      {
+        "item": "Site Identified",
+        "unit": "Site",
+        "qty": 11,
+        "unit_cost": 6058.86,
+        "total": 66647.42,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Core Document Package - Informed Consent",
+        "unit": "ICF(s)",
+        "qty": 4,
+        "unit_cost": 2237.57,
+        "total": 8950.27,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Core Document Package",
+        "unit": "Core Document Package",
+        "qty": 19,
+        "unit_cost": 754.01,
+        "total": 14326.11,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Core Document Package (Amendments) w/ ICF change",
+        "unit": "Master ICF Amendment",
+        "qty": 8,
+        "unit_cost": 4106.83,
+        "total": 32854.63,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Core Document Package (Notifications)",
+        "unit": "Notification",
+        "qty": 132,
+        "unit_cost": 189.79,
+        "total": 25052.57,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Activation",
+        "unit": "Site",
+        "qty": 19,
+        "unit_cost": 7084.02,
+        "total": 134596.44,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Contract",
+        "unit": "Site",
+        "qty": 19,
+        "unit_cost": 2923.93,
+        "total": 55554.68,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Contract Amendments",
+        "unit": "Total Contract Amendment",
+        "qty": 27,
+        "unit_cost": 1652.25,
+        "total": 44610.84,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Clinical Trial Submission to Central/Local IRBs and EC(s)",
+        "unit": "Site",
+        "qty": 11,
+        "unit_cost": 3406.89,
+        "total": 37475.78,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Substantial Amendment",
+        "unit": "Amendment",
+        "qty": 2,
+        "unit_cost": 65192.26,
+        "total": 130384.51,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Import/Export License",
+        "unit": "License",
+        "qty": 1,
+        "unit_cost": 6521.89,
+        "total": 6521.89,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "RA Amendments",
+        "unit": "Amendment",
+        "qty": 10,
+        "unit_cost": 2647.58,
+        "total": 26475.83,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Initial RA Amendment Project Start Up",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 3689.67,
+        "total": 3689.67,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Ethics Committee Amendment",
+        "unit": "Amendment",
+        "qty": 54,
+        "unit_cost": 2206.47,
+        "total": 119149.4,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "ICF Site Info Personalization",
+        "unit": "Sites",
+        "qty": 19,
+        "unit_cost": 224.75,
+        "total": 4270.26,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Preparation and QC of CSR Submissions",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 806.7,
+        "total": 806.7,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total: Site Start-up",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 711367.0,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "Clinical Site Monitoring and Site Management",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "sub"
+      },
+      {
+        "item": "Onsite Transition Visits (South Korea)",
+        "unit": "Transition Visit",
+        "qty": 5,
+        "unit_cost": 2336.79,
+        "total": 11683.96,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Onsite Transition Visits (USA)",
+        "unit": "Transition Visit",
+        "qty": 2,
+        "unit_cost": 4050.16,
+        "total": 8100.32,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Remote Onsite Transition Visits (USA)",
+        "unit": "Transition Visit",
+        "qty": 1,
+        "unit_cost": 2984.33,
+        "total": 2984.33,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Document Review for South Korea Transition",
+        "unit": "Site",
+        "qty": 5,
+        "unit_cost": 353.95,
+        "total": 1769.75,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Document Review for USA Transition",
+        "unit": "Site",
+        "qty": 3,
+        "unit_cost": 632.18,
+        "total": 1896.55,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Qualification Visit (SQV)",
+        "unit": "Qual Visit",
+        "qty": 6,
+        "unit_cost": 2325.61,
+        "total": 13953.67,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Qualification Visit by Phone",
+        "unit": "Qual Call",
+        "qty": 7,
+        "unit_cost": 438.11,
+        "total": 3066.77,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Initiation Visit (SIV)",
+        "unit": "SIV Visit",
+        "qty": 11,
+        "unit_cost": 2619.94,
+        "total": 28819.38,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Interim Site Monitoring Visit (IMV) - One-Day",
+        "unit": "IMV Visit",
+        "qty": 365,
+        "unit_cost": 3052.53,
+        "total": 1114172.51,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Interim Site Monitoring Visit (IMV) - Two-Day",
+        "unit": "IMV Visit",
+        "qty": 81,
+        "unit_cost": 4092.57,
+        "total": 331497.83,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Remote IMV - One-Day",
+        "unit": "Remote IMV Visit",
+        "qty": 92,
+        "unit_cost": 3215.9,
+        "total": 295862.8,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Remote IMV - Two-Day",
+        "unit": "Remote IMV Visit",
+        "qty": 15,
+        "unit_cost": 5030.91,
+        "total": 75463.65,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Essential Document / TMF Maintenance",
+        "unit": "Enroll-to-FU Month",
+        "qty": 51,
+        "unit_cost": 9468.77,
+        "total": 482907.32,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Closeout Visit (COV)",
+        "unit": "Closeout Visits",
+        "qty": 19,
+        "unit_cost": 3742.13,
+        "total": 71100.4,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Site Management",
+        "unit": "Site Month",
+        "qty": 898,
+        "unit_cost": 676.95,
+        "total": 607896.88,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Electronic Investigator Site File Software (eISF)",
+        "unit": "Site",
+        "qty": 19,
+        "unit_cost": 2712.45,
+        "total": 51536.53,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "CTMS Transfer",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 150000.0,
+        "total": 150000.0,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Data Integration Services",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 18326.38,
+        "total": 18326.38,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total: Clinical Monitoring & Site Mgmt",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 3271039.02,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "Project Management and Support",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "sub"
+      },
+      {
+        "item": "Project Management (Pre-Study)",
+        "unit": "Pre-study Month",
+        "qty": 5,
+        "unit_cost": 73424.31,
+        "total": 367121.56,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Project Management (Ongoing)",
+        "unit": "Enroll/Treatment Month",
+        "qty": 27,
+        "unit_cost": 53560.49,
+        "total": 1446133.21,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Project Management (Closeout)",
+        "unit": "Closeout Month",
+        "qty": 5,
+        "unit_cost": 15953.26,
+        "total": 79766.31,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Project Management (Long Term Follow-up)",
+        "unit": "LTFU/DBL Month",
+        "qty": 25,
+        "unit_cost": 50463.88,
+        "total": 1261597.02,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "DLRT Charter Creation and Review",
+        "unit": "Charter",
+        "qty": 2,
+        "unit_cost": 743.66,
+        "total": 1487.32,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "IQVIA DrugDev",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 188748.2,
+        "total": 188748.2,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Vendor Management Office",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 213486.0,
+        "total": 213486.0,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total: Project Management",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 3558339.6,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "Meetings",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "sub"
+      },
+      {
+        "item": "Meetings - Kick-off Meeting",
+        "unit": "Meeting",
+        "qty": 1,
+        "unit_cost": 13595.13,
+        "total": 13595.13,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Customer Teleconferences",
+        "unit": "Meeting",
+        "qty": 142,
+        "unit_cost": 758.87,
+        "total": 107758.93,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Meetings - Internal Team Meetings",
+        "unit": "Meeting*CRA",
+        "qty": 1054,
+        "unit_cost": 100.73,
+        "total": 106172.93,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "DLRM",
+        "unit": "Meeting",
+        "qty": 17,
+        "unit_cost": 1580.93,
+        "total": 26875.73,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Transition/Wrap-up Meetings (KR+USA, 6 lines)",
+        "unit": "Meeting",
+        "qty": 24,
+        "unit_cost": null,
+        "total": 21813.27,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "LRSU to CRA handover meeting",
+        "unit": "Site",
+        "qty": 11,
+        "unit_cost": 144.12,
+        "total": 1585.28,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total: Meetings",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 274801.27,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "End of Study Activities",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "Direct",
+        "kind": "sub"
+      },
+      {
+        "item": "Submission of End of Trial Notifications",
+        "unit": "Site",
+        "qty": 19,
+        "unit_cost": 161.25,
+        "total": 3063.78,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total: End of Study",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 3063.78,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "Sub-total Direct Costs (Core CRO Services)",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 8012431.43,
+        "cost_type": "Direct",
+        "kind": "subtotal"
+      },
+      {
+        "item": "Discount (Bottomline)",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": -741196.04,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "One Time Discount for Work Order only",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": -653067.82,
+        "cost_type": "Direct",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total Discounted Direct Costs (Professional/Specialty)",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 6618167.57,
+        "cost_type": "Direct",
+        "kind": "total"
+      },
+      {
+        "item": "Pass-Through Costs (Core Services)",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "PTC",
+        "kind": "section"
+      },
+      {
+        "item": "Office Supplies",
+        "unit": "Notebook",
+        "qty": 19,
+        "unit_cost": 1689.21,
+        "total": 32095.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Monitoring Travel",
+        "unit": "Visit",
+        "qty": 465,
+        "unit_cost": 585.0,
+        "total": 272025.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Regulatory/IRB/EC fees",
+        "unit": "Estimated Total",
+        "qty": 19,
+        "unit_cost": 14516.42,
+        "total": 275811.92,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Document Indexing, QC and File Review",
+        "unit": "Document",
+        "qty": 7975,
+        "unit_cost": 0.08,
+        "total": 598.13,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Printing",
+        "unit": "Site",
+        "qty": 19,
+        "unit_cost": 11.26,
+        "total": 214.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Teleconferences",
+        "unit": "Teleconference",
+        "qty": 264,
+        "unit_cost": 21.0,
+        "total": 5544.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Miscellaneous Administrative Overhead",
+        "unit": "active sites x months",
+        "qty": 898,
+        "unit_cost": 33.0,
+        "total": 29634.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Informed Consent Form",
+        "unit": "ICF",
+        "qty": 40,
+        "unit_cost": 1523.25,
+        "total": 60930.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "DocuSign",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 35.36,
+        "total": 35.36,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Clario",
+        "unit": "Study",
+        "qty": 1,
+        "unit_cost": 416337.0,
+        "total": 416337.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Investigator Grants and Vendor",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": null,
+        "cost_type": "PTC",
+        "kind": "section"
+      },
+      {
+        "item": "Investigator Payments (North America)",
+        "unit": "Patient",
+        "qty": 80,
+        "unit_cost": 43173.9,
+        "total": 3453912.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Investigator Payments (Asia Pacific)",
+        "unit": "Patient",
+        "qty": 130,
+        "unit_cost": 37442.35,
+        "total": 4867505.0,
+        "cost_type": "PTC",
+        "kind": "item"
+      },
+      {
+        "item": "Sub-total Pass-through Costs",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 9414641.41,
+        "cost_type": "PTC",
+        "kind": "total"
+      },
+      {
+        "item": "Project Grand Total",
+        "unit": null,
+        "qty": null,
+        "unit_cost": null,
+        "total": 16032808.97,
+        "cost_type": "Total",
+        "kind": "total"
+      }
+    ],
+    "tracker_meta": {
+      "contract_number": "LAB97701",
+      "version": "CO1_23Sep2025",
+      "budget_usd": 15935420.47,
+      "paid_usd": 7387992.209999999,
+      "remaining_usd": 8547428.260000002
+    }
+  },
+  "vendor_status": [
+    {
+      "vendor": "IQVIA",
+      "contracted": 15935420.47,
+      "paid": 3144815.93,
+      "remaining": 12790604.540000001,
+      "pct_remaining": 0.8026524661887381
+    },
+    {
+      "vendor": "Syneos",
+      "contracted": null,
+      "paid": 0,
+      "remaining": null,
+      "pct_remaining": null
+    },
+    {
+      "vendor": "Sharp",
+      "contracted": 675051,
+      "paid": 472838.16,
+      "remaining": 202212.84000000003,
+      "pct_remaining": 0.2995519449641583
+    },
+    {
+      "vendor": "Fisher",
+      "contracted": 249693702,
+      "paid": 15142569,
+      "remaining": 234551133,
+      "pct_remaining": 0.9393554227491089
+    },
+    {
+      "vendor": "Marken",
+      "contracted": 132368849,
+      "paid": 132368849,
+      "remaining": 0,
+      "pct_remaining": 0
+    },
+    {
+      "vendor": "SBQ",
+      "contracted": 440404.83,
+      "paid": 160795.18,
+      "remaining": 279609.65,
+      "pct_remaining": 0.6348923330382186
+    },
+    {
+      "vendor": "Aptamer",
+      "contracted": 294600000,
+      "paid": 54450000,
+      "remaining": 240150000,
+      "pct_remaining": 0.8151731160896131
+    },
+    {
+      "vendor": "Invivo",
+      "contracted": 490894,
+      "paid": 213142.36,
+      "remaining": 277751.64,
+      "pct_remaining": 0.5658077711277791
+    },
+    {
+      "vendor": "Labconnect",
+      "contracted": 68277,
+      "paid": 45962.23,
+      "remaining": 22314.769999999997,
+      "pct_remaining": 0.3268270427816102
+    },
+    {
+      "vendor": "AIMS",
+      "contracted": 367130000,
+      "paid": 250597600,
+      "remaining": 116532400,
+      "pct_remaining": 0.3174145398087871
+    }
+  ],
+  "quarterly": [
+    {
+      "vendor": "IQVIA",
+      "currency": "USD",
+      "year": 2024,
+      "quarter": 3,
+      "planned": 0,
+      "actual": 297156.95
+    },
+    {
+      "vendor": "IQVIA",
+      "currency": "USD",
+      "year": 2024,
+      "quarter": 4,
+      "planned": 0,
+      "actual": 2772763.95
+    },
+    {
+      "vendor": "IQVIA",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 1,
+      "planned": 0,
+      "actual": 34695.35
+    },
+    {
+      "vendor": "IQVIA",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 2,
+      "planned": 0,
+      "actual": 656709.24
+    },
+    {
+      "vendor": "IQVIA",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 3,
+      "planned": 0,
+      "actual": 829858.1599999999
+    },
+    {
+      "vendor": "IQVIA",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 4,
+      "planned": 772849,
+      "actual": 2380983.1
+    },
+    {
+      "vendor": "IQVIA",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 1,
+      "planned": 1050743,
+      "actual": 1305306.74
+    },
+    {
+      "vendor": "IQVIA",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 2,
+      "planned": 437810,
+      "actual": 1431538.7799999998
+    },
+    {
+      "vendor": "IQVIA",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 3,
+      "planned": 437810,
+      "actual": 134077.91999999998
+    },
+    {
+      "vendor": "IQVIA",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 4,
+      "planned": 350243,
+      "actual": 0
+    },
+    {
+      "vendor": "IQVIA",
+      "currency": "USD",
+      "year": 2027,
+      "quarter": 1,
+      "planned": 350243,
+      "actual": 0
+    },
+    {
+      "vendor": "IQVIA",
+      "currency": "USD",
+      "year": 2027,
+      "quarter": 2,
+      "planned": 262686,
+      "actual": 0
+    },
+    {
+      "vendor": "Syneos",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 4,
+      "planned": 364505,
+      "actual": 0
+    },
+    {
+      "vendor": "Syneos",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 1,
+      "planned": 543464,
+      "actual": 0
+    },
+    {
+      "vendor": "Syneos",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 2,
+      "planned": 452886,
+      "actual": 0
+    },
+    {
+      "vendor": "Syneos",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 3,
+      "planned": 377405,
+      "actual": 0
+    },
+    {
+      "vendor": "Syneos",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 4,
+      "planned": 314504,
+      "actual": 0
+    },
+    {
+      "vendor": "Syneos",
+      "currency": "USD",
+      "year": 2027,
+      "quarter": 1,
+      "planned": 262087,
+      "actual": 0
+    },
+    {
+      "vendor": "Syneos",
+      "currency": "USD",
+      "year": 2027,
+      "quarter": 3,
+      "planned": 262087,
+      "actual": 0
+    },
+    {
+      "vendor": "Sharp",
+      "currency": "USD",
+      "year": 2023,
+      "quarter": 1,
+      "planned": 0,
+      "actual": 12267
+    },
+    {
+      "vendor": "Sharp",
+      "currency": "USD",
+      "year": 2023,
+      "quarter": 2,
+      "planned": 0,
+      "actual": 16333.47
+    },
+    {
+      "vendor": "Sharp",
+      "currency": "USD",
+      "year": 2023,
+      "quarter": 3,
+      "planned": 0,
+      "actual": 46052.33
+    },
+    {
+      "vendor": "Sharp",
+      "currency": "USD",
+      "year": 2023,
+      "quarter": 4,
+      "planned": 0,
+      "actual": 20282.860000000004
+    },
+    {
+      "vendor": "Sharp",
+      "currency": "USD",
+      "year": 2024,
+      "quarter": 1,
+      "planned": 0,
+      "actual": 7522.83
+    },
+    {
+      "vendor": "Sharp",
+      "currency": "USD",
+      "year": 2024,
+      "quarter": 2,
+      "planned": 0,
+      "actual": 49874.57000000001
+    },
+    {
+      "vendor": "Sharp",
+      "currency": "USD",
+      "year": 2024,
+      "quarter": 3,
+      "planned": 0,
+      "actual": 41664.659999999996
+    },
+    {
+      "vendor": "Sharp",
+      "currency": "USD",
+      "year": 2024,
+      "quarter": 4,
+      "planned": 0,
+      "actual": 31336.489999999998
+    },
+    {
+      "vendor": "Sharp",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 1,
+      "planned": 0,
+      "actual": 25424.65
+    },
+    {
+      "vendor": "Sharp",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 2,
+      "planned": 0,
+      "actual": 68361.41
+    },
+    {
+      "vendor": "Sharp",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 3,
+      "planned": 0,
+      "actual": 100122.42000000001
+    },
+    {
+      "vendor": "Sharp",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 4,
+      "planned": 0,
+      "actual": 53595.47
+    },
+    {
+      "vendor": "Fisher",
+      "currency": "KRW",
+      "year": 2025,
+      "quarter": 3,
+      "planned": 0,
+      "actual": 4838959
+    },
+    {
+      "vendor": "Fisher",
+      "currency": "KRW",
+      "year": 2025,
+      "quarter": 4,
+      "planned": 0,
+      "actual": 10303610
+    },
+    {
+      "vendor": "Marken",
+      "currency": "KRW",
+      "year": 2023,
+      "quarter": 2,
+      "planned": 0,
+      "actual": 6832940
+    },
+    {
+      "vendor": "Marken",
+      "currency": "KRW",
+      "year": 2023,
+      "quarter": 3,
+      "planned": 0,
+      "actual": 42000
+    },
+    {
+      "vendor": "Marken",
+      "currency": "KRW",
+      "year": 2024,
+      "quarter": 2,
+      "planned": 0,
+      "actual": 29201942
+    },
+    {
+      "vendor": "Marken",
+      "currency": "KRW",
+      "year": 2024,
+      "quarter": 4,
+      "planned": 0,
+      "actual": 10670790
+    },
+    {
+      "vendor": "Marken",
+      "currency": "KRW",
+      "year": 2025,
+      "quarter": 2,
+      "planned": 0,
+      "actual": 2942881
+    },
+    {
+      "vendor": "Marken",
+      "currency": "KRW",
+      "year": 2025,
+      "quarter": 3,
+      "planned": 0,
+      "actual": 39794243
+    },
+    {
+      "vendor": "Marken",
+      "currency": "KRW",
+      "year": 2025,
+      "quarter": 4,
+      "planned": 0,
+      "actual": 42884053
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2023,
+      "quarter": 1,
+      "planned": 0,
+      "actual": 67333.98
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2023,
+      "quarter": 3,
+      "planned": 0,
+      "actual": 1968
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2024,
+      "quarter": 4,
+      "planned": 0,
+      "actual": 4750
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2025,
+      "quarter": 1,
+      "planned": 0,
+      "actual": 6213.6
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2025,
+      "quarter": 2,
+      "planned": 0,
+      "actual": 70413.6
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2026,
+      "quarter": 1,
+      "planned": 50182,
+      "actual": 0
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2026,
+      "quarter": 2,
+      "planned": 50182,
+      "actual": 10116
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2026,
+      "quarter": 3,
+      "planned": 50182,
+      "actual": 0
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2026,
+      "quarter": 4,
+      "planned": 50182,
+      "actual": 0
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2027,
+      "quarter": 1,
+      "planned": 50182,
+      "actual": 0
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2027,
+      "quarter": 2,
+      "planned": 50182,
+      "actual": 0
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2027,
+      "quarter": 3,
+      "planned": 50182,
+      "actual": 0
+    },
+    {
+      "vendor": "SBQ",
+      "currency": "CHF",
+      "year": 2027,
+      "quarter": 4,
+      "planned": 50182,
+      "actual": 0
+    },
+    {
+      "vendor": "Aptamer",
+      "currency": "KRW",
+      "year": 2025,
+      "quarter": 2,
+      "planned": 0,
+      "actual": 14190000
+    },
+    {
+      "vendor": "Aptamer",
+      "currency": "KRW",
+      "year": 2025,
+      "quarter": 4,
+      "planned": 36600000,
+      "actual": 40260000
+    },
+    {
+      "vendor": "Aptamer",
+      "currency": "KRW",
+      "year": 2026,
+      "quarter": 1,
+      "planned": 33777000,
+      "actual": 0
+    },
+    {
+      "vendor": "Aptamer",
+      "currency": "KRW",
+      "year": 2026,
+      "quarter": 2,
+      "planned": 59577000,
+      "actual": 0
+    },
+    {
+      "vendor": "Aptamer",
+      "currency": "KRW",
+      "year": 2026,
+      "quarter": 3,
+      "planned": 43377000,
+      "actual": 0
+    },
+    {
+      "vendor": "Aptamer",
+      "currency": "KRW",
+      "year": 2026,
+      "quarter": 4,
+      "planned": 28377000,
+      "actual": 0
+    },
+    {
+      "vendor": "Aptamer",
+      "currency": "KRW",
+      "year": 2027,
+      "quarter": 1,
+      "planned": 35154000,
+      "actual": 0
+    },
+    {
+      "vendor": "Aptamer",
+      "currency": "KRW",
+      "year": 2027,
+      "quarter": 2,
+      "planned": 38700000,
+      "actual": 0
+    },
+    {
+      "vendor": "Invivo",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 3,
+      "planned": 0,
+      "actual": 166689
+    },
+    {
+      "vendor": "Invivo",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 4,
+      "planned": 10499,
+      "actual": 17748.87
+    },
+    {
+      "vendor": "Invivo",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 1,
+      "planned": 15748,
+      "actual": 13484.149999999998
+    },
+    {
+      "vendor": "Invivo",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 2,
+      "planned": 15748,
+      "actual": 15220.34
+    },
+    {
+      "vendor": "Invivo",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 3,
+      "planned": 15748,
+      "actual": 0
+    },
+    {
+      "vendor": "Invivo",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 4,
+      "planned": 15748,
+      "actual": 0
+    },
+    {
+      "vendor": "Invivo",
+      "currency": "USD",
+      "year": 2027,
+      "quarter": 1,
+      "planned": 20998,
+      "actual": 0
+    },
+    {
+      "vendor": "Labconnect",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 3,
+      "planned": 0,
+      "actual": 45130
+    },
+    {
+      "vendor": "Labconnect",
+      "currency": "USD",
+      "year": 2025,
+      "quarter": 4,
+      "planned": 5413,
+      "actual": 832.23
+    },
+    {
+      "vendor": "Labconnect",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 1,
+      "planned": 8120,
+      "actual": 0
+    },
+    {
+      "vendor": "Labconnect",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 2,
+      "planned": 8120,
+      "actual": 0
+    },
+    {
+      "vendor": "Labconnect",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 3,
+      "planned": 8120,
+      "actual": 0
+    },
+    {
+      "vendor": "Labconnect",
+      "currency": "USD",
+      "year": 2026,
+      "quarter": 4,
+      "planned": 8120,
+      "actual": 0
+    },
+    {
+      "vendor": "Labconnect",
+      "currency": "USD",
+      "year": 2027,
+      "quarter": 1,
+      "planned": 10826,
+      "actual": 0
+    },
+    {
+      "vendor": "AIMS",
+      "currency": "KRW",
+      "year": 2023,
+      "quarter": 4,
+      "planned": 0,
+      "actual": 23650000
+    },
+    {
+      "vendor": "AIMS",
+      "currency": "KRW",
+      "year": 2024,
+      "quarter": 3,
+      "planned": 0,
+      "actual": 53399500
+    },
+    {
+      "vendor": "AIMS",
+      "currency": "KRW",
+      "year": 2024,
+      "quarter": 4,
+      "planned": 0,
+      "actual": 46695000
+    },
+    {
+      "vendor": "AIMS",
+      "currency": "KRW",
+      "year": 2025,
+      "quarter": 1,
+      "planned": 0,
+      "actual": 50160000
+    },
+    {
+      "vendor": "AIMS",
+      "currency": "KRW",
+      "year": 2025,
+      "quarter": 2,
+      "planned": 0,
+      "actual": 23650000
+    },
+    {
+      "vendor": "AIMS",
+      "currency": "KRW",
+      "year": 2025,
+      "quarter": 4,
+      "planned": 0,
+      "actual": 44067100
+    },
+    {
+      "vendor": "AIMS",
+      "currency": "KRW",
+      "year": 2026,
+      "quarter": 1,
+      "planned": 33000000,
+      "actual": 8976000
+    },
+    {
+      "vendor": "AIMS",
+      "currency": "KRW",
+      "year": 2026,
+      "quarter": 3,
+      "planned": 9075000,
+      "actual": 0
+    },
+    {
+      "vendor": "AIMS",
+      "currency": "KRW",
+      "year": 2027,
+      "quarter": 1,
+      "planned": 12500000,
+      "actual": 0
+    },
+    {
+      "vendor": "AIMS",
+      "currency": "KRW",
+      "year": 2027,
+      "quarter": 2,
+      "planned": 12500000,
+      "actual": 0
+    },
+    {
+      "vendor": "AIMS",
+      "currency": "KRW",
+      "year": 2027,
+      "quarter": 3,
+      "planned": 12500000,
+      "actual": 0
+    },
+    {
+      "vendor": "AIMS",
+      "currency": "KRW",
+      "year": 2027,
+      "quarter": 4,
+      "planned": 12500000,
+      "actual": 0
+    }
+  ],
+  "payments": [
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "Pre-Payment Due Upon ATP Execution",
+      "budget_usd": 270676.37,
+      "invoiced_usd": 270676.37,
+      "invoice_no": "SGP-030213",
+      "invoiced_date": "2024-07-22",
+      "paid_year": 2024,
+      "paid_month": 8,
+      "paid_date": "2024-08-08",
+      "total_krw": 406014555,
+      "paid_yn": "Y",
+      "approval_no": "CD24-170"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "Pre-Payment Due Upon WO Execution",
+      "budget_usd": 722048.76,
+      "invoiced_usd": 722048.76,
+      "invoice_no": "SGP-030533",
+      "invoiced_date": "2024-09-27",
+      "paid_year": 2024,
+      "paid_month": 10,
+      "paid_date": "2024-10-10",
+      "total_krw": 45585,
+      "paid_yn": "Y",
+      "approval_no": "CD24-220"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "Sign off transition checklist",
+      "budget_usd": 661816.76,
+      "invoiced_usd": 661816.76,
+      "invoice_no": "SGP-030822",
+      "invoiced_date": "2024-11-29",
+      "paid_year": 2024,
+      "paid_month": 12,
+      "paid_date": "2024-12-19",
+      "total_krw": 45657,
+      "paid_yn": "Y",
+      "approval_no": "CD24-277"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "First IRB submission of AML site",
+      "budget_usd": 595635.08,
+      "invoiced_usd": 595635.08,
+      "invoice_no": "SGP-031343",
+      "invoiced_date": "2025-04-08",
+      "paid_year": 2025,
+      "paid_month": 4,
+      "paid_date": "2025-04-17",
+      "total_krw": 45768,
+      "paid_yn": "Y",
+      "approval_no": "CD25-072"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "First IRB approval of AML site",
+      "budget_usd": 463271.73,
+      "invoiced_usd": 463271.73,
+      "invoice_no": "SGP-031701",
+      "invoiced_date": "2025-07-14",
+      "paid_year": 2025,
+      "paid_month": 8,
+      "paid_date": "2025-08-14",
+      "total_krw": 45891,
+      "paid_yn": "Y",
+      "approval_no": "CD25-155"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "Pre-payment upon CO1 Execution",
+      "budget_usd": 17605,
+      "invoiced_usd": 17605,
+      "invoice_no": "SGP-032017",
+      "invoiced_date": "2025-10-08",
+      "paid_year": 2025,
+      "paid_month": 11,
+      "paid_date": "2025-11-27",
+      "total_krw": 45999,
+      "paid_yn": "Y",
+      "approval_no": "CD25-205"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "First SIV for additional solid tumor site",
+      "budget_usd": 606207.57,
+      "invoiced_usd": 606207.57,
+      "invoice_no": "SGP-032306",
+      "invoiced_date": "2025-12-10",
+      "paid_year": 2025,
+      "paid_month": 12,
+      "paid_date": "2025-12-24",
+      "total_krw": 46027,
+      "paid_yn": "Y",
+      "approval_no": "CD25-232"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "30% of Monitoring Visits & Reports Completed",
+      "budget_usd": 471496.93,
+      "invoiced_usd": 471496.96,
+      "invoice_no": "SGP-032306",
+      "invoiced_date": "2025-12-10",
+      "paid_year": 2025,
+      "paid_month": 12,
+      "paid_date": "2025-12-24",
+      "total_krw": 46027,
+      "paid_yn": "Y",
+      "approval_no": "CD25-232"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "80% of Site Initiation Visits & Reports Completed",
+      "budget_usd": 471496.93,
+      "invoiced_usd": 471496.93,
+      "invoice_no": "SGP-032465",
+      "invoiced_date": "2026-01-20",
+      "paid_year": 2026,
+      "paid_month": 2,
+      "paid_date": "2026-02-26",
+      "total_krw": 46081,
+      "paid_yn": "Y",
+      "approval_no": "CD26-016"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "25% of Monitoring Visits & Reports Completed",
+      "budget_usd": 471496.93,
+      "invoiced_usd": 471496.93,
+      "invoice_no": "SGP-032175",
+      "invoiced_date": "2025-11-09",
+      "paid_year": 2025,
+      "paid_month": 12,
+      "paid_date": "2025-12-24",
+      "total_krw": 46027,
+      "paid_yn": "Y",
+      "approval_no": "CD25-225"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "35% of Monitoring Visits & Reports Completed",
+      "budget_usd": 404131.92,
+      "invoiced_usd": 404131.92,
+      "invoice_no": "SGP-032533",
+      "invoiced_date": "2026-02-10",
+      "paid_year": 2026,
+      "paid_month": 3,
+      "paid_date": "2026-03-12",
+      "total_krw": 46096,
+      "paid_yn": "Y",
+      "approval_no": "CD26-023"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "40% of Monitoring Visits & Reports Completed",
+      "budget_usd": 404131.92,
+      "invoiced_usd": 404131.92,
+      "invoice_no": "SGP-032889",
+      "invoiced_date": "2026-05-13",
+      "paid_year": 2026,
+      "paid_month": 6,
+      "paid_date": "2026-06-04",
+      "total_krw": 46183,
+      "paid_yn": "Y",
+      "approval_no": "CO26-025"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "50% of Monitoring Visits & Reports Completed",
+      "budget_usd": 336776.59,
+      "invoiced_usd": 336776.59,
+      "invoice_no": "SGP-032978",
+      "invoiced_date": "2026-06-10",
+      "paid_year": 2026,
+      "paid_month": 6,
+      "paid_date": "2026-07-09",
+      "total_krw": 46218,
+      "paid_yn": "Y",
+      "approval_no": "CO26-045"
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "55% of Monitoring Visits & Reports Completed",
+      "budget_usd": 336776.59,
+      "invoiced_usd": null,
+      "invoice_no": null,
+      "invoiced_date": null,
+      "paid_year": null,
+      "paid_month": null,
+      "paid_date": null,
+      "total_krw": 0,
+      "paid_yn": null,
+      "approval_no": null
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "65% of Monitoring Visits & Reports Completed",
+      "budget_usd": 269421.27,
+      "invoiced_usd": null,
+      "invoice_no": null,
+      "invoiced_date": null,
+      "paid_year": null,
+      "paid_month": null,
+      "paid_date": null,
+      "total_krw": 0,
+      "paid_yn": null,
+      "approval_no": null
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "75% of Monitoring Visits & Reports Completed",
+      "budget_usd": 269421.27,
+      "invoiced_usd": null,
+      "invoice_no": null,
+      "invoiced_date": null,
+      "paid_year": null,
+      "paid_month": null,
+      "paid_date": null,
+      "total_krw": 0,
+      "paid_yn": null,
+      "approval_no": null
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "80% of Monitoring Visits & Reports Completed",
+      "budget_usd": 202065.95,
+      "invoiced_usd": null,
+      "invoice_no": null,
+      "invoiced_date": null,
+      "paid_year": null,
+      "paid_month": null,
+      "paid_date": null,
+      "total_krw": 0,
+      "paid_yn": null,
+      "approval_no": null
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "90% of Monitoring Visits & Reports Completed",
+      "budget_usd": 202065.95,
+      "invoiced_usd": null,
+      "invoice_no": null,
+      "invoiced_date": null,
+      "paid_year": null,
+      "paid_month": null,
+      "paid_date": null,
+      "total_krw": 0,
+      "paid_yn": null,
+      "approval_no": null
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "95% of Monitoring Visits & Reports Completed",
+      "budget_usd": 202065.95,
+      "invoiced_usd": null,
+      "invoice_no": null,
+      "invoiced_date": null,
+      "paid_year": null,
+      "paid_month": null,
+      "paid_date": null,
+      "total_krw": 0,
+      "paid_yn": null,
+      "approval_no": null
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "Completion of In-treatment follow-up of last patient",
+      "budget_usd": 202065.95,
+      "invoiced_usd": null,
+      "invoice_no": null,
+      "invoiced_date": null,
+      "paid_year": null,
+      "paid_month": null,
+      "paid_date": null,
+      "total_krw": 0,
+      "paid_yn": null,
+      "approval_no": null
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "100% Site close out",
+      "budget_usd": 165186.48,
+      "invoiced_usd": null,
+      "invoice_no": null,
+      "invoiced_date": null,
+      "paid_year": null,
+      "paid_month": null,
+      "paid_date": null,
+      "total_krw": 0,
+      "paid_yn": null,
+      "approval_no": null
+    },
+    {
+      "cost_type": "Direct",
+      "category": "Direct (Core CRO Services)",
+      "milestone": "Credit of residual Pre-Payment",
+      "budget_usd": -1010330.13,
+      "invoiced_usd": null,
+      "invoice_no": null,
+      "invoiced_date": null,
+      "paid_year": null,
+      "paid_month": null,
+      "paid_date": null,
+      "total_krw": 0,
+      "paid_yn": null,
+      "approval_no": null
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-030212",
+      "invoiced_usd": 26480.58,
+      "invoiced_date": "2024-07-22",
+      "paid_year": 2024,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-030531",
+      "invoiced_usd": 137619.42,
+      "invoiced_date": "2024-09-27",
+      "paid_year": 2024,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-030532",
+      "invoiced_usd": 1248213,
+      "invoiced_date": "2024-09-27",
+      "paid_year": 2024,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-030621",
+      "invoiced_usd": 439.55,
+      "invoiced_date": "2024-10-15",
+      "paid_year": 2024,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-030789",
+      "invoiced_usd": 2626.46,
+      "invoiced_date": "2024-11-21",
+      "paid_year": 2024,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-030941",
+      "invoiced_usd": 2603.63,
+      "invoiced_date": "2024-12-26",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-031090",
+      "invoiced_usd": 3495.17,
+      "invoiced_date": "2025-02-11",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-031208",
+      "invoiced_usd": 28596.55,
+      "invoiced_date": "2025-03-05",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-031300",
+      "invoiced_usd": 6399.93,
+      "invoiced_date": "2025-03-24",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-031418",
+      "invoiced_usd": 22753.1,
+      "invoiced_date": "2025-04-28",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-031520",
+      "invoiced_usd": 25045.7,
+      "invoiced_date": "2025-05-22",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-031521",
+      "invoiced_usd": 6875.43,
+      "invoiced_date": "2025-05-22",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-031653",
+      "invoiced_usd": 246916.46,
+      "invoiced_date": "2025-07-04",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-031654",
+      "invoiced_usd": 33087.27,
+      "invoiced_date": "2025-07-04",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-031763",
+      "invoiced_usd": 27051.47,
+      "invoiced_date": "2025-07-28",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-031764",
+      "invoiced_usd": 59531.23,
+      "invoiced_date": "2025-07-28",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032098",
+      "invoiced_usd": 24756.78,
+      "invoiced_date": "2025-10-17",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032002",
+      "invoiced_usd": 38305.79,
+      "invoiced_date": "2025-09-25",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032003",
+      "invoiced_usd": 214703.35,
+      "invoiced_date": "2025-09-25",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032143",
+      "invoiced_usd": 266838.75,
+      "invoiced_date": "2025-11-07",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032144",
+      "invoiced_usd": 32289.36,
+      "invoiced_date": "2025-11-07",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032257",
+      "invoiced_usd": 212960.76,
+      "invoiced_date": "2025-11-27",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032258",
+      "invoiced_usd": 24321.85,
+      "invoiced_date": "2025-11-27",
+      "paid_year": 2025,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032353",
+      "invoiced_usd": 418111.57,
+      "invoiced_date": "2025-12-19",
+      "paid_year": 2026,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032354",
+      "invoiced_usd": 11566.32,
+      "invoiced_date": "2025-12-19",
+      "paid_year": 2026,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032593",
+      "invoiced_usd": 183170.01,
+      "invoiced_date": "2026-03-06",
+      "paid_year": 2026,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032594",
+      "invoiced_usd": 69898.94,
+      "invoiced_date": "2026-03-06",
+      "paid_year": 2026,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032690",
+      "invoiced_usd": 82636.67,
+      "invoiced_date": "2026-03-24",
+      "paid_year": 2026,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032689",
+      "invoiced_usd": 18197.63,
+      "invoiced_date": "2026-03-24",
+      "paid_year": 2026,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032827",
+      "invoiced_usd": 11569.87,
+      "invoiced_date": "2026-04-24",
+      "paid_year": 2026,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032940",
+      "invoiced_usd": 298480.73,
+      "invoiced_date": "2026-06-09",
+      "paid_year": 2026,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-032941",
+      "invoiced_usd": 26676.42,
+      "invoiced_date": "2026-06-09",
+      "paid_year": 2026,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-033032",
+      "invoiced_usd": 38914.75,
+      "invoiced_date": "2026-06-22",
+      "paid_year": 2026,
+      "breakdown": {}
+    },
+    {
+      "cost_type": "PTC",
+      "category": "Pass-through",
+      "invoice_no": "SGP-033033",
+      "invoiced_usd": 95163.17,
+      "invoiced_date": "2026-06-22",
+      "paid_year": 2026,
+      "breakdown": {}
+    }
+  ],
+  "monitoring_visits": {
+    "snapshots": [
+      "29Oct25",
+      "08Dec25",
+      "09Feb26",
+      "25Feb26"
+    ],
+    "rows": [
+      {
+        "group": "Site Selection 10",
+        "activity": "Site Selection Teleconference",
+        "contracted": 8,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 8,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 8,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 8,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 8,
+            "kr": null,
+            "us": null
+          }
+        ],
+        "balance": 0
+      },
+      {
+        "group": "Site Selection 10",
+        "activity": "Site Selection Visits",
+        "contracted": 2,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 2,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 2,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 2,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 2,
+            "kr": null,
+            "us": null
+          }
+        ],
+        "balance": 0
+      },
+      {
+        "group": "Site Initiation 8",
+        "activity": "Site Initiation Visits",
+        "contracted": 8,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 1,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 1,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 1,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 1,
+            "kr": null,
+            "us": null
+          }
+        ],
+        "balance": 7
+      },
+      {
+        "group": "Site Initiation 8",
+        "activity": "Site InitiationTeleconference(OOS)",
+        "contracted": 0,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 1,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 2,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 4,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 5,
+            "kr": null,
+            "us": null
+          }
+        ],
+        "balance": -5
+      },
+      {
+        "group": "Site Initiation 8",
+        "activity": null,
+        "contracted": 18,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": null,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": null,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": null,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": null,
+            "kr": null,
+            "us": null
+          }
+        ],
+        "balance": null
+      },
+      {
+        "group": "IMV 434",
+        "activity": "One Day Onsite Monitoring Visits",
+        "contracted": 208,
+        "contracted_kr": 135,
+        "contracted_us": 73,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 19,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 23,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 29,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 29,
+            "kr": 27,
+            "us": 2
+          }
+        ],
+        "balance": 179
+      },
+      {
+        "group": "IMV 434",
+        "activity": "Two Day Onsite Monitoring Visits",
+        "contracted": 108,
+        "contracted_kr": 91,
+        "contracted_us": 17,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 44,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 50,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 56,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 60,
+            "kr": 51,
+            "us": 9
+          }
+        ],
+        "balance": 48
+      },
+      {
+        "group": "IMV 434",
+        "activity": "Three Day Onsite Monitoring Visits",
+        "contracted": 25,
+        "contracted_kr": 23,
+        "contracted_us": 5,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 16,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 16,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 20,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 17,
+            "kr": 17,
+            "us": 0
+          }
+        ],
+        "balance": 8
+      },
+      {
+        "group": "IMV 434",
+        "activity": "One Day Remote SDM Visit",
+        "contracted": 74,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 1,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 3,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 4,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 7,
+            "kr": null,
+            "us": 7
+          }
+        ],
+        "balance": 70
+      },
+      {
+        "group": "IMV 434",
+        "activity": "Two Day Remote SDM Visit",
+        "contracted": 17,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 15,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 17,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 21,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 24,
+            "kr": null,
+            "us": 24
+          }
+        ],
+        "balance": -7
+      },
+      {
+        "group": "IMV 434",
+        "activity": "Three Day Remote SDM Visit",
+        "contracted": 2,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 5,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 5,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 5,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 2,
+            "kr": null,
+            "us": 2
+          }
+        ],
+        "balance": -3
+      },
+      {
+        "group": "Co-IMV 39",
+        "activity": "One Day Co-Monitoring Visits",
+        "contracted": 12,
+        "contracted_kr": 10,
+        "contracted_us": 2,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 15,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 15,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 16,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 16,
+            "kr": 16,
+            "us": 0
+          }
+        ],
+        "balance": -4
+      },
+      {
+        "group": "Co-IMV 39",
+        "activity": "Two Day Co-Monitoring Visits",
+        "contracted": 23,
+        "contracted_kr": 23,
+        "contracted_us": 2,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 15,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 17,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 20,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 22,
+            "kr": 22,
+            "us": 0
+          }
+        ],
+        "balance": 1
+      },
+      {
+        "group": "Co-IMV 39",
+        "activity": "Three Day Co-Monitoring Visits",
+        "contracted": 2,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 1,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 1,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 1,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 1,
+            "kr": 1,
+            "us": 0
+          }
+        ],
+        "balance": 1
+      },
+      {
+        "group": "Co-IMV 39",
+        "activity": "One Day Remote Co-Monitoring Visits",
+        "contracted": 2,
+        "contracted_kr": null,
+        "contracted_us": 2,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 0,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 0,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 1,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 0,
+            "kr": 0,
+            "us": 0
+          }
+        ],
+        "balance": 1
+      },
+      {
+        "group": "Co-IMV 39",
+        "activity": "Two Day Remote Co-Monitoring Visits(OOS)",
+        "contracted": 0,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 0,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 0,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 5,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 5,
+            "kr": 0,
+            "us": 5
+          }
+        ],
+        "balance": -5
+      },
+      {
+        "group": "Co-IMV 39",
+        "activity": "Three Day Remote Co-Monitoring Visits (OOS)",
+        "contracted": 0,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 2,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 2,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 3,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 3,
+            "kr": 0,
+            "us": 3
+          }
+        ],
+        "balance": -3
+      },
+      {
+        "group": "Interim MV Sub-Total",
+        "activity": null,
+        "contracted": 473,
+        "contracted_kr": 282,
+        "contracted_us": 101,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": 133,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": 149,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": 181,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": 186,
+            "kr": 134,
+            "us": 52
+          }
+        ],
+        "balance": 286
+      },
+      {
+        "group": "COV 15",
+        "activity": "Onsite Close-Out Visits",
+        "contracted": 15,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": null,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": null,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": null,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": null,
+            "kr": null,
+            "us": null
+          }
+        ],
+        "balance": null
+      },
+      {
+        "group": "Total",
+        "activity": "Total Site Monitoring Visits",
+        "contracted": 506,
+        "contracted_kr": null,
+        "contracted_us": null,
+        "actuals": [
+          {
+            "snapshot": "29Oct25",
+            "total": null,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "08Dec25",
+            "total": null,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "09Feb26",
+            "total": null,
+            "kr": null,
+            "us": null
+          },
+          {
+            "snapshot": "25Feb26",
+            "total": null,
+            "kr": null,
+            "us": null
+          }
+        ],
+        "balance": null
+      }
+    ]
+  },
+  "billing_milestones": [
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B004",
+      "description": "First SIV for additional solid tumor site-CO1",
+      "amount": 606207.57,
+      "budget_qty": 1,
+      "expected_month": "Dec25"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B007",
+      "description": "30% of Monitoring Visits & Reports Completed (142 visit)",
+      "amount": 471496.93,
+      "budget_qty": 1,
+      "expected_month": "Dec25"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B008",
+      "description": "80% of Site Initiation Visits & Reports Completed (6.5 visit)",
+      "amount": 471496.93,
+      "budget_qty": 1,
+      "expected_month": "Dec25"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B009",
+      "description": "25% of Monitoring Visits & Reports Completed",
+      "amount": 471496.93,
+      "budget_qty": 1,
+      "expected_month": "Nov25"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B010",
+      "description": "35% of Monitoring Visits & Reports Completed (166 visits)",
+      "amount": 404131.92,
+      "budget_qty": 1,
+      "expected_month": "Feb26"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B011",
+      "description": "40% of Monitoring Visits & Reports Completed (189 visits)",
+      "amount": 404131.92,
+      "budget_qty": 1,
+      "expected_month": "Apr26"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B012",
+      "description": "50% of Monitoring Visits & Reports Completed (236 visits)",
+      "amount": 336776.59,
+      "budget_qty": 1,
+      "expected_month": "Jun26"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B013",
+      "description": "55% of Monitoring Visits & Reports Completed",
+      "amount": 336776.59,
+      "budget_qty": 1,
+      "expected_month": "Sep26"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B014",
+      "description": "65% of Monitoring Visits & Reports Completed",
+      "amount": 269421.27,
+      "budget_qty": 1,
+      "expected_month": "Dec26"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B015",
+      "description": "75% of Monitoring Visits & Reports Completed",
+      "amount": 269421.27,
+      "budget_qty": 1,
+      "expected_month": "Mar27"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B016",
+      "description": "80% of Monitoring Visits & Reports Completed",
+      "amount": 202065.95,
+      "budget_qty": 1,
+      "expected_month": "Sep27"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B017",
+      "description": "90% of Monitoring Visits & Reports Completed",
+      "amount": 202065.95,
+      "budget_qty": 1,
+      "expected_month": "Mar28"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B018",
+      "description": "95% of Monitoring Visits & Reports Completed",
+      "amount": 202065.95,
+      "budget_qty": 1,
+      "expected_month": "Sep28"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B019",
+      "description": "Completion of In-treatment follow-up of last patient",
+      "amount": 202065.95,
+      "budget_qty": 1,
+      "expected_month": "Mar29"
+    },
+    {
+      "activity": "TIME",
+      "source_type": "BILL",
+      "category": "B020",
+      "description": "100% Site close out",
+      "amount": 165186.48,
+      "budget_qty": 1,
+      "expected_month": "Jun29"
+    }
+  ],
+  "expense_forecast": [
+    {
+      "category": "INVESTIGATOR FEES",
+      "series": [
+        {
+          "date": "2026-10-25",
+          "kind": "Actual",
+          "value": 204168.09
+        },
+        {
+          "date": "2026-11-25",
+          "kind": "Actual",
+          "value": 417332.04
+        },
+        {
+          "date": "2026-12-25",
+          "kind": "Actual",
+          "value": 133693.23
+        },
+        {
+          "date": "2026-01-26",
+          "kind": "Actual",
+          "value": 49476.78
+        },
+        {
+          "date": "2026-02-26",
+          "kind": "Forecast",
+          "value": 183170.01
+        },
+        {
+          "date": "2026-03-26",
+          "kind": "Forecast",
+          "value": 183170.01
+        },
+        {
+          "date": "2026-04-26",
+          "kind": "Forecast",
+          "value": 183170.01
+        },
+        {
+          "date": "2026-05-26",
+          "kind": "Forecast",
+          "value": 183170.01
+        },
+        {
+          "date": "2026-06-26",
+          "kind": "Forecast",
+          "value": 183170.01
+        },
+        {
+          "date": "2026-07-26",
+          "kind": "Forecast",
+          "value": 183170.01
+        },
+        {
+          "date": "2026-08-26",
+          "kind": "Forecast",
+          "value": 183170.01
+        },
+        {
+          "date": "2026-09-26",
+          "kind": "Forecast",
+          "value": 183170.01
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "Forecast",
+          "value": 183170.01
+        },
+        {
+          "date": "2026-11-26",
+          "kind": "Forecast",
+          "value": 183170.01
+        },
+        {
+          "date": "2026-12-26",
+          "kind": "Forecast",
+          "value": 183170.01
+        }
+      ]
+    },
+    {
+      "category": "OTHER EXPENSES",
+      "series": [
+        {
+          "date": "2026-09-25",
+          "kind": "Actual",
+          "value": -5769.39
+        },
+        {
+          "date": "2026-10-25",
+          "kind": "Actual",
+          "value": 23016.65
+        },
+        {
+          "date": "2026-11-25",
+          "kind": "Actual",
+          "value": 11632.19
+        },
+        {
+          "date": "2026-12-25",
+          "kind": "Actual",
+          "value": 32648.93
+        },
+        {
+          "date": "2026-01-26",
+          "kind": "Actual",
+          "value": 37529.36
+        },
+        {
+          "date": "2026-02-26",
+          "kind": "Forecast",
+          "value": 69898.94
+        },
+        {
+          "date": "2026-03-26",
+          "kind": "Forecast",
+          "value": 50000
+        },
+        {
+          "date": "2026-04-26",
+          "kind": "Forecast",
+          "value": 50000
+        },
+        {
+          "date": "2026-05-26",
+          "kind": "Forecast",
+          "value": 50000
+        },
+        {
+          "date": "2026-06-26",
+          "kind": "Forecast",
+          "value": 50000
+        },
+        {
+          "date": "2026-07-26",
+          "kind": "Forecast",
+          "value": 50000
+        },
+        {
+          "date": "2026-08-26",
+          "kind": "Forecast",
+          "value": 50000
+        },
+        {
+          "date": "2026-09-26",
+          "kind": "Forecast",
+          "value": 50000
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "Forecast",
+          "value": 50000
+        },
+        {
+          "date": "2026-11-26",
+          "kind": "Forecast",
+          "value": 50000
+        },
+        {
+          "date": "2026-12-26",
+          "kind": "Forecast",
+          "value": 50000
+        }
+      ]
+    },
+    {
+      "category": "TOTAL EXPENSES",
+      "series": [
+        {
+          "date": "2026-09-25",
+          "kind": "Actual",
+          "value": -5769.39
+        },
+        {
+          "date": "2026-10-25",
+          "kind": "Actual",
+          "value": 227184.74
+        },
+        {
+          "date": "2026-11-25",
+          "kind": "Actual",
+          "value": 428964.23
+        },
+        {
+          "date": "2026-12-25",
+          "kind": "Actual",
+          "value": 166342.16
+        },
+        {
+          "date": "2026-01-26",
+          "kind": "Actual",
+          "value": 87006.14
+        },
+        {
+          "date": "2026-02-26",
+          "kind": "Forecast",
+          "value": 253068.95
+        },
+        {
+          "date": "2026-03-26",
+          "kind": "Forecast",
+          "value": 233170.01
+        },
+        {
+          "date": "2026-04-26",
+          "kind": "Forecast",
+          "value": 233170.01
+        },
+        {
+          "date": "2026-05-26",
+          "kind": "Forecast",
+          "value": 233170.01
+        },
+        {
+          "date": "2026-06-26",
+          "kind": "Forecast",
+          "value": 233170.01
+        },
+        {
+          "date": "2026-07-26",
+          "kind": "Forecast",
+          "value": 233170.01
+        },
+        {
+          "date": "2026-08-26",
+          "kind": "Forecast",
+          "value": 233170.01
+        },
+        {
+          "date": "2026-09-26",
+          "kind": "Forecast",
+          "value": 233170.01
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "Forecast",
+          "value": 233170.01
+        },
+        {
+          "date": "2026-11-26",
+          "kind": "Forecast",
+          "value": 233170.01
+        },
+        {
+          "date": "2026-12-26",
+          "kind": "Forecast",
+          "value": 233170.01
+        }
+      ]
+    }
+  ],
+  "subject_visits": [
+    {
+      "study": 5,
+      "subject": "537-1001",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-04-19",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-04-26",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 01 Day 01",
+      "instance": "Cycle 01 Day 01",
+      "visit_date": "2023-05-11",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 01 Day 08",
+      "instance": "Cycle 01 Day 08",
+      "visit_date": "2023-05-18",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 01 Day 15",
+      "instance": "Cycle 01 Day 15",
+      "visit_date": "2023-05-25",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 01 Day 22",
+      "instance": "Cycle 01 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 02 Day 01",
+      "instance": "Cycle 02 Day 01",
+      "visit_date": "2023-06-01",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 02 Day 08",
+      "instance": "Cycle 02 Day 08",
+      "visit_date": "2023-06-08",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 02 Day 15",
+      "instance": "Cycle 02 Day 15",
+      "visit_date": "2023-06-15",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 02 Day 22",
+      "instance": "Cycle 02 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 03 Day 01",
+      "instance": "Cycle 03 Day 01",
+      "visit_date": "2023-06-22",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 03 Day 08",
+      "instance": "Cycle 03 Day 08",
+      "visit_date": "2023-06-29",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 03 Day 15",
+      "instance": "Cycle 03 Day 15",
+      "visit_date": "2023-07-06",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 03 Day 22",
+      "instance": "Cycle 03 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 04 Day 01",
+      "instance": "Cycle 04 Day 01",
+      "visit_date": "2023-07-13",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 04 Day 08",
+      "instance": "Cycle 04 Day 08",
+      "visit_date": "2023-07-20",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 04 Day 15",
+      "instance": "Cycle 04 Day 15",
+      "visit_date": "2023-07-27",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 04 Day 22",
+      "instance": "Cycle 04 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 01",
+      "instance": "Day 01 Cycle 05",
+      "visit_date": "2023-08-03",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 01",
+      "instance": "Day 01 Cycle 06",
+      "visit_date": "2023-08-24",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 01",
+      "instance": "Day 01 Cycle 07",
+      "visit_date": "2023-09-14",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 01",
+      "instance": "Day 01 Cycle 08",
+      "visit_date": "2023-10-05",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 08",
+      "instance": "Day 08 Cycle 08",
+      "visit_date": "2023-10-12",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 08",
+      "instance": "Day 08 Cycle 07",
+      "visit_date": "2023-09-21",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 08",
+      "instance": "Day 08 Cycle 06",
+      "visit_date": "2023-08-31",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 08",
+      "instance": "Day 08 Cycle 05",
+      "visit_date": "2023-08-10",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 15",
+      "instance": "Day 15 Cycle 05",
+      "visit_date": "2023-08-17",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 15",
+      "instance": "Day 15 Cycle 07",
+      "visit_date": "2023-09-28",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 15",
+      "instance": "Day 15 Cycle 06",
+      "visit_date": "2023-09-07",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 15",
+      "instance": "Day 15 Cycle 08",
+      "visit_date": "2023-10-19",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1002",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Day 22",
+      "instance": "Day 22 Cycle 05",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "537-1003",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-07-12",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1003",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 01 Day 01",
+      "instance": "Cycle 01 Day 01",
+      "visit_date": "2023-07-27",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1003",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 01 Day 08",
+      "instance": "Cycle 01 Day 08",
+      "visit_date": "2023-08-03",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1003",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 01 Day 15",
+      "instance": "Cycle 01 Day 15",
+      "visit_date": "2023-08-10",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1003",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 01 Day 22",
+      "instance": "Cycle 01 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "537-1003",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 02 Day 01",
+      "instance": "Cycle 02 Day 01",
+      "visit_date": "2023-08-17",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1003",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 02 Day 08",
+      "instance": "Cycle 02 Day 08",
+      "visit_date": null,
+      "visit_done": "No"
+    },
+    {
+      "study": 5,
+      "subject": "537-1003",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 02 Day 15",
+      "instance": "Cycle 02 Day 15",
+      "visit_date": null,
+      "visit_done": "No"
+    },
+    {
+      "study": 5,
+      "subject": "537-1003",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 02 Day 22",
+      "instance": "Cycle 02 Day 22",
+      "visit_date": null,
+      "visit_done": "No"
+    },
+    {
+      "study": 5,
+      "subject": "537-1003",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "End of Treatment",
+      "instance": "End of Treatment",
+      "visit_date": "2023-08-24",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1003",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Safety Follow up",
+      "instance": "Safety Follow up",
+      "visit_date": null,
+      "visit_done": "No"
+    },
+    {
+      "study": 5,
+      "subject": "537-1004",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-09-07",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1005",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-09-20",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1006",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-09-25",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1007",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-09-27",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1007",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 01 Day 01",
+      "instance": "Cycle 01 Day 01",
+      "visit_date": "2023-10-12",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "537-1007",
+      "site": "Montefiore Medical Center",
+      "site_no": 537,
+      "visit_folder": "Cycle 01 Day 08",
+      "instance": "Cycle 01 Day 08",
+      "visit_date": "2023-10-19",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-02-06",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 01 Day 01",
+      "instance": "Cycle 01 Day 01",
+      "visit_date": "2023-02-23",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 01 Day 08",
+      "instance": "Cycle 01 Day 08",
+      "visit_date": "2023-03-02",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 01 Day 15",
+      "instance": "Cycle 01 Day 15",
+      "visit_date": "2023-03-09",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 01 Day 22",
+      "instance": "Cycle 01 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 02 Day 01",
+      "instance": "Cycle 02 Day 01",
+      "visit_date": "2023-03-16",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 02 Day 08",
+      "instance": "Cycle 02 Day 08",
+      "visit_date": "2023-03-23",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 02 Day 15",
+      "instance": "Cycle 02 Day 15",
+      "visit_date": "2023-03-30",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 02 Day 22",
+      "instance": "Cycle 02 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 03 Day 01",
+      "instance": "Cycle 03 Day 01",
+      "visit_date": "2023-04-06",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 03 Day 08",
+      "instance": "Cycle 03 Day 08",
+      "visit_date": "2023-04-13",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 03 Day 15",
+      "instance": "Cycle 03 Day 15",
+      "visit_date": "2023-04-20",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 03 Day 22",
+      "instance": "Cycle 03 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 04 Day 01",
+      "instance": "Cycle 04 Day 01",
+      "visit_date": "2023-04-27",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 04 Day 08",
+      "instance": "Cycle 04 Day 08",
+      "visit_date": "2023-05-04",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 04 Day 15",
+      "instance": "Cycle 04 Day 15",
+      "visit_date": "2023-05-11",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 04 Day 22",
+      "instance": "Cycle 04 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 01",
+      "instance": "Day 01 Cycle 05",
+      "visit_date": "2023-05-18",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 01",
+      "instance": "Day 01 Cycle 08",
+      "visit_date": "2023-07-20",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 01",
+      "instance": "Day 01 Cycle 06",
+      "visit_date": "2023-06-08",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 01",
+      "instance": "Day 01 Cycle 07",
+      "visit_date": "2023-06-29",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 01",
+      "instance": "Day 01 Cycle 09",
+      "visit_date": "2023-08-10",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 08",
+      "instance": "Day 08 Cycle 08",
+      "visit_date": "2023-07-27",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 08",
+      "instance": "Day 08 Cycle 09",
+      "visit_date": "2023-08-17",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 08",
+      "instance": "Day 08 Cycle 07",
+      "visit_date": "2023-07-06",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 08",
+      "instance": "Day 08 Cycle 06",
+      "visit_date": "2023-06-15",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 08",
+      "instance": "Day 08 Cycle 05",
+      "visit_date": "2023-05-25",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 15",
+      "instance": "Day 15 Cycle 05",
+      "visit_date": "2023-06-01",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 15",
+      "instance": "Day 15 Cycle 08",
+      "visit_date": "2023-08-03",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 15",
+      "instance": "Day 15 Cycle 07",
+      "visit_date": "2023-07-13",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 15",
+      "instance": "Day 15 Cycle 06",
+      "visit_date": "2023-06-22",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 15",
+      "instance": "Day 15 Cycle 09",
+      "visit_date": "2023-08-24",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 22",
+      "instance": "Day 22 Cycle 05",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "End of Treatment",
+      "instance": "End of Treatment",
+      "visit_date": "2023-08-31",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1001",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Safety Follow up",
+      "instance": "Safety Follow up",
+      "visit_date": "2023-09-11",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1002",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-03-23",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1002",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 01 Day 01",
+      "instance": "Cycle 01 Day 01",
+      "visit_date": "2023-03-30",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1002",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 01 Day 08",
+      "instance": "Cycle 01 Day 08",
+      "visit_date": null,
+      "visit_done": "No"
+    },
+    {
+      "study": 5,
+      "subject": "540-1002",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 01 Day 15",
+      "instance": "Cycle 01 Day 15",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "540-1002",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 01 Day 22",
+      "instance": "Cycle 01 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "540-1002",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "End of Treatment",
+      "instance": "End of Treatment",
+      "visit_date": "2023-04-11",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1002",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Safety Follow up",
+      "instance": "Safety Follow up",
+      "visit_date": "2023-04-27",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-07-13",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 01 Day 01",
+      "instance": "Cycle 01 Day 01",
+      "visit_date": "2023-07-20",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 01 Day 08",
+      "instance": "Cycle 01 Day 08",
+      "visit_date": "2023-07-27",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 01 Day 15",
+      "instance": "Cycle 01 Day 15",
+      "visit_date": "2023-08-03",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 01 Day 22",
+      "instance": "Cycle 01 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 02 Day 01",
+      "instance": "Cycle 02 Day 01",
+      "visit_date": "2023-08-10",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 02 Day 08",
+      "instance": "Cycle 02 Day 08",
+      "visit_date": "2023-08-17",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 02 Day 15",
+      "instance": "Cycle 02 Day 15",
+      "visit_date": "2023-08-24",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 02 Day 22",
+      "instance": "Cycle 02 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 03 Day 01",
+      "instance": "Cycle 03 Day 01",
+      "visit_date": "2023-08-31",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 03 Day 08",
+      "instance": "Cycle 03 Day 08",
+      "visit_date": "2023-09-07",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 03 Day 15",
+      "instance": "Cycle 03 Day 15",
+      "visit_date": "2023-09-14",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 03 Day 22",
+      "instance": "Cycle 03 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 04 Day 01",
+      "instance": "Cycle 04 Day 01",
+      "visit_date": "2023-09-21",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 04 Day 08",
+      "instance": "Cycle 04 Day 08",
+      "visit_date": "2023-09-28",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 04 Day 15",
+      "instance": "Cycle 04 Day 15",
+      "visit_date": "2023-10-05",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Cycle 04 Day 22",
+      "instance": "Cycle 04 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 01",
+      "instance": "Day 01 Cycle 05",
+      "visit_date": "2023-10-09",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 08",
+      "instance": "Day 08 Cycle 05",
+      "visit_date": "2023-10-16",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1003",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Day 15",
+      "instance": "Day 15 Cycle 05",
+      "visit_date": "2023-10-23",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1004",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-09-07",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "540-1005",
+      "site": "Oregon Health and Science University Knight Cancer Institute",
+      "site_no": 540,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-09-14",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1001",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-06-26",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1001",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 01 Day 01",
+      "instance": "Cycle 01 Day 01",
+      "visit_date": "2023-07-06",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1001",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 01 Day 08",
+      "instance": "Cycle 01 Day 08",
+      "visit_date": "2023-07-13",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1001",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 01 Day 15",
+      "instance": "Cycle 01 Day 15",
+      "visit_date": "2023-07-19",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1001",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 01 Day 22",
+      "instance": "Cycle 01 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "822-1001",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 02 Day 01",
+      "instance": "Cycle 02 Day 01",
+      "visit_date": "2023-07-27",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1001",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 02 Day 08",
+      "instance": "Cycle 02 Day 08",
+      "visit_date": null,
+      "visit_done": "No"
+    },
+    {
+      "study": 5,
+      "subject": "822-1001",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "End of Treatment",
+      "instance": "End of Treatment",
+      "visit_date": "2023-07-28",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1002",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Screening",
+      "instance": "Screening",
+      "visit_date": "2023-09-01",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1002",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 01 Day 01",
+      "instance": "Cycle 01 Day 01",
+      "visit_date": "2023-09-07",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1002",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 01 Day 08",
+      "instance": "Cycle 01 Day 08",
+      "visit_date": "2023-09-14",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1002",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 01 Day 15",
+      "instance": "Cycle 01 Day 15",
+      "visit_date": "2023-09-21",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1002",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 01 Day 22",
+      "instance": "Cycle 01 Day 22",
+      "visit_date": null,
+      "visit_done": "Not Applicable"
+    },
+    {
+      "study": 5,
+      "subject": "822-1002",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 02 Day 01",
+      "instance": "Cycle 02 Day 01",
+      "visit_date": "2023-09-27",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1002",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 02 Day 08",
+      "instance": "Cycle 02 Day 08",
+      "visit_date": "2023-10-04",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1002",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 02 Day 15",
+      "instance": "Cycle 02 Day 15",
+      "visit_date": "2023-10-10",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1002",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 02 Day 22",
+      "instance": "Cycle 02 Day 22",
+      "visit_date": "2023-10-19",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1002",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 03 Day 01",
+      "instance": "Cycle 03 Day 01",
+      "visit_date": "2023-10-19",
+      "visit_done": "Yes"
+    },
+    {
+      "study": 5,
+      "subject": "822-1002",
+      "site": "Severance Hospital, Yonsei University Health System",
+      "site_no": 822,
+      "visit_folder": "Cycle 03 Day 08",
+      "instance": "Cycle 03 Day 08",
+      "visit_date": "2023-10-26",
+      "visit_done": "Yes"
+    }
+  ],
+  "sources": [
+    "IQVIA_ATP.pdf",
+    "IQVIA_MSA.pdf",
+    "IQVIA_WOv3.docx",
+    "project_budget_tracker.xlsx",
+    "subject_visit_tracker.xlsx",
+    "visit_balance.xlsx"
+  ]
+}
