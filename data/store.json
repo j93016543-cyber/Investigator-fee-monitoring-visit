@@ -56694,7 +56694,19 @@
       },
       "823": {
         "name": "Korea University Medical Center",
-        "ctas": []
+        "ctas": [
+          {
+            "version": "CTA Original",
+            "effective_date": "2023-09-04",
+            "protocol_version": null,
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "n_files": 6
+          }
+        ],
+        "source_folder": "Site 823",
+        "cta_institution": null
       },
       "824": {
         "name": "Samsung Medical Center",
@@ -56719,6 +56731,7 @@
     "551": 1,
     "552": 1,
     "821": 10,
-    "822": 7
+    "822": 7,
+    "823": 1
   }
 }
