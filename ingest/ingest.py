@@ -385,7 +385,7 @@ def parse_pending_fees(path):
             "visit_date": d(ws.cell(r, h.get("Visit Date", 23)).value),
             "trans_date": d(ws.cell(r, h.get("Trans Date", 9)).value),
             "amount": num(ws.cell(r, h.get("Net Amount", 32)).value),
-            "currency": "KRW",  # BWS 연구비 = 원(KRW)
+            "currency": "USD",  # BWS 연구비 = USD (IQVIA 전달 금액)
             "country": g("Country", 10), "doc_id": g("Expenses Doc ID", 24),
             "seq": seq, "payment_date": None, "status": "TBD",
         })

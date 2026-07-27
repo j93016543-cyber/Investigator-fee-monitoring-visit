@@ -102,12 +102,12 @@ function renderFee(){
   const fees=DATA.investigator_fees||[], invs=DATA.pass_through_invoices||[], pending=DATA.pending_fees||[];
   const feeUSD=sum(fees.filter(x=>x.currency==='USD'),x=>x.amount);
   const feeKRW=sum(fees.filter(x=>x.currency==='KRW'),x=>x.amount);
-  const pendKRW=sum(pending,x=>x.amount);
+  const pendUSD=sum(pending,x=>x.amount);
 
   p.append(el('div',{class:'kpis'},[
     kpi('연구비 (Investigator Grants) 총액', usd(env.investigator_grants_total), 'WO v3 계약 · 대상자당 NA $43,174 / AP $37,442'),
     kpi('연구비 실지급 누계 (visit activity)', usd(feeUSD), `+ ₩${Math.round(feeKRW).toLocaleString()} · ${fees.length.toLocaleString()}건`),
-    kpi('연구비 지급예정 (TBD · 7월)', '₩'+Math.round(pendKRW).toLocaleString(), `${pending.length}건 · BWS Jul2026 (미지급)`),
+    kpi('연구비 지급예정 (TBD · 7월)', usd(pendUSD), `${pending.length}건 · BWS Jul2026 (미지급)`),
     kpi('Invoiceable (Professional/Specialty)', usd(env.professional_specialty_max), 'WO v3 최대 (할인 후 Direct)'),
     kpi('IQVIA 지급 완료', usd(tm.paid_usd||st.paid), (st.pct_remaining!=null?`잔여 ${pct(st.pct_remaining)}`:''), tm.budget_usd?(tm.paid_usd/tm.budget_usd):null),
   ]));
