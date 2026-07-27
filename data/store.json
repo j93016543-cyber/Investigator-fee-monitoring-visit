@@ -68768,6 +68768,16 @@
               ]
             },
             "n_files": 4
+          },
+          {
+            "version": "Protocol V14.2",
+            "effective_date": "2026-05-04",
+            "protocol_version": null,
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
           }
         ],
         "source_folder": "Site 823",
@@ -71565,6 +71575,16 @@
           {
             "version": "Protocol V13.2",
             "effective_date": "2025-10-22",
+            "protocol_version": null,
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
+          },
+          {
+            "version": "Protocol V14.2",
+            "effective_date": "2026-04-09",
             "protocol_version": null,
             "institution": null,
             "pi": null,
@@ -75541,6 +75561,26 @@
             "items": [],
             "visit_costs": {},
             "n_files": 1
+          },
+          {
+            "version": "CTA Amendment #3",
+            "effective_date": "2025-11-04",
+            "protocol_version": null,
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
+          },
+          {
+            "version": "CTA Amendment #4",
+            "effective_date": "2026-05-08",
+            "protocol_version": null,
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
           }
         ],
         "source_folder": "Site 825",
@@ -75548,7 +75588,30 @@
       },
       "826": {
         "name": "The Catholic University of Korea Seoul St. Mary's Hospital",
-        "ctas": []
+        "ctas": [
+          {
+            "version": "Initial",
+            "effective_date": "2025-07-30",
+            "protocol_version": null,
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
+          },
+          {
+            "version": "CTA Amendment #1",
+            "effective_date": "2026-06-06",
+            "protocol_version": null,
+            "institution": null,
+            "pi": null,
+            "items": [],
+            "visit_costs": {},
+            "n_files": 1
+          }
+        ],
+        "source_folder": "Site 826",
+        "cta_institution": null
       }
     }
   },
@@ -75564,8 +75627,9 @@
     "552": 2,
     "821": 10,
     "822": 8,
-    "823": 7,
-    "824": 6,
-    "825": 8
+    "823": 8,
+    "824": 7,
+    "825": 10,
+    "826": 2
   }
 }
