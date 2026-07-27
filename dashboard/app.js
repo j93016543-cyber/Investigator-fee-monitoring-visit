@@ -99,13 +99,15 @@ function renderFee(){
   const p=$('#panel-fee'); p.innerHTML='';
   const env=C.payment_envelopes||{}, tm=C.tracker_meta||{};
   const st=(DATA.vendor_status||[]).find(v=>v.vendor==='IQVIA')||{};
-  const fees=DATA.investigator_fees||[], invs=DATA.pass_through_invoices||[];
+  const fees=DATA.investigator_fees||[], invs=DATA.pass_through_invoices||[], pending=DATA.pending_fees||[];
   const feeUSD=sum(fees.filter(x=>x.currency==='USD'),x=>x.amount);
   const feeKRW=sum(fees.filter(x=>x.currency==='KRW'),x=>x.amount);
+  const pendUSD=sum(pending,x=>x.amount);
 
   p.append(el('div',{class:'kpis'},[
     kpi('연구비 (Investigator Grants) 총액', usd(env.investigator_grants_total), 'WO v3 계약 · 대상자당 NA $43,174 / AP $37,442'),
     kpi('연구비 실지급 누계 (visit activity)', usd(feeUSD), `+ ₩${Math.round(feeKRW).toLocaleString()} · ${fees.length.toLocaleString()}건`),
+    kpi('연구비 지급예정 (TBD · 7월)', usd(pendUSD), `${pending.length}건 · BWS Jul2026 (미지급)`),
     kpi('Invoiceable (Professional/Specialty)', usd(env.professional_specialty_max), 'WO v3 최대 (할인 후 Direct)'),
     kpi('IQVIA 지급 완료', usd(tm.paid_usd||st.paid), (st.pct_remaining!=null?`잔여 ${pct(st.pct_remaining)}`:''), tm.budget_usd?(tm.paid_usd/tm.budget_usd):null),
   ]));
@@ -231,10 +233,13 @@ function renderB(p, fees, invs){
   invs.forEach(x=>{ const c=ctaAt(x.site, x.payment_date);
     rows.push({t:'Invoice', country:x.country, site:x.site, subj:'', visit:'', vdate:'',
       desc:x.description, amount:x.amount, cur:x.currency, cta:c, pdate:x.payment_date, order:1e9}); });
+  (DATA.pending_fees||[]).forEach(x=>{ const pv=parseVisit(x.visit); const c=ctaAt(x.site, realDate(x.visit_date)||x.trans_date);
+    rows.push({t:'지급예정(TBD)', country:x.country, site:x.site, subj:x.patient, visit:pv.label, vdate:realDate(x.visit_date),
+      desc:x.visit, amount:x.amount, cur:x.currency, cta:c, pdate:null, tbd:true, order:pv.order-0.5}); });
   const sites=[...new Set(rows.map(r=>r.site).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b)));
   const ctrl=el('div',{class:'controls'});
   const selSite=el('select',{},[el('option',{value:''},'모든 Site'),...sites.map(s=>el('option',{value:s},'Site '+s))]);
-  const selType=el('select',{},[el('option',{value:''},'전체'),el('option',{value:'Investigator fee'},'Investigator fee'),el('option',{value:'Invoice'},'Invoice')]);
+  const selType=el('select',{},[el('option',{value:''},'전체'),el('option',{value:'Investigator fee'},'Investigator fee'),el('option',{value:'Invoice'},'Invoice'),el('option',{value:'지급예정(TBD)'},'지급예정(TBD)')]);
   const qq=el('input',{type:'search',placeholder:'검색 (대상자/설명/visit)'});
   const cnt=el('span',{class:'small muted'});
   ctrl.append(el('span',{class:'small muted'},'필터:'),selSite,selType,qq,el('span',{class:'spacer'}),cnt);
@@ -247,16 +252,17 @@ function renderB(p, fees, invs){
     let rs=rows.filter(r=>(!fs||String(r.site)===fs)&&(!ft||r.t===ft)&&(!fq||[r.subj,r.desc,r.visit].some(v=>String(v||'').toLowerCase().includes(fq))));
     cnt.textContent=`${rs.length.toLocaleString()}건`;
     const rr=rs.slice(0,600).map(r=>{ const neg=r.amount<0;
-      return {country:r.country, sname:siteName(r.site), site:r.site, t:chip(r.t==='Invoice'?'mute':'acc',r.t),
-        subj:r.subj, visit:r.visit, vdate:r.vdate, desc:r.desc, amt:money(r.amount,r.cur),
+      const tchip = r.tbd?chip('info','지급예정 TBD'):chip(r.t==='Invoice'?'mute':'acc',r.t);
+      return {country:r.country, sname:siteName(r.site), site:r.site, t:tchip,
+        subj:r.subj, visit:r.visit, vdate:r.vdate||(r.tbd?'—':''), desc:r.desc, amt:money(r.amount,r.cur),
         cv:r.cta?r.cta.version:'—', ce:r.cta?r.cta.effective_date:'—',
-        _shade:{amt: neg?'warn':(r.pdate?'good':null), cv: r.cta?null:'warn'}}; });
+        _shade:{amt: neg?'warn':(r.tbd?'info':(r.pdate?'good':null)), cv: r.cta?null:'warn'}}; });
     holder.append(tableFrom(cols,rr,{tall:true}));
     if(rs.length>600) holder.append(el('div',{class:'small muted',style:'padding:8px 12px'},`상위 600건 표시 (총 ${rs.length.toLocaleString()}). Site/검색으로 좁히세요.`));
   }
   selSite.onchange=draw; selType.onchange=draw; qq.oninput=draw; draw();
   const body=el('div',{},[
-    el('div',{class:'note',html:'<span>ℹ️</span><div><b>연구비 원장</b> (템플릿 11컬럼). <b>effective CTA</b>는 방문/지급일 시점의 site CTA(<code>site_cta.json</code>). 음영: <span class="chip good">지급완료</span>/<span class="chip warn">조정·취소(음수)</span>, CTA 미입력 시 노랑.</div>'}),
+    el('div',{class:'note',html:'<span>ℹ️</span><div><b>연구비 원장</b> (템플릿 11컬럼). <b>effective CTA</b>는 방문/지급일 시점의 site CTA. 음영: <span class="chip good">지급완료</span>/<span class="chip warn">조정·취소(음수)</span>/<span class="chip info">지급예정 TBD</span>(7월 지급예정, BWS Jul2026). CTA 미입력 시 노랑.</div>'}),
     ctrl, holder ]);
   p.append(card('B','지급 원장 (Country · site · subject · visit · Amount · CTA)','연구비 + invoiceable 라인 상세', body, false));
 }

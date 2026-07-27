@@ -137,6 +137,8 @@ wb = openpyxl.Workbook()
 fees = store.get("investigator_fees", [])
 invs = store.get("pass_through_invoices", [])
 pays = store.get("payments", [])
+pending = store.get("pending_fees", [])
+pend_usd = sum(x["amount"] for x in pending if isinstance(x.get("amount"), (int, float)))
 env = C.get("payment_envelopes", {})
 sites_cta = sorted([s for s in scts if scts[s].get("ctas")], key=str)
 
@@ -154,9 +156,10 @@ kpis = [
     ("연구비(Investigator Grants) 계약 총액", env.get("investigator_grants_total"), "usd0", "WO v3 (USD)"),
     ("연구비 실지급 누계 (USD, 미국 site)", round(feeU, 2), "usd", "visit_activity! Visit Amount"),
     ("연구비 실지급 누계 (₩ WON, 한국 site)", round(feeK), "krw", "visit_activity! Visit Amount"),
+    ("연구비 지급예정 (TBD, 7월 · USD)", round(pend_usd, 2), "usd", "BWS Jul2026 (paid date=TBD)"),
     ("Invoiceable(Professional) 최대", env.get("professional_specialty_max"), "usd0", "WO v3"),
     ("현재 IQVIA 계약 예산(최신 CO)", (C.get("cnf_versions") or [{}])[-1].get("grand_total"), "usd0", "IQVIA CNF 최신"),
-    ("연구비 실지급 건수", len(fees), "int", "visit_activity rows"),
+    ("연구비 실지급/지급예정 건수", f"{len(fees)} / {len(pending)}", None, "visit_activity / BWS"),
 ]
 ws.cell(5, 1, "항목").font = HDR_FONT; ws.cell(5, 1).fill = HDR_FILL
 ws.cell(5, 2, "값").font = HDR_FONT; ws.cell(5, 2).fill = HDR_FILL
@@ -223,10 +226,28 @@ for k, qk in enumerate(sorted(sq)):
         cc = ws.cell(rr, jj, round(val)); cc.font = BASE; cc.number_format = fm
     for cc in range(1, 6):
         ws.cell(rr, cc).border = BORDER
-ws.cell(r0 - 2, 1)  # noop
+# 지급예정(TBD) 요약 by site — req(신규)
+r0 = r0 + len(sq) + 3
+ws.cell(r0, 1, "연구비 지급예정 (TBD · 7월, BWS Jul2026) — site별").font = Font(name=FONT, size=12, bold=True)
+r0 += 1
+for j, h in enumerate(["Site#", "기관", "건수", "금액(USD)"], 1):
+    c = ws.cell(r0, j, h); c.fill = HDR_FILL; c.font = HDR_FONT; c.border = BORDER
+psite = {}
+for x in pending:
+    o = psite.setdefault(str(x.get("site")), {"n": 0, "u": 0.0})
+    o["n"] += 1
+    o["u"] += x.get("amount") or 0
+for k, sk in enumerate(sorted(psite, key=lambda z: (z == "None", z))):
+    rr = r0 + 1 + k; o = psite[sk]
+    ws.cell(rr, 1, sk).font = BASE
+    ws.cell(rr, 2, site_name(sk) if sk != "None" else "(site 미지정)").font = BASE
+    ws.cell(rr, 3, o["n"]).font = BASE
+    cu = ws.cell(rr, 4, round(o["u"], 2)); cu.number_format = '$#,##0.00'
+    for cc in range(1, 5):
+        ws.cell(rr, cc).border = BORDER
 ws.column_dimensions["A"].width = 44
 for col in "BCDE":
-    ws.column_dimensions[col].width = 20
+    ws.column_dimensions[col].width = 22
 ws.freeze_panes = "A5"
 
 # ============================================================ A. CTA 변경이력
@@ -291,6 +312,20 @@ for x in invs:
                   "CTA eff date": c["effective_date"] if c else "—",
                   "Payment #": x.get("payment_no"), "Paid date": x.get("payment_date"), "비고": "",
                   "_shade": {}})
+for x in pending:  # 지급예정(TBD) — BWS Jul2026
+    lab, _ = parse_visit(x.get("visit")); vd = real_date(x.get("visit_date"))
+    c = cta_at(x.get("site"), vd or x.get("trans_date"))
+    costs = c.get("visit_costs", {}).get(lab) if c else None
+    m = visit_cost_match(x.get("amount"), costs) if costs else None
+    rowsB.append({"Country": x.get("country"), "site name": site_name(x.get("site")), "site #": x.get("site"),
+                  "구분": "Investigator fee (지급예정)", "subject #": x.get("patient"), "Visit #": lab, "Visit date": vd,
+                  "description": x.get("visit"), "Amount": x.get("amount"), "Cur": x.get("currency"),
+                  "CTA 계약금액": (f"{costs[0]:,.0f}~{costs[-1]:,.0f}" if costs and costs[0] != costs[-1]
+                                 else (f"{costs[0]:,.0f}" if costs else "—")),
+                  "계약대조": {"good": "일치", "warn": "초과", "crit": "미달"}.get(m, "—" if c else "계약없음"),
+                  "effective CTA": c["version"] if c else "—", "CTA eff date": c["effective_date"] if c else "—",
+                  "Payment #": "", "Paid date": "TBD", "비고": "7월 지급예정(IQVIA 전달, Trans " + str(x.get("trans_date")) + ")",
+                  "_shade": {"Paid date": "info", "계약대조": m}})
 Bhead = ["Country", "site name", "site #", "구분", "subject #", "Visit #", "Visit date", "description",
          "Amount", "Cur", "CTA 계약금액", "계약대조", "effective CTA", "CTA eff date", "Payment #", "Paid date", "비고"]
 sheet("B. 지급원장", Bhead, rowsB,

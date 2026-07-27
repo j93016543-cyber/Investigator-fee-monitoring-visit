@@ -361,6 +361,38 @@ def parse_cra_visits(path):
     return recs
 
 
+def parse_pending_fees(path):
+    """BWS 연구비/invoice ER 배치(INVFE) - 지급예정(paid date=TBD) 연구비.
+
+    CRA ER 과 시트 구조가 같으나 Reason=INVFE(카테고리 91511) 이면 연구비 배치.
+    Payment Date 컬럼이 없으므로 미지급(TBD)로 취급.
+    """
+    wb = openpyxl.load_workbook(path, data_only=True)
+    ws = wb.active
+    h = _hdr(ws, 33)
+    recs = []
+    for r in range(3, ws.max_row + 1):
+        seq = ws.cell(r, h.get("Seq #", 1)).value
+        reason = s(ws.cell(r, h.get("Reason", 3)).value)
+        if seq is None and reason is None:
+            continue
+        if reason != "INVFE":
+            continue
+        g = lambda k, dc: s(ws.cell(r, h.get(k, dc)).value)
+        recs.append({
+            "site": g("Investigator Site", 25), "patient": g("Patient ID", 22),
+            "visit": g("Description", 8),
+            "visit_date": d(ws.cell(r, h.get("Visit Date", 23)).value),
+            "trans_date": d(ws.cell(r, h.get("Trans Date", 9)).value),
+            "amount": num(ws.cell(r, h.get("Net Amount", 32)).value),
+            "currency": "USD",  # IQVIA ER 보고통화
+            "country": g("Country", 10), "doc_id": g("Expenses Doc ID", 24),
+            "seq": seq, "payment_date": None, "status": "TBD",
+        })
+    wb.close()
+    return recs
+
+
 def parse_cra_expenses(path):
     """CRA ER 경비 - E 소스 (CRA/site/카테고리/금액/일자)."""
     wb = openpyxl.load_workbook(path, data_only=True)
@@ -406,7 +438,7 @@ def load_store():
             "payments": [], "monitoring_visits": {}, "billing_milestones": [],
             "expense_forecast": [], "subject_visits": [],
             "investigator_fees": [], "pass_through_invoices": [],
-            "cra_visits": [], "cra_expenses": [], "sources": []}
+            "cra_visits": [], "cra_expenses": [], "pending_fees": [], "sources": []}
     if STORE.exists():
         loaded = json.loads(STORE.read_text(encoding="utf-8"))
         base.update(loaded)  # 기존 데이터 유지 + 신규 키 기본값 보장
@@ -471,10 +503,23 @@ def main():
                                       x.get("visit_start")))
                     processed.append((f.name, f"cra_visits ({len(recs)} F)"))
                 elif "Incurring Person" in hdr or "Investigator Site" in hdr:
-                    recs = parse_cra_expenses(f)
-                    upsert(store["cra_expenses"], recs,
-                           lambda x: (norm_inv(x.get("doc_id")), x.get("seq")))
-                    processed.append((f.name, f"cra_expenses ({len(recs)} E)"))
+                    # INVFE(연구비 배치) vs CRA 경비 구분: Reason 컬럼 확인
+                    wb2 = openpyxl.load_workbook(f, read_only=True, data_only=True)
+                    ws2 = wb2.active
+                    rcol = next((c for c in range(1, 10) if ws2.cell(1, c).value == "Reason"), 3)
+                    reasons = {ws2.cell(r, rcol).value for r in range(3, min(ws2.max_row, 40) + 1)}
+                    wb2.close()
+                    if "INVFE" in reasons:
+                        recs = parse_pending_fees(f)
+                        upsert(store["pending_fees"], recs,
+                               lambda x: (norm_inv(x.get("doc_id")), x.get("seq"),
+                                          x.get("patient"), x.get("visit"), x.get("amount")))
+                        processed.append((f.name, f"pending_fees ({len(recs)} 지급예정)"))
+                    else:
+                        recs = parse_cra_expenses(f)
+                        upsert(store["cra_expenses"], recs,
+                               lambda x: (norm_inv(x.get("doc_id")), x.get("seq")))
+                        processed.append((f.name, f"cra_expenses ({len(recs)} E)"))
                 elif "Sheet1" in sheets and "Sheet2" in sheets:
                     v = parse_visit_balance(f)
                     store["monitoring_visits"] = v["monitoring_visits"]

@@ -111,9 +111,15 @@ tr.eff{outline:2px solid var(--accent);outline-offset:-2px}
 .chip.crit{background:var(--crit-wash);color:var(--crit);border-color:color-mix(in srgb,var(--crit) 30%,transparent)}
 .chip.mute{background:var(--surface-3);color:var(--ink-3)}
 .chip.acc{background:var(--accent-wash);color:var(--accent-ink)}
+.chip.info{background:#e4ebf6;color:#3a5ba0;border-color:#c3d0ea}
+:root[data-theme="dark"] .chip.info{background:#1e2a44;color:#9db4e6;border-color:#31456e}
 td.shade-good{background:var(--good-wash)}
 td.shade-warn{background:var(--warn-wash)}
 td.shade-crit{background:var(--crit-wash)}
+td.shade-info{background:#e8eef8}
+:root[data-theme="dark"] td.shade-info{background:#1c2740}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) td.shade-info{background:#1c2740}
+  :root:where(:not([data-theme="light"])) .chip.info{background:#1e2a44;color:#9db4e6;border-color:#31456e}}
 .dot{width:9px;height:9px;border-radius:2px;display:inline-block;vertical-align:-1px;margin-right:5px}
 
 /* legend / controls */
